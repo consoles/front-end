@@ -9,28 +9,49 @@
 			padding: 0;
 		}
 		.left{
-			width: 33.3%;
+/*			width: 33.3%;*/
+			width: 200px;
 			height: 500px;
-			float: left;
+			
+/*			float: left;*/
+			position: absolute;
+			left: 0;
+			top: 0;
+			
 			background-color: red;
 		}
 		.middle{
-			width: 33.3%;
+/*			width: 33.3%;*/
 			height: 500px;
-			float: left;
+			
+/*			float: left;*/
+			margin: 0 310px 0 210px;
+			
 			background-color: green;
 		}
 		.right{
-			width: 33.3%;
+/*			width: 33.3%;*/
+			width: 300px;
 			height: 500px;
-			float: right;
+			
+/*			float: right;*/
+			position: absolute;
+			right: 0;
+			top: 0;
+			
 			background-color: blue;
 		}
 	</style>
 </head>
 <body>
-	<div class="left"></div>
-	<div class="middle"></div>
-	<div class="right"></div>
+	<div class="left">200px</div>
+	<div class="middle"><b>[自适应宽度]</b><br />在DIV+CSS网页中时常使用html注释与css注释，而各种注释大多作用是在重要代码处加上注释说明注明意思。比如写了一段代码是比较特殊的时常需要改动的CSS代码，为了以后一下即可找到此段代码，这个时候加入CSS 注释加以说明，即可起到说明提示作用。
+在CSS中如何加注释-怎么加注释呢？
+其实很简单CSS注释语法为：
+/* 注释内容 */
+注释是以“斜杠+星号”开始，“星号+斜杠”结束，需要注意是注释字符均为英文半角小写。
+EXP
+假如DIVCSS5写了一段CSS代码，我们为了他人看的清楚是什么意思，这段代码是哪部分的CSS样式选择器，我们即可在CSS中加CSS注释。</div>
+	<div class="right">300px</div>
 </body>
 </html>
