@@ -33,6 +33,20 @@
 			
 			float: right;
 		}
+		.sub_l{
+			width: 400px;
+			height: 600px;
+			background-color: cadetblue;
+			
+			float: left;
+		}
+		.sub_r{
+			width: 200px;
+			height: 600px;
+			background-color: chartreuse;
+			
+			float: right;
+		}
 		.foot{
 			width: 800px;
 			height: 100px;
@@ -45,7 +59,10 @@
 	<div class="top">顶部</div>
 	<div class="main">
 		<div class="left">左-子div</div>
-		<div class="right">右-子div</div>
+		<div class="right">
+			<div class="sub_l">右子div-左</div>
+			<div class="sub_r">右子div-右</div>
+		</div>
 	</div>
 	<div class="foot">底部</div>
 </body>
