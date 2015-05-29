@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>混合布局</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.top{
+			height: 100px;
+			background: blue;
+		}
+		.main{
+			width: 800px;
+			height: 600px;
+			background: #ccc;
+			margin: 0 auto;		
+		}
+/*		注意子div的浮动*/
+		.left{
+			width: 200px;
+			height: 600px;
+			background-color: blueviolet;
+			
+			float: left;
+		}
+		.right{
+			width: 600px;
+			height: 600px;
+			background-color: brown;
+			
+			float: right;
+		}
+		.foot{
+			width: 800px;
+			height: 100px;
+			background-color: #900;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">顶部</div>
+	<div class="main">
+		<div class="left">左-子div</div>
+		<div class="right">右-子div</div>
+	</div>
+	<div class="foot">底部</div>
+</body>
+</html>
