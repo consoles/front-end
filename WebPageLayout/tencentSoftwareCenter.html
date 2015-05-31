@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>腾讯软件中心-横向双列布局</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			background-color: dodgerblue;
+			width: 960px;
+			margin: 0 auto;
+		}
+		#header{
+			background-color: darkviolet;
+			width: 100%;
+		}
+		#mainbody{
+			background-color: darkslategray;
+			width: 100%;
+			
+			overflow: hidden;
+		}
+		.left{
+			width: 800px;
+			height: 200px;
+			background-color: chartreuse;
+			
+			float: left;
+		}
+		.right{
+			width: 140px;
+			height: 300px;
+			background-color: chocolate;
+			
+			float: right;
+/*
+			margin-left: 20px;
+			float: left;
+*/
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">头部</div>
+		<div id="mainbody">主体内容
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div id="footer">版权部分</div>
+	</div>
+</body>
+</html>
