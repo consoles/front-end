@@ -12,11 +12,28 @@
     #box2{
        height: 50px;
         background-color: green;
+		float: left;
     }
+	  
+/*	 清除浮动常用的两种方式： */
+/*
+	  方式一
+	p{
+		width: 100%;
+		overflow: hidden;
+	}
+*/
+	  
+/*	  方式二*/
+	p{
+		clear: both;
+	}  
   </style>
 </head>
 <body>
+	<p>fds基金撒地方集散地基金法斯蒂芬三大</p>
 	<div id="box1">盒子1.当元素设置为浮动属性之后会对紧跟着它的元素产生影响</div>
-	<div id="box2"></div>
+	<div id="box2">盒子2</div>
+	<p>此段文字受到了浮动的影响</p>
 </body>
 </html>
