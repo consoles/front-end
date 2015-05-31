@@ -7,11 +7,18 @@
 		.box1{
 			background-color: blue;
 			height: 300px;
-			
+		}
+		
+		#wrap{
+			width: 400px;
+			background-color: crimson;
+			position: absolute;
 		}
 /*		父包含块一般设置为相对定位*/
 		.box{
 			position: relative;
+			top: 100px;
+			left: 150px;
 			
 			height: 50px;
 			background-color: darkorange;
@@ -21,6 +28,8 @@
 			height: 100px;
 			
 			position: absolute;
+			left: 100px;
+			top: 200px;
 		}
 		.box3{
 			background-color:deeppink;
@@ -29,10 +38,12 @@
 	</style>
 </head>
 <body>
-	<div class="box1">box1</div>
-	<div class="box">
-		<div class="box2">box2,绝对定位之后宽度变化了，随着内容增长</div>
+	<div id="wrap">
+		<div class="box1">box1</div>
+		<div class="box">box
+			<div class="box2">box2的父级已定位</div>
+		</div>
+		<div class="box3">box3</div>
 	</div>
-	<div class="box3">box3</div>
 </body>
 </html>
