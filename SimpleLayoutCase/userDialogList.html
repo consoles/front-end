@@ -11,31 +11,84 @@
 		list-style: none;
 		font:12px/1.5 "Arial", "sans-serif", "微软雅黑", "宋体", "Tahoma"
 	}
-
-		.content{
+		
+/*		================================= 初级人员的想法 ======================================*/
+		.content1{
 			width: 600px;
 			position: relative;
-			background-color:fuchsia;
+			overflow: hidden;
 		}
-		.content .userHead{
+		.content1 .userHead{
 			width: 100px;
 			float: left;
 		}
-		.content .userHead img{
+		.content1 .userHead img{
 			margin-left: 20px;
 		}
-		.content .message{
+		.content1 .message{
 			width: 456px;
 			float: right;
 			background-color: forestgreen;
 			padding: 20px;
 			border: 2px solid #f0f;
 		}
-		.content .message p{
+		.content1 .message p{
 			font-size: 12px;
 			line-height: 25px;
 		}
-		.content .message span{
+		.content1 .message span{
+			position: absolute;
+			right: 20px;
+			top: 10px;
+			font-size: 12px;
+		}
+		
+/*		================================== 中级人员的想法 =====================================*/
+		.content2{
+			width: 600px;
+			position: relative;
+			overflow: hidden;
+		}
+		.content2 img{
+			float: left;
+			margin-left: 20px;
+		}
+		.content2 .message{
+			width: 456px;
+			float: right;
+			background-color: forestgreen;
+			padding: 20px;
+			border: 2px solid #f0f;
+		}
+		.content2 .message p{
+			font-size: 12px;
+			line-height: 25px;
+		}
+		.content2 .message span{
+			position: absolute;
+			right: 20px;
+			top: 10px;
+			font-size: 12px;
+		}
+		
+/*		================================== 高级人员的想法 =====================================*/
+		.content3{
+			width: 456px;
+			background-color: forestgreen;
+			padding: 20px;
+			border: 2px solid #f0f;
+			margin-left: 100px;
+			position: relative;
+		}
+		.content3 img{
+			float: left;
+			margin: -20px 0 0 -100px;
+		}
+		.content3 p{
+			font-size: 12px;
+			line-height: 25px;
+		}
+		.content3 span{
 			position: absolute;
 			right: 20px;
 			top: 10px;
@@ -44,7 +97,8 @@
 	</style>
 </head>
 <body>
-	<div class="content">
+<!--第一种方式：使用div的嵌套-->
+	<div class="content1">
 		<div class="userHead">
 			<img src="images/head01.jpg"/>
 		</div>
@@ -54,5 +108,26 @@
 			<span>10分钟之前</span>
 		</div>
 	</div>
+	
+<br /><br />	
+<!--第二种方式：去掉图片外面的div	-->
+	<div class="content2">
+		<img src="images/head01.jpg"/>
+		<div class="message">
+			<h6>樱桃小丸子</h6>
+			<p>调查数据显示，中层及以上管理人员109760元，专业技术人员66074元，办事人员和有关人员47483元，商业、服务业人员40669元，生产、运输设备操作人员及有关人员42914元。商业、服务业人员平均工资最低，是全部就业人员平均水平的81％。岗位平均工资最高与最低之比为2．70。将一个普通的方法修饰成为测试方法。（expected=XX.class，用于预期捕获某种异常，使其通过测试；timeout=毫秒，用于对方法的运行时间进行限定，防止死循环和进行性能测试）</p>
+			<span>10分钟之前</span>
+		</div>
+	</div>
+	<br /><br />
+	
+<!--	第三种方式：先考虑html结构，语义化-->
+	<div class="content3">
+		<img src="images/head01.jpg" alt="">
+		<h6>樱桃小丸子</h6>
+		<p>调查数据显示，中层及以上管理人员109760元，专业技术人员66074元，办事人员和有关人员47483元，商业、服务业人员40669元，生产、运输设备操作人员及有关人员42914元。商业、服务业人员平均工资最低，是全部就业人员平均水平的81％。岗位平均工资最高与最低之比为2．70。将一个普通的方法修饰成为测试方法。（expected=XX.class，用于预期捕获某种异常，使其通过测试；timeout=毫秒，用于对方法的运行时间进行限定，防止死循环和进行性能测试）</p>
+		<span>10分钟之前</span>
+	</div>
+	
 </body>
 </html>
