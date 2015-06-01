@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>水平导航菜单</title>
+	<title>圆角菜单</title>
 	<style>
 /*		reset*/
 		*{
@@ -15,12 +15,13 @@
 /*		只需要去掉ul的宽度，并将li设置为左浮动*/
 		ul{
 			list-style: none;
-			height: 30px;
-			margin-top: 20px;
-			border-bottom: 5px solid darkorange;
+			height: 50px;
+			border-bottom: 5px solid #f60;
+			padding-left: 50px;
 		}
 		ul li{
 			float: left;
+			margin-top: 20px;
 		}
 		
 		
@@ -31,13 +32,13 @@
 			line-height: 30px;
 			height: 30px;
 			width: 100px;
-			background-color: deepskyblue;
-			
+			background-image: url(btnBg.png);	/* 圆角菜单的图片,图片的上面30px的高度是空白，当鼠标悬停上去的时候显示下面的30px就可以了，也就是将图片向上移动30px。 */
 			text-align: center;
 		}
-		ul li a:hover,ul li a.on{
+		ul li .on,ul li a:hover{
 			background-color: darkorange;
 			color: whitesmoke;
+			background-position: 0 -30px;
 		}
 	</style>
 </head>
