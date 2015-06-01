@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS雪碧图实现登录框</title>
+	<style type="text/css">
+		/*reset*/
+		*{
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+		body{
+			background-color: #eee;
+		}
+		ul{
+			list-style: none;
+		}
+
+		.login-box{
+			width: 240px;
+			margin: 25px;
+			padding: 20px;
+			background: #fff;
+		}
+		.login-box ul{
+			padding: 10px;
+		}
+		.login-box li{
+			padding: 0 0 15px 0;
+			overflow: hidden;
+		}
+		.login-box .text{
+			height: 30px;
+			line-height: 30px;
+			padding: 0 5px;
+			color: #999;
+			font-family: "微软雅黑";
+			border: 1px solid #aaa;
+			font-size: 14px;
+			width: 80%;
+		}
+
+		.login-box span{
+			font-size: 10px;
+		}
+		.login-box a{
+			float: right;
+			font-size: 10px;
+			margin-right: 50px;
+		}
+
+
+		.login-btn,.reg-btn{
+	        background:url(spire_login.jpg);
+	        width:190px;
+	        height:38px;
+    	}
+		.login-box .login-btn{
+			background-position: 0 0;
+		}
+		.login-box .reg-btn{
+			background-position: 0 -38px;
+		}
+    	
+	</style>
+</head>
+<body>
+	<div class="login-box">
+		<ul>
+			<li><input type="text" class="text" value="请输入邮箱/手机号/用户名"/></li>
+			<li><input type="text" class="text" value="请输入密码"/></li>
+			<li><input type="checkbox"/><span>下次自动登录</span><a href="">忘记密码？</a></li>
+			<li><input type="button" class="login-btn" /></li>
+			<hr />
+			<li><input type="button" class="reg-btn" /></li>
+		</ul>
+	</div>
+</body>
+</html>
