@@ -17,9 +17,12 @@
 			list-style: none;
 		}
 
+		hr{
+			color: red;
+		}
 		.login-box{
-			width: 240px;
-			margin: 25px;
+			width: 220px;
+			margin: 20px;
 			padding: 20px;
 			background: #fff;
 		}
@@ -29,6 +32,7 @@
 		.login-box li{
 			padding: 0 0 15px 0;
 			overflow: hidden;
+			margin-left: 5px;
 		}
 		.login-box .text{
 			height: 30px;
@@ -38,18 +42,21 @@
 			font-family: "微软雅黑";
 			border: 1px solid #aaa;
 			font-size: 14px;
-			width: 80%;
+			width: 90%;
 		}
 
+		.login-box .checkbox{
+			vertical-align: middle;
+		}
 		.login-box span{
 			font-size: 10px;
 		}
 		.login-box a{
 			float: right;
 			font-size: 10px;
-			margin-right: 50px;
+			margin: 2px 5px 0 0;
+			text-decoration: none;
 		}
-
 
 		.login-btn,.reg-btn{
 	        background:url(spire_login.jpg);
@@ -62,7 +69,11 @@
 		.login-box .reg-btn{
 			background-position: 0 -38px;
 		}
-    	
+    	.login-box .line span{
+			display:block;
+			width:100%;
+			border-top:1px solid #aaa;
+		}
 	</style>
 </head>
 <body>
@@ -70,9 +81,9 @@
 		<ul>
 			<li><input type="text" class="text" value="请输入邮箱/手机号/用户名"/></li>
 			<li><input type="text" class="text" value="请输入密码"/></li>
-			<li><input type="checkbox"/><span>下次自动登录</span><a href="">忘记密码？</a></li>
+			<li><input type="checkbox" class="checkbox"/><span>下次自动登录</span><a href="">忘记密码？</a></li>
 			<li><input type="button" class="login-btn" /></li>
-			<hr />
+			<li class="line"><span></span></li>
 			<li><input type="button" class="reg-btn" /></li>
 		</ul>
 	</div>
