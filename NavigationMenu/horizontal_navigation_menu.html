@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>垂直导航菜单</title>
+	<title>水平导航菜单</title>
 	<style>
 /*		reset*/
 		*{
@@ -12,11 +12,15 @@
 			font-family: "微软雅黑";
 		}
 		
+/*		只需要去掉ul的宽度，并将li设置为左浮动*/
 		ul{
 			list-style: none;
-			width: 100px;
 		}
-	
+		ul li{
+			float: left;
+		}
+		
+		
 		ul li a{
 			display: block;						/* 将a标签变成块元素，就可以像对待li那样对待a */
 			
@@ -25,8 +29,8 @@
 			height: 30px;
 			width: 100px;
 			background-color: deepskyblue;
-			margin-bottom: 1px;					/* 相邻的li之间有间距 */
-			text-indent: 20px;					/* 文字向右偏移适当位置，如果使用padding-left则li的宽度受到影响 */
+			
+			text-align: center;
 		}
 		ul li a:hover{
 			background-color: darkorange;
@@ -36,7 +40,7 @@
 </head>
 <body>
 	<ul>
-		<li><a href="">首页</a></li>
+		<li><a href="">首   页</a></li>
 		<li><a href="">新闻快讯</a></li>
 		<li><a href="">产品快讯</a></li>
 		<li><a href="">售后服务</a></li>
