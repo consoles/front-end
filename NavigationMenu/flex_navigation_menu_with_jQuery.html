@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery为伸缩菜单添加动态效果</title>
+	<style>
+/*		reset*/
+		*{
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		
+/*		只需要去掉ul的宽度，并将li设置为左浮动*/
+		ul{
+			list-style: none;
+			height: 50px;
+			border-bottom: 5px solid #f60;
+			padding-left: 50px;
+		}
+		ul li{
+			float: left;
+			margin-top: 20px;
+		}
+		
+		
+		ul li a{
+			display: block;						/* 将a标签变成块元素，就可以像对待li那样对待a */
+			
+			text-decoration: none;
+			line-height: 30px;
+			height: 30px;
+			width: 100px;
+			text-align: center;
+		}
+		ul li .on,ul li a:hover{
+			background-color: darkorange;
+			color: whitesmoke;
+			height: 40px;		/* 文字垂直居中 */
+			line-height: 40px;
+			margin-top: -10px;	/* 当hight变为40px，默认向下偏移10px，margin-top取负值 */
+		}
+	</style>
+	<script src="../lib/jquery-2.1.1.js"></script>
+	<script>
+//		$(function(){}); 相当于window.onload
+		$(function(){
+			
+//			hover封装了鼠标移入和鼠标移出的两个函数
+			$('a').hover(
+				function(){
+					$(this).stop();							// 停止当前动画，开始新的动画
+					$(this).animate({'width':'180px'},300); // 封装了animation函数，传入属性值和延迟（毫秒）
+				},
+				function(){
+					$(this).stop();
+					$(this).animate({'width':'120px'},300);
+				}
+			);
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li><a href="" class="on">首   页</a></li>
+		<li><a href="">新闻快讯</a></li>
+		<li><a href="">产品快讯</a></li>
+		<li><a href="">售后服务</a></li>
+		<li><a href="">联系我们</a></li>
+	</ul>
+</body>
+</html>
