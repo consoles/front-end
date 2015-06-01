@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript为伸缩菜单添加动态效果</title>
+	<style>
+/*		reset*/
+		*{
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		
+/*		只需要去掉ul的宽度，并将li设置为左浮动*/
+		ul{
+			list-style: none;
+			height: 50px;
+			border-bottom: 5px solid #f60;
+			padding-left: 50px;
+		}
+		ul li{
+			float: left;
+			margin-top: 20px;
+		}
+		
+		
+		ul li a{
+			display: block;						/* 将a标签变成块元素，就可以像对待li那样对待a */
+			
+			text-decoration: none;
+			line-height: 30px;
+			height: 30px;
+			width: 100px;
+			text-align: center;
+		}
+		ul li .on,ul li a:hover{
+			background-color: darkorange;
+			color: whitesmoke;
+			height: 40px;		/* 文字垂直居中 */
+			line-height: 40px;
+			margin-top: -10px;	/* 当hight变为40px，默认向下偏移10px，margin-top取负值 */
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			
+			var aA = document.getElementsByTagName('a');
+			
+			for(var i = 0;i < aA.length;i++){
+//				鼠标移入a标签菜单变宽
+				aA[i].onmouseover = function(){
+					if(this.className != 'on'){
+						clearInterval(this.timer);					/* 清除动画，防止动画的叠加 */
+						var speed = 10;								/* 移动的速度 */
+						var maxWidth = 180;							/* 最大的宽度 */
+
+						var This = this;
+						This.timer = setInterval(function(){
+
+							This.style.width = This.offsetWidth + speed + 'px';
+
+							if(This.offsetWidth >= maxWidth){
+								clearInterval(This.timer);
+							}
+
+						},30);
+					}		
+				};
+				
+//				鼠标移出a标签，菜单变窄
+				aA[i].onmouseout = function(){
+					
+					if(this.className != 'on'){
+						clearInterval(this.timer);
+						
+						var speed = -10;							/* 移动的速度 */
+						var minWidth = 120;							/* 最大的宽度 */
+
+						var This = this;
+						This.timer = setInterval(function(){
+							
+							This.style.width = This.offsetWidth + speed + 'px';
+							if(This.offsetWidth <= minWidth){
+								This.style.width = minWidth + 'px';
+								clearInterval(This.timer);
+							}
+
+						},30);
+					}
+				};
+			}
+		};
+	</script>
+</head>
+<body>
+	<ul>
+		<li><a href="" class="on">首   页</a></li>
+		<li><a href="">新闻快讯</a></li>
+		<li><a href="">产品快讯</a></li>
+		<li><a href="">售后服务</a></li>
+		<li><a href="">联系我们</a></li>
+	</ul>
+</body>
+</html>
