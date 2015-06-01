@@ -68,5 +68,26 @@ CSS的定位机制有3种：
 
 - 三列布局
 
+
+### 网页布局范例 ###
+1. 新浪微博布局中的第三种情况。
+![](http://i.imgur.com/jcmuVIU.jpg)
+
+### CSS雪碧图 ###
+![](http://i.imgur.com/RDHNItr.jpg)
+一些大型的网站为了性能的优化。导航条上的图片并不是使用的是img标签。使用雪碧图（CSS Sprite）的场景：
+
+- 静态信息，不经常变化。
+- 小图片，容量小。
+
+例如：淘宝的导航条。
+![](http://i.imgur.com/GowMdOB.jpg)
+发现它是由很多的小图片混杂在一起的大图片。这样做的目的就是减少http请求的数目，加速显示。
+![](http://i.imgur.com/uJVBSIc.png)
+![](http://i.imgur.com/j7LAPz2.jpg)
+它主要使用的是CSS的`background-position`属性控制显示的图片。我们可以通过控制这个属性来控制需要显示的小图片。
+
+生成雪碧图常用sprite工具自动生成。[CSSgaga教程](http://www.99css.com/1524/)。
+
 #注意事项#
 1 .CSS中只有多行注释，在其他语言中的"//"方式是不行的。

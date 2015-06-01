@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS雪碧图</title>
+	<style>
+/*		reset*/
+		h3,ul{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			display: block;
+			height: 32px;		/* height和line-height一样的目的：让文字垂直居中 */
+			line-height: 32px;
+			overflow: hidden;	/* 防止元素溢出 */
+			border-bottom: 2px solid #a1b
+		}
+		ul li i{
+			background: url(sidebar.png);
+			display: inline;
+			width: 25px;
+			height: 25px;
+			float:left;
+			margin: 5px 10px 0 0;
+		}
+		ul li h3{
+			font-size: 14px;
+			font-weight: 600;
+		}
+		
+		.cat{
+			width: 150px;
+			background-color: #f0f0f0f;
+			border: 2px solid #bbb;
+		}
+		.cat-1 i{
+			background-position: 0 0;
+		}
+		.cat-2 i{
+			background-position: 0 -25px;
+		}
+		.cat-3 i{
+			background-position: 0 -50px;
+		}
+		.cat-4 i{
+			background-position: 0 -75px;
+		}
+		.cat-5 i{
+			background-position: 0 -100px;
+		}
+		.cat-6 i{
+			background-position: 0 -125px;
+		}
+		.cat-7 i{
+			background-position: 0 -150px;
+		}
+		.cat-8 i{
+			background-position: 0 -175px;
+		}
+		.cat-9 i{
+			background-position: -40px -25px;
+		}
+	</style>
+</head>
+<body>
+	<p>CSS雪碧图实现的原理：通过CSS的<b>background-position</b>属性</p>
+	<div class="cat">
+		<ul>
+			<li class="cat-1">
+				<i></i>
+				<h3>服装内衣</h3>
+			</li>
+			<li class="cat-2">
+				<i></i>
+				<h3>鞋包配饰</h3>
+			</li>
+			<li class="cat-3">
+				<i></i>
+				<h3>运动户外</h3>
+			</li>
+			<li class="cat-4">
+				<i></i>
+				<h3>珠宝手表</h3>
+			</li>
+			<li class="cat-5">
+				<i></i>
+				<h3>手机数码</h3>
+			</li>
+			<li class="cat-6">
+				<i></i>
+				<h3>办公电脑</h3>
+			</li>
+			<li class="cat-7">
+				<i></i>
+				<h3>护肤彩妆</h3>
+			</li>
+			<li class="cat-8">
+				<i></i>
+				<h3>母婴用品</h3>
+			</li>
+			<li class="cat-9">
+				<i></i>
+				<h3>其他分类</h3>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
