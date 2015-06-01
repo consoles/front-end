@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航菜单</title>
+	<style>
+/*		reset*/
+		*{
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+			font-family: "微软雅黑";
+		}
+		
+		ul{
+			list-style: none;
+			width: 100px;
+		}
+	
+		ul li a{
+			display: block;						/* 将a标签变成块元素，就可以像对待li那样对待a */
+			
+			text-decoration: none;
+			line-height: 30px;
+			height: 30px;
+			width: 100px;
+			background-color: deepskyblue;
+			margin-bottom: 1px;					/* 相邻的li之间有间距 */
+			text-indent: 20px;					/* 文字向右偏移适当位置，如果使用padding-left则li的宽度受到影响 */
+		}
+		ul li a:hover{
+			background-color: darkorange;
+			color: whitesmoke;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="">首页</a></li>
+		<li><a href="">新闻快讯</a></li>
+		<li><a href="">产品快讯</a></li>
+		<li><a href="">售后服务</a></li>
+		<li><a href="">联系我们</a></li>
+	</ul>
+</body>
+</html>
