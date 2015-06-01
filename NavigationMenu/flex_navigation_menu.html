@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>圆角菜单</title>
+	<title>伸缩菜单</title>
 	<style>
 /*		reset*/
 		*{
@@ -32,12 +32,14 @@
 			line-height: 30px;
 			height: 30px;
 			width: 100px;
-			background-image: url(btnBg.png);	/* 圆角菜单的图片,图片的上面30px的高度是空白，当鼠标悬停上去的时候显示下面的30px就可以了，也就是将图片向上移动30px。 */
 			text-align: center;
 		}
 		ul li .on,ul li a:hover{
+			background-color: darkorange;
 			color: whitesmoke;
-			background-position: 0 -30px;
+			height: 40px;		/* 文字垂直居中 */
+			line-height: 40px;
+			margin-top: -10px;	/* 当hight变为40px，默认向下偏移10px，margin-top取负值 */
 		}
 	</style>
 </head>
