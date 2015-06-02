@@ -15,7 +15,12 @@
 /*底部固定层  bottom: 0;*/
 		}
 		#top input{border:none;}
-
+		.feedback{
+			position: fixed;
+			right: 50px;
+			bottom: 50px;
+		}
+		
 		.left{float:left; margin-left:10px;}
 		.search{float:left; margin-left:10px; margin-top:7px;}
 		.select_btn{background:url(select_top.gif) no-repeat; width:57px; height:42px; cursor:pointer; float:left;}
