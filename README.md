@@ -90,4 +90,8 @@ CSS的定位机制有3种：
 生成雪碧图常用sprite工具自动生成。[CSSgaga教程](http://www.99css.com/1524/)。
 
 #注意事项#
-1 .CSS中只有多行注释，在其他语言中的"//"方式是不行的。
+
+1. CSS中只有多行注释，在其他语言中的"//"方式是不行的。
+2. html中输出空格可以有以下2种解决方案：
+	1.  使用html的`&nbsp;`来解决：`1 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3`
+	2.  使用CSS样式：`<span style="white-space:pre">1 2          3</span>`
