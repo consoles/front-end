@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+
+#divLogin{
+	width: 300px;
+	height: 150px;
+	margin: 200px auto 0;
+
+	background-color: aquamarine;
+
+}
+.divContent{
+	padding: 20px 20px;
+}
+.btnCenter{
+	padding-left: 70px;
+	padding-top: 10px;
+}
+.txt{
+	
+}
+.divMsg{
+	color: red;
+	font-weight: bold;
+}

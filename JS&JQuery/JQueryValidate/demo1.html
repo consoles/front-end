@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery Validaton插件</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="../../lib/jquery-2.1.1.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script>
+		/*************************************************************
+		
+		1. method：验证的方法。例如email则表示校验是否符合email规则；
+		2. rule：验证的规则，指的是元素和验证方法的关联。
+		3. validate的该插件的核心方法，定义了基本的校验规则和一些有用的配置项，例如debug这个参数为true就表示表单不会提交，只会进行检查，调试的时候十分方便。
+		
+		*************************************************************/
+		$(function(){
+			$('#loginFrom').validate({
+				debug:false, // 为true表示只进行校验而不提交
+				/* 注意：验证的字段是表单的name字段 */
+				rules:{
+					username:{
+						required:true,
+//						minlength:2,
+//						maxlength:10,
+						rangelength:[2,10],
+//						remote:'remote.json' // 以get请求向后台发送该参数
+						remote:{
+							url:'remote.json',
+							type:'get',
+							data:{
+								loginTime:function(){
+									return +new Date(); // 前面加号表示的是毫秒值，相当于getTime，转化成数字
+								}
+							}
+						}
+					},
+					password:{
+						required:true,
+						minlength:2,
+						maxlength:16
+					},
+					/*特别注意：有连字符的时候需要用引号*/
+					'confirm-password':{
+						equalTo:'#password'
+					},
+					num:{
+						required:true,
+//						min:-2.3,
+//						max:9
+						range:[-2.3,9]
+					},
+					email:{
+						email:true
+					},
+					website:{
+						url:true
+					},
+					birthday:{
+						/* 可以被Date.parse非法转换的 */
+//						date:true
+						/*ISO标准日期格式的校验*/
+						dateISO:true
+					},
+					digits:{
+						digits:true
+					}
+				},
+				messages:{
+					username:{
+						required:'用户名必须填写',
+//						minlength:'用户名最小为2位',
+//						maxlength:'用户名最大为10位',
+						rangelength:'用户名为2-10个字符',
+						remote:'用户名不存在！'
+					},
+					password:{
+						required:'密码必须填写',
+						minlength:'密码小为2位',
+						maxlength:'密码最大为16位'
+					},
+					'confirm-password':{
+						equalTo:'2次输入密码不一致！'
+					},
+					num:{
+						required:'数字必须填写',
+//						min:'最小值是-2.3',
+//						max:'最大值为9'
+						range:'必须是-2.3~9的数字'
+					},
+					email:{
+						email:'非法的邮箱地址'
+					},
+					website:{
+						url:'非法的网址'
+					},
+					birthday:{
+//						date:'日期不合法'
+						dateISO:'不符合标准iso日期格式,yyyy-mm-dd'
+					}
+				}
+			});
+		})
+	</script>
+</head>
+<body>
+	<form id="loginFrom">
+		<fieldset>
+			<legend>用户登录</legend>			
+			<p>
+				<label for="username">用户名</label>
+				<input type="text" id="username" name="username" />
+			</p>
+			<p>
+				<label for="password">密码</label>
+				<input type="password" id="password" name="password" />
+			</p>
+			<p>
+				<label for="confirm-password">确认密码</label>
+				<input type="password" id="confirm-password" name="confirm-password" />
+			</p>
+			<p>
+				<label for="num">数字</label>
+				<input type="text" id="num" name="num" />
+			</p>
+			<p>
+				<label for="email">邮箱</label>
+				<input type="text" id="email" name="email" />
+			</p>
+			<p>
+				<label for="website">网址</label>
+				<input type="text" id="website" name="website" />
+			</p>
+			<p>
+				<label for="birthday">生日</label>
+				<input type="text" id="birthday" name="birthday" />
+			</p>
+			<p>
+				<label for="digits">非负整数</label>
+				<input type="text" id="digits" name="digits" />
+			</p>
+			<p>
+				<input type="submit" value="登录" />
+			</p>
+		</fieldset>
+	</form>	
+</body>
+</html>

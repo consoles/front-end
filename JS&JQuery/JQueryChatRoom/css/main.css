@@ -1,0 +1,19 @@
+*{
+	margin: 0 auto;
+}
+.divShow{
+	border: solid 1px #ccc;
+	height: 300px;
+	padding: 5px;
+	font-size: 12px;
+	overflow-y: scroll; /* 内容过多的时候显示滚动条 */ 
+}
+#divMain{
+	border: solid 5px #ccc;
+	width: 80%;
+}
+#divMain .divTop .divLeft{
+	float: left;
+	margin-right: 50px;
+	width: 70%;
+}
