@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Validate自定义验证方法</title>
+    <script src="../../lib/jquery-2.1.1.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script>
+        /*****************************************************************
+         *
+         * jQuery.validator.addMethod(name,method [,message])
+         * name:方法名称
+         * method：function(value,element,params)方法逻辑
+         * message：提示消息
+         *
+         * addition-methods.js:包含了许多拓展验证的方法，我们写自定义验证插件的时候可以参考这个
+         *
+         ******************************************************************/
+
+        $(function () {
+            $('#loginFrom').validate({
+                debug: false, // 为true表示只进行校验而不提交
+                /* 注意：验证的字段是表单的name字段 */
+                rules: {
+                    username: {
+                        required: true,
+                        rangelength: [2, 10],
+                        remote: 'remote.json' // 以get请求向后台发送该参数
+                    },
+                    password: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 16
+                    },
+                    /*特别注意：有连字符的时候需要用引号*/
+                    'confirm-password': {
+                        equalTo: '#password'
+                    },
+                    // 使用自定义的验证规则
+                    zipcode: {
+                        required: true,
+                        zipcode: '中国' //向校验方法传入参数（可以用于最大值和最小值的校验）
+                    }
+                },
+                messages: {
+                    username: {
+                        required: '用户名必须填写',
+                        rangelength: '用户名为2-10个字符',
+                        remote: '用户名不存在！'
+                    },
+                    password: {
+                        required: '密码必须填写',
+                        minlength: '密码小为2位',
+                        maxlength: '密码最大为16位'
+                    },
+                    'confirm-password': {
+                        equalTo: '2次输入密码不一致！'
+                    },
+                    zipcode: {
+                        required: '邮政编码必填！'
+                    }
+                }
+            });
+
+            // 自定义验证邮箱的方法
+            $.validator.addMethod('zipcode', function (value, element, params) {
+                var reg = /^\d{6}$/;
+                console.log(params);    // 打印传入的参数
+                return this.optional(element) || reg.test(value); // 前面的条件表示值为空的时候不去触发校验规则
+            }, $.validator.format('请填写正确的{0}邮编！'));
+        })
+    </script>
+</head>
+<body>
+<form id="loginFrom">
+    <fieldset>
+        <legend>用户登录</legend>
+        <p>
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username"/>
+        </p>
+
+        <p>
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password"/>
+        </p>
+
+        <p>
+            <label for="confirm-password">确认密码</label>
+            <input type="password" id="confirm-password" name="confirm-password"/>
+        </p>
+
+        <p>
+            <label for="zipcode">邮编</label>
+            <input type="text" id="zipcode" name="zipcode"/>
+        </p>
+        <p>
+            <input type="submit" value="登录"/>
+        </p>
+    </fieldset>
+</form>
+<h3>自定义验证的提示消息</h3>
+<img src="images/extend.jpg"/>
+</body>
+</html>
