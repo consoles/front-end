@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>事件流</title>
+    <script>
+        function showMessage(){
+            alert('hello!');
+        }
+
+        window.onload = function () {
+            // DOM 0级事件【所有浏览器通用】
+            // 给btn2添加一个点击的属性,在这里采用匿名函数
+            var btn2 = document.getElementById('btn2');
+            btn2.onclick = function () {
+                alert('这是通过DOM 0级添加的事件处理程序');
+            }
+            btn2.onclick = null; // 删除DOM事件只需要将其属性值设置为null即可
+
+/*
+            // DOM 2级事件【IE8不支持】(注意：所有的on都要去掉例如onclick变成click，onmouseover变成mouseover)
+            var btn3 = document.getElementById('btn3');
+            btn3.addEventListener('click',showMessage,false);
+            btn3.addEventListener('click', function () {
+                alert(this.value);
+            },false);
+            btn3.removeEventListener('click',showMessage,false); // 删除DOM事件注意此时不能使用匿名函数
+
+            // IE 事件处理程序【主要是Opera和低版本的IE，高版本浏览器都不支持，例如IE11】（又需要加on了！）
+            var btn4 = document.getElementById('btn4');
+            btn4.attachEvent('onclick',showMessage);
+            btn4.detachEvent('onclick',showMessage);
+*/
+            // 跨浏览器事件处理程序(封装成对象)
+            var eventUtil = {
+                /**
+                 * 添加句柄
+                 * @param element 给谁添加元素
+                 * @param type 事件的类型（例如click）
+                 * @param handler 该事件触发了什么操作
+                 */
+                addHandler:function(element,type,handler){
+
+                    if(element.addEventListener){                       // 支持DOM 2级？
+                        element.addEventListener(type,handler,false);
+                    }else if(element.attachEvent){                      // 支持IE？
+                        element.attachEvent(on + type,handler)
+                    }else{
+                        // window.onload = function(){}和window['onclick'] = function(){}完全等价
+                        element['on' + type] = handler;                 // 切记这里不能用点（而所有的点都可以替代成中括号）
+                    }
+
+                }
+                ,
+                /**
+                 * 删除句柄
+                 * @param element
+                 * @param type
+                 * @param handler
+                 */
+                removeHandler:function(element,type,handler){
+
+                    if(element.removeEventListener){                        // 支持DOM 2级？
+                        element.removeEventListener(type,handler,false);
+                    }else if(element.detachEvent){                          // 支持IE？
+                        element.detachEvent['on' + type,handler];
+                    }else{
+                        element['on' + type] = null;                        // DOM 0级
+                    }
+
+                }
+            }
+
+            var btn5 = document.getElementById('btn5');
+            eventUtil.addHandler(btn5,'click',showMessage);
+            eventUtil.removeHandler(btn5,'click',showMessage);
+        }
+    </script>
+</head>
+<body>
+    <div id="div">
+        <input type="button" value="HTML事件处理程序" id="btn1" onclick="showMessage()"/>
+        <input type="button" value="DOM 0级事件处理程序" id="btn2"/>
+        <input type="button" value="DOM 2级事件处理程序" id="btn3"/>
+        <input type="button" value="低版本IE事件处理程序" id="btn4"/>
+        <input type="button" value="跨浏览器事件处理程序" id="btn5"/>
+    </div>
+    <h3>IE11不再支持自己的事件处理程序了</h3>
+    <img src="images/IE11dosentsupportAttachEvent.jpg">
+</body>
+</html>
