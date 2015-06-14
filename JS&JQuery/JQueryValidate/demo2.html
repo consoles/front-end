@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery插件validate的高级API</title>
+    <link href="css/style.css"/>
+    <style>
+        .right{
+            color: olive;
+        }
+        .wrong{
+            color: #ff00ff;
+        }
+    </style>
+    <script src="../../lib/jquery-2.1.1.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script>
+        /******************************************************************************
+         *
+         * valid()方法用于检查表单或者某些元素是否有效
+         * rules()方法用于获取表单元素的校验规则；rules('add',rules)用于向表单增加校验规则，rules('remove',rules)删除校验规则
+         *
+         *       ======================== Validator对象 ========================
+         * validate方法返回Validator对象，Validator对象拥有很多方法：
+         * ①Validator.from()验证表单有效性，返回true/false
+         * ②Validator.element(element)验证某个元素是否有效，返回true/false
+         * ③Validator.resetFrom()重置表单
+         * ④Validator.showErrors(errors)针对某个表单元素显示特定的错误信息
+         * ⑤Validator.numberOfInvalids()返回无效的元素数量
+         *
+         *       ======================== Validator对象的静态方法 ========================
+         * ①JQuery.validator.addMethod(name,method [,message])增加自定义的验证方法
+         * ②JQuery.validator.format(template,argument,argumentN...)格式化字符串，用参数代替模板中的{n}，用于验证规则的提示语言
+         * ③JQuery.validator.setDefault(options)修改插件默认设置
+         * ④JQuery.validator.addClassRules(name,rules)为其包含名为name的class增加组合验证类型
+         *
+         *        ======================== validator方法的配置项 ========================
+         * ①submitHandler通过验证后运行的函数，可以加上表单提交的方法
+         * ②invalidHandler无效表单提交后运行的函数
+         *
+         * ③ignore忽略某些元素(默认值是":hidden"也就是不对隐藏的元素验证)
+         * ④rules验证规则（有一个隐藏的depends属性）
+         * ⑤messages提示信息
+         * ⑥groups对一组元素进行验证，将错误信息集中显示
+         *
+         * ⑦onsubmit是否在提交时验证（缺省为true）
+         * ⑧onfocusout是否在获取焦点时验证
+         * ⑨onkeyup是否在敲击键盘的时候验证
+         * ⑩onclick是否在鼠标点击时验证，一般用户checkbox或者radio
+         * ⑪focusInvalid提交表单后未通过验证的表单（第一个或者提交之间获得焦点的未通过验证的表单）是否会获得焦点
+         * ⑫focusCleanup当未通过验证的元素获得焦点时，是否移除错误提示
+         *
+         * ⑬errorClass指定错误提示的css类名
+         * ⑭validClass验证通过时的css类名
+         *
+         * ⑮errorElement使用什么标签标记错误
+         * ⑯wrapper使用什么标签将上边的errorElement包起来
+         * ⑰errorLabelContainer 把错误信息计划总放在一个容器里面
+         * ⑱errorContainer 显示错误或者隐藏验证信息，可以自动实现有错误信息时把容器变为显示，无错误信息时隐藏
+         *
+         * showErrors可以显示总共多少未通过验证的元素
+         * errorPlacement自定义错误信息放置的位置
+         * succeess要验证的元素通过验证后的动作（可以指定一个class或者执行一个函数）[针对label元素]
+         * highlight可以给通过验证的元素加效果[针对input元素]
+         * unhighlight去除未通过验证的元素的效果，一般和highlight同时使用
+         *
+         *        ======================== 选择器拓展 ========================
+         *  ①:blank选择所有值为空的元素（trim方法）
+         *  ②:filled选择所有值不为空的元素
+         *  ③:unchecked选择所有没有被选中的元素
+         * ****************************************************************************/
+
+        var validator; // validator对象
+        $(function () {
+            $.validator.setDefaults({debug:true}); // 修改全部默认设置，例如将表单中的所有debug设置为true
+            validator = $('#loginFrom').validate({
+                        rules: {
+                            username: {
+                                required: {
+                                    depends: function (element) {
+                                        return $('#password').is(':filled');// 如果密码没有填就不会校验用户名，如果密码填写了就校验用户名
+                                    }
+                                },
+                                minlength: 2,
+                                maxlength: {
+                                    param:16,
+                                    depends:function(element){
+                                        return $('#password').is(':filled');// 如果密码没有填写就不校验最大长度
+                                    }
+                                }
+                            }
+                            ,
+                            password: {
+                                required: true,
+                                minlength: 2,
+                                maxlength: 16
+                            }
+                            ,
+                            ignoreContent:{
+                                required:true
+                            }
+                        },
+                        messages: {
+                            username: {
+                                required: '姓名不能为空',
+                                rangelength: '姓名必须是2~10个字符'
+                            },
+                            password: {
+                                required: '密码为必填字段',
+                                minlength: '密码最小为2位',
+                                maxlength: '密码最大为10位'
+                            }
+                        },
+                        submitHandler:function(form){
+                            console.log($(form).serialize());
+                        }
+//                      ,
+//                        invalidHandler:function(event,validator){
+//                            console.log('错误数量：' + validator.numberOfInvalids());
+//                        }
+//                        ,
+//                        ignore:'#ignoreContent' //虽然在rules中规定是必须字段，但是在此处忽略了
+//                        ,
+//                        // 错误信息集中显示
+//                        groups:{
+//                            login:'username password'
+//                        },errorPlacement:function(error,element){
+//                            error.insertBefore('#info');
+//                        }
+//                        ,
+//                        errorClass:'wrong',
+//                        validClass:'right',
+//
+//                        errorContainer:'#info',
+//                        errorLabelContainer:'#info',
+//                        errorElement:'li',
+//                        wrapper:'ul'
+                        ,
+                        showErrors:function(errorMap,errorList){
+                            console.log(errorMap);
+                            console.log('-----------------------');
+                            console.log(errorList);
+                            this.defaultShowErrors(); // 使用系统默认的错误展示方式
+                        }
+                        ,
+                        success:'ok'
+                        ,
+                        highlight: function (element, errorClass, validClass) {
+                            $(element).addClass(errorClass).removeClass(validClass);
+                            $(element).fadeOut().fadeIn(); // 校验的时候闪烁输入框
+                        }
+                        ,
+                        unhighlight: function (element,errorClass,validClass) {
+                            $(element).addClass(validClass).removeClass(errorClass);
+                        }
+                    }
+            );
+
+            // 验证表单是否有效（有效就提交）
+            $('#check').click(function () {
+                alert($('#loginFrom').valid() ? '填写正确' : '填写错误！');
+            });
+
+            // 为所有class为txt的元素添加邮箱的验证规则
+            $.validator.addClassRules({
+                txt:{
+                    email:true
+                }
+            });
+
+            // 表单无效的事件也可以这样触发
+            $('#loginFrom').on('invalid-form',function(event,validator){
+                console.log('错误数量：' + validator.numberOfInvalids());
+            });
+        })
+    </script>
+</head>
+<body>
+<form id="loginFrom">
+    <fieldset>
+        <legend>用户登录</legend>
+        <p id="info"></p>
+        <p>
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username" class="txt"/>
+        </p>
+
+        <p>
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password" class="txt"/>
+        </p>
+
+        <p>
+            <button id="check">检查表单</button>
+        </p>
+
+        <p>
+            <label for="ignoreContent">忽略的内容</label>
+            <input type="text" id="ignoreContent" name="ignoreContent" />
+        </p>
+
+        <p>
+            <input type="submit" value="登录" />
+        </p>
+    </fieldset>
+</form>
+    <h3>下图展示了如何在控制台运行命令获取表单元素的验证规则</h3>
+    <img src="images/getvalidaterules.jpg" title="控制台运行命令获取表单的校验规则">
+    <h3>下图展示了如何在控制台运行命令获取validator对象</h3>
+    <img src="images/validatorObject.jpg" title="validator对象的方法">
+    <h3>下图展示了validator对象的format方法</h3>
+    <img src="images/format.jpg" title="validator对象的format静态方法">
+</body>
+</html>
