@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>DOM 事件对象</title>
+    <script src="js/event.js"></script>
+    <script>
+
+        window.onload = function(){
+            var btn1 = document.getElementById('btn1');
+            var box = document.getElementById('box');
+            var go = document.getElementById('go');
+
+            // 事件冒泡，点击按钮的时候还点击了div
+            eventUtil.addHandler(btn1,'click',showMsg);
+            eventUtil.addHandler(box,'click',showBox);
+            eventUtil.addHandler(go,'click',stopGoto);
+
+        }
+        function showMsg(event){
+            event = event || window.event;  // 后者是兼容IE8及以下
+            alert('事件类型：' + event.type);
+            alert('事件目标：' + event.target||event.srcElement);
+            alert('事件目标的节点名：' + event.target.nodeName||event.srcElement.nodeName);
+            event.stopPropagation();    // 执行完这个事件就行了，阻止事件冒泡，Propagation是传播的意思
+        }
+        function showBox(){
+            alert('这是放按钮的盒子box');
+        }
+        function stopGoto(event){
+            event.stopPropagation();
+            event.preventDefault(); // 阻止a标签的默认行为
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="按钮1" id="btn1"/>
+        <a href="demo1.html" id="go">跳转到demo1.html</a>
+    </div>
+</body>
+</html>
