@@ -61,3 +61,8 @@ DOM2级事件定义了2个方法：用于处理指定和删除事件处理程序
 - `srcElement`属性：获取事件的目标；
 - `cancleBubble`属性：设置为true用于阻止事件冒泡；
 - `returnValue`属性：默认为true，设置为false就表示阻止事件的默认行为。
+
+## Q&A： ##
+- IE10以前的浏览器不支持`document.getElementsByTagName()`方法。
+- 鼠标光标的位置可以使用`clientX`和`clientY`两个属性来指定。
+- 任何鼠标可以拖动的元素都要有绝对定位。
