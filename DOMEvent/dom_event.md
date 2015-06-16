@@ -66,3 +66,4 @@ DOM2级事件定义了2个方法：用于处理指定和删除事件处理程序
 - IE10以前的浏览器不支持`document.getElementsByTagName()`方法。
 - 鼠标光标的位置可以使用`clientX`和`clientY`两个属性来指定。
 - 任何鼠标可以拖动的元素都要有绝对定位。
+- `offsetTop`和`offsetLeft`可以获取元素和浏览器窗口的上距离和左边的距离。
