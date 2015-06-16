@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    font-size: 12px;
+    padding: 6px 0 0 10px;
+}
+
+#login_box {
+    width: 300px;
+    height: 150px;
+    background: #eee;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -75px;
+    display: none;
+}
+
+#login_box p {
+    height: 20px;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+    padding: 6px 0 0 5px;
+    font-weight: bold;
+}
+
+#close {
+    width: 14px;
+    height: 14px;
+    background: url(close.png) no-repeat;
+    position: absolute;
+    right: 4px;
+    top: 6px;
+    cursor:pointer;
+}
