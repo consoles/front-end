@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>获取样式</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            setInterval(function () {
+                var oDiv = document.getElementById('div1');
+                oDiv.style.width = oDiv.offsetWidth - 1 + 'px';
+            },30);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
