@@ -2,10 +2,19 @@
     margin: 0;
     padding: 0;
 }
-#div1{
+/*#div1{*/
+    /*width: 200px;*/
+    /*height: 200px;*/
+    /*background: #ff0000;*/
+    /*filter: alpha(opacity:30);*/
+    /*opacity: 0.3;*/
+/*}*/
+div{
     width: 200px;
     height: 200px;
     background: #ff0000;
+    margin: 10px;
+    float: left;
     filter: alpha(opacity:30);
     opacity: 0.3;
 }

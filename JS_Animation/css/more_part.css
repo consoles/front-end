@@ -10,4 +10,6 @@ ul li{
     height: 100px;
     background: yellow;
     margin-bottom: 20px;
+    filter: alpha(opacity:30);
+    opacity: 0.3;
 }
