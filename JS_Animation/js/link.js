@@ -3,7 +3,6 @@
  */
 window.onload = function () {
 
-
    var Li = document.getElementById('li1');
 
     Li.onmouseover = function () {
@@ -14,8 +13,8 @@ window.onload = function () {
         });
     }
     Li.onmouseout = function () {
-        startMove(this,'opacity',30, function () {
-            startMove(Li,'height',200, function () {
+        startMove(Li,'opacity',30, function () {
+            startMove(Li,'height',100, function () {
                 startMove(Li,'width',200);
             })
         });
