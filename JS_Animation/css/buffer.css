@@ -1,0 +1,19 @@
+body,div,span{
+    margin: 0;
+    padding: 0;
+}
+#div1{
+    width: 200px;
+    height: 200px;
+    background: #f00;
+    position: relative;
+    left: -200px;
+}
+#div1 span{
+    width: 20px;
+    height: 50px;
+    background: blue;
+    position: absolute;
+    left: 200px;
+    top: 75px;
+}
