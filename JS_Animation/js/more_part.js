@@ -19,12 +19,21 @@ window.onload = function () {
 function startMove(obj,iTarget){
     clearInterval(obj.timer);
     obj.timer = setInterval(function () {
-        var  speed = (iTarget - obj.offsetWidth) / 8;
+        var icur = parseInt(getStyle(obj,'width'));
+        var  speed = (iTarget - icur) / 8;
         speed = speed > 0?Math.ceil(speed):Math.floor(speed);
-        if(obj.offsetWidth == iTarget){
+        if(icur == iTarget){
             clearInterval(obj.timer);
         }else{
-            obj.style.width = obj.offsetWidth + speed + 'px';
+            obj.style['width'] = icur + speed + 'px';
         }
     },30);
+}
+
+function getStyle(obj,attr){
+    if(obj.currentStyle){
+        return obj.currentStyle[attr]; // IE
+    }else{
+        return getComputedStyle(obj,false)[attr];//FF，注意第二个参数是垃圾参数
+    }
 }

@@ -52,7 +52,7 @@ function startMove(obj,iTarget){
             clearInterval(obj.timer);
         }else{
             obj.alpha += speed;
-            obj.style.filter = 'alpha('+ obj.alpha+')'; // IE
+            obj.style.filter = 'alpha(:'+ obj.alpha+')'; // IE
             obj.style.opacity = obj.alpha / 100;
         }
     },30);
