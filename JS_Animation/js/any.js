@@ -27,8 +27,8 @@ window.onload = function () {
         startMove(this,'opacity',100);
     }
     li1.onmouseout = function () {
-        startMove(this,'height',100);
-        //startMove(this,'opacity',30);
+        //startMove(this,'height',100);
+        startMove(this,'opacity',30);
     }
 
     li2.onmouseover = function () {
@@ -71,6 +71,7 @@ function startMove1(obj,iTarget){
 function startMove(obj,attr,iTarget){
     clearInterval(obj.timer);
     obj.timer = setInterval(function () {
+        // 获取当前值
         var icur = 0;
         // 透明度要单独处理
         if(attr == 'opacity'){
@@ -79,8 +80,11 @@ function startMove(obj,attr,iTarget){
             icur = parseInt(getStyle(obj,attr));
         }
 
+        // 求速度
         var  speed = (iTarget - icur) / 8;
         speed = speed > 0?Math.ceil(speed):Math.floor(speed);
+
+        // 检测停止
         if(icur == iTarget){
             clearInterval(obj.timer);
         }else{
