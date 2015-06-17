@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+ul li{
+    width: 200px;
+    height: 100px;
+    background: yellow;
+    margin-bottom: 20px;
+}
