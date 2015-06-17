@@ -8,19 +8,36 @@
             width: 200px;
             height: 200px;
             background: #ff0000;
-            border: 1px solid #000;
+            border: 5px solid #000;
+            font-size: 14px;
+            color: #ffffff;
         }
     </style>
     <script>
         window.onload = function () {
             setInterval(function () {
                 var oDiv = document.getElementById('div1');
-                oDiv.style.width = oDiv.offsetWidth - 1 + 'px';
+//                alert('当前div的宽度：'+oDiv.style.width);
+                oDiv.style.width = parseInt(getStyle(oDiv,'width')) - 1 + 'px';
+                oDiv.style.fontSize = parseInt(getStyle(oDiv,'fontSize')) + 1 + 'px';
             },30);
+        }
+
+        /**
+         * 获取样式
+         * @param obj 对象
+         * @param attr 属性
+         */
+        function getStyle(obj,attr){
+            if(obj.currentStyle){
+                return obj.currentStyle[attr]; // IE
+            }else{
+                return getComputedStyle(obj,false)[attr];//FF，注意第二个参数是垃圾参数
+            }
         }
     </script>
 </head>
 <body>
-    <div id="div1"></div>
+    <div id="div1">font-size</div>
 </body>
 </html>
