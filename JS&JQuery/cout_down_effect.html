@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>系统时钟</title>
+    <script>
+
+        var timer = null;
+        window.onload = function () {
+            showTime();
+
+            timer = setInterval(function () {
+                getTimeDiff(new Date('2015,6,18,20:23:30'));
+            },500);
+        }
+        /**
+         * 时钟空位补0
+         */
+        function checkTime(i) {
+            return i < 10 ? '0' + i : i;
+
+        }
+        /**
+         * 获取系统时钟
+         */
+        function showTime() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var h = now.getHours();
+            var m = checkTime(now.getMinutes());
+            var s = checkTime(now.getSeconds());
+            var weekday = '星期' + '日一二三四五六'.charAt(now.getDay());
+
+            document.getElementById("show").innerHTML = year + "年" + month + "月" + day + "日 " + weekday + h + ":" + m + ":" + s;
+            setTimeout('showTime()', 500);
+        }
+
+        /**
+         * 获取时差(距离目标时间的天数、小时数、分钟数、秒数)
+         * @param endTime 结束时间(是日期对象)
+         */
+        function getTimeDiff(endTime){
+            var currentTime = new Date();
+            var leftTime = (endTime.getTime() - currentTime.getTime())/1000;   // 得到时间差的秒值
+            var days = parseInt(leftTime/(60*60*24));
+            var hours = parseInt(leftTime/(60*60)%24);
+            var minutes = parseInt(leftTime / 60 % 60);
+            var seconds = parseInt(leftTime % 60);
+            document.getElementById('txtShow').innerHTML = checkTime(days) + '天' + checkTime(hours) + '时' + checkTime(minutes) + '分' + checkTime(seconds) + '秒';
+            if(leftTime <= 0){
+                document.getElementById('txtShow').innerHTML = '时间到团购结束';
+                clearInterval(timer);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="content">
+    当前时间<span id="show"></span><br />
+    目标时间2015/6/18 20:23:30，倒计时<span id="txtShow"></span>
+</div>
+</body>
+</html>

@@ -95,3 +95,9 @@ CSS的定位机制有3种：
 2. html中输出空格可以有以下2种解决方案：
 	1.  使用html的`&nbsp;`来解决：`1 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3`
 	2.  使用CSS样式：`<span style="white-space:pre">1 2          3</span>`
+3.  遍历json需要使用`for-in`循环。
+
+		 var json = {a:1,b:2};
+		  	for(var i in json){
+				alert(i + '--->' + json[i]);
+		 }
