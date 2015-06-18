@@ -2,35 +2,48 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>无缝滚动</title>
+    <title>间歇滚动</title>
     <link rel="stylesheet" href="style.css"/>
     <script>
+
         window.onload = function () {
+            var area = document.getElementById('moocBox'); // 滚动区域
+            var timer;
 
-            // 获取元素
-            var area = document.getElementById('moocBox'),
-                con1 = document.getElementById('con1'),
-                con2 = document.getElementById('con2');
+            var iLiHeight = 24;                 // 单行信息的高度
+            var speed = 50;                     // 滚动的速度
+            area.innerHTML += area.innerHTML;   // 克隆元素
+            area.scrollTop = 0;
+            var delay = 2000;
 
-            con2.innerHTML = con1.innerHTML;    // 克隆，实现无缝滚动
+            function startScroll(){
+                area.scrollTop++;
+                timerI = setInterval(scrollUp,speed);
+            }
 
             // 向上滚动的函数
             function scrollUp(){
-                if(area.scrollTop >= con1.offsetHeight){    // con1完全滚动出去
-                    area.scrollTop = 0;
+                // 移出的距离是单行信息高度的整数倍
+                if(area.scrollTop % iLiHeight == 0){
+                    clearInterval(timerI);
+                    timerT = setTimeout(startScroll,delay);
                 }else{
                     area.scrollTop++;
+                    if(area.scrollTop >= area.scrollHeight / 2){
+                        area.scrollTop = 0;
+                    }
                 }
             }
+            setTimeout(startScroll,delay);
 
-            var time = 50;
-            var timer = setInterval(scrollUp,time);
             // 鼠标移入和移出事件
             area.onmouseover = function () {
-                clearInterval(timer);
+                clearTimeout(timerT);
+                clearInterval(timerI);
             }
             area.onmouseout = function () {
-                timer = setInterval(scrollUp,time);
+                clearTimeout(timerT);
+                timerI = setInterval(scrollUp,speed);
             }
         }
     </script>
@@ -43,7 +56,7 @@
     <!--  头部结束 -->
     <!--  中间 -->
     <div id="moocBox">
-        <ul id="con1">
+        <ul>
             <li><a href="#">1.学会html5 绝对的屌丝逆袭（案例）</a><span>2013-09-18</span></li>
             <li><a href="#">2.tab页面切换效果（案例）</a><span>2013-10-09</span></li>
             <li><a href="#">3.圆角水晶按钮制作（案例）</a><span>2013-10-21</span></li>
@@ -53,8 +66,6 @@
             <li><a href="#">7.信息列表制作(案例)</a><span>2013-11-15</span></li>
             <li><a href="#">8.下拉菜单制作(案例)</a><span>2013-11-22</span></li>
             <li><a href="#">9.如何实现“新手引导”效果</a><span>2013-12-06</span></li>
-        </ul>
-        <ul id="con2">
         </ul>
     </div>
     <!--  中间结束 -->
