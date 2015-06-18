@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>marque标签实现信息滚动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            width: 600px;
+            height: 500px;
+            background: #cccccc;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    marquee标签的属性
+    1. behavior（滚动的方式）
+        alternate:两端之间来回滚动
+        scroll:由一端滚动到另一端（重复）
+        slide：从一端滚动到另一端（不重复）
+
+    2. direction(滚动的方向)
+        top、down、left、right
+
+    3. loop（滚动的次数）
+       值为-1表示一直滚动，默认值
+
+    4. scrollamount（活动字幕的滚动速度）
+
+    5. scrolldelay（设置字幕2次滚动之间的来回切换的延迟时间）
+    -->
+
+    <div id="content">
+        <marquee>我默认向左滚动.....</marquee>
+        <hr/>
+        <marquee direction="right" scrolldelay="500">我向右滚动,滚动时间是500ms</marquee>
+        <hr/>
+        <marquee behavior="alternate" scrollamount="10" loop="3">我来回滚动，速度是10,循环3次</marquee>
+        <hr/>
+        <marquee behavior="scroll" direction="up" bgcolor="#999" width="300px" height="150px">我向上滚动</marquee>
+        <marquee behavior="scroll" direction="up" bgcolor="yellow" width="400px" height="250px" onmouseover="this.stop();" onmouseout="this.start();">
+            <p>
+                <a href="">小伙伴，新鲜案例出炉了。。。</a><br/>
+                <a href="">一个学习型的网站</a><br/>
+                <a href="">如果有建议请提交给我们</a><br/>
+                <a href="">谢谢大家的支持</a><br/>
+                <a href="">非常感谢大家的光临</a><br/>
+                <a href="">端午节快乐！</a><br/>
+            </p>
+        </marquee>
+    </div>
+</body>
+</html>
