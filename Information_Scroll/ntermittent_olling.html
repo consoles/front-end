@@ -8,13 +8,12 @@
 
         window.onload = function () {
             var area = document.getElementById('moocBox'); // 滚动区域
-            var timer;
 
             var iLiHeight = 24;                 // 单行信息的高度
             var speed = 50;                     // 滚动的速度
             area.innerHTML += area.innerHTML;   // 克隆元素
             area.scrollTop = 0;
-            var delay = 2000;
+            var delay = 2000;                   // 每2000ms移动一次
 
             function startScroll(){
                 area.scrollTop++;
@@ -42,7 +41,7 @@
                 clearInterval(timerI);
             }
             area.onmouseout = function () {
-                clearTimeout(timerT);
+                clearInterval(timerI);
                 timerI = setInterval(scrollUp,speed);
             }
         }
