@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模拟电商网站XXX后发送验证码</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var send = document.getElementById('send'),
+                    times = 60,
+                    timer = null;
+            var text = send.value;
+            send.onclick = function () {
+                // 计时开始
+                timer = setInterval(function () {
+
+                    times--;
+                    if (times >= 0) {
+                        send.disabled = true;
+                        send.value = times + '秒后重试';
+                    } else {
+                        times = 60;
+                        clearInterval(timer);
+                        send.disabled = false;
+                        send.value = text;
+                    }
+
+                }, 1000);
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="send" value="发送验证码">
+</body>
+</html>

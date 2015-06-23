@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>焦点轮播图效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrap {
+            height: 170px;
+            width: 490px;
+            overflow: hidden;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        .wrap ul {
+            position: absolute;
+        }
+
+        .wrap ul li {
+            height: 170px;
+        }
+
+        .wrap ol {
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+        }
+
+        .wrap ol li {
+            height: 20px;
+            width: 20px;
+            background: #ccc;
+            border: solid 1px #666;
+            margin-left: 5px;
+            color: #000;
+            float: left;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .wrap ol .on {
+            background: #E97305;
+            color: #fff;
+        }
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var wrap = document.getElementById('wrap'),
+                pics = document.getElementById('pic').getElementsByTagName("li"),
+                list = document.getElementById('list').getElementsByTagName('li'),
+                index = 0,
+                timer = null;
+
+            // 自动播放函数
+            function autoPlay() {
+                index = ++index % pics.length;
+                changePic(index);
+            }
+
+            // 定义图片切换函数
+            function changePic(curIndex) {
+                for (var i = 0; i < pics.length; i++) {
+                    pics[i].style.display = "none";
+                    list[i].className = "";
+                }
+                pics[curIndex].style.display = "block";
+                list[curIndex].className = "on";
+            }
+
+            timer = setInterval(autoPlay, 2000);
+
+            // 鼠标划过整个容器时停止自动播放
+            wrap.onmouseover = function () {
+                clearInterval(timer);
+            }
+            // 鼠标离开整个容器时继续播放至下一张
+            wrap.onmouseout = function () {
+                timer = setInterval(autoPlay, 2000);
+            }
+
+            // 遍历所有数字导航实现划过切换至对应的图片
+            for (var i = 0; i < list.length; i++) {
+                list[i].onmouseover = function () {
+                    clearInterval(timer);
+                    index = this.innerText - 1;
+                    changePic(index);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="wrap" id='wrap'>
+    <ul id="pic">
+        <li><img src="images/img01.jpg" alt=""></li>
+        <li><img src="images/img02.jpg" alt=""></li>
+        <li><img src="images/img03.jpg" alt=""></li>
+        <li><img src="images/img04.jpg" alt=""></li>
+        <li><img src="images/img05.jpg" alt=""></li>
+    </ul>
+    <ol id="list">
+        <li class="on">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+</div>
+</body>
+</html>
