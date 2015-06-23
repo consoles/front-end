@@ -11,8 +11,7 @@ function $(id) {
 }
 window.onload = function () {
 
-    var index = 0,      // 标签的索引
-        timer = null;   // 定时器
+    var timer = null;   // 定时器
 
     var lis = $('notice-title').getElementsByTagName('li'),
         divs = $('notice-content').getElementsByTagName('div');
