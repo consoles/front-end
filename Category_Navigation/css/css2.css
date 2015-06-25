@@ -61,6 +61,8 @@ body{
     -webkit-box-shadow: 0 0 8px #ddd;
     /* 没有小箭头 */
     background-image: none;
+    height: 60px;
+    border-left: 4px solid #e4393c;
 }
 
 /* 悬浮层 */
@@ -70,13 +72,23 @@ body{
     display: block;
 }
 
+.topmenu .lihover b{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+    font-size: 10pt;
+}
+.topmenu .lihover b a{
+    margin: 2px;
+}
 /* 白色小方框 */
 .topmenu .lihover span{
     background: #ffffff;
     display: inline-block;
     z-index: 20;
     width: 20px;
-    height: 30px;
+    height: 60px;
     float: right;
     position: relative;
 }
@@ -169,4 +181,12 @@ body{
 .rightdiv dl dd a:hover{
     color: #737373;
     font-weight: normal;
+}
+.topmenu li b{
+    display: none;
+}
+.rightPic{
+    position: relative;
+    right: -80px;
+    bottom: -40px;
 }
