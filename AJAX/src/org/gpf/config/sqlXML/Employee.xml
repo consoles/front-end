@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.gpf.dao.IEmployeeDAO">
+
+<!-- mybatis缓存 -->  
+    <cache eviction="LRU" flushInterval="600000" size="1024" readOnly="false" />  
+  <!-- 配置结果集 -->	
+  <resultMap type="org.gpf.bean.Employee" id="EmployeeResult">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="sex" jdbcType="VARCHAR" property="sex"/>
+    <result column="job" jdbcType="VARCHAR" property="job"/>
+  </resultMap>
+
+ <sql id="columns">
+ 	id,name,sex,job	<!-- 把列名配置在这里，下面可以引用 -->
+ </sql>	
+
+  <select id="queryEmployeeById" resultMap="EmployeeResult" parameterType="org.gpf.bean.Employee">
+    SELECT <include refid="columns"></include> FROM Employee
+    <where>
+	    id = #{id}
+    </where>
+  </select>
+  
+  <insert id="insertEmployee" parameterType="org.gpf.bean.Employee">
+  	INSERT INTO Employee(id,name,sex,job) 
+  		VALUES(myseq.nextval,#{name,jdbcType=VARCHAR},#{sex,jdbcType=VARCHAR},#{job,jdbcType=VARCHAR})
+  </insert>
+</mapper>

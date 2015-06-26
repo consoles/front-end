@@ -83,4 +83,62 @@
 		}
 	}
 
+## JSON的解析 ##
+![](http://i.imgur.com/MffTUgb.jpg)
+一般使用第二种方式，因为第一种方式不进行json语法的检查，如果含有json数据中包含恶意的js代码（例如`window.location`到一个恶意站点）。
+### Ajax跨域 ###
+- 一个域名地址的组成：
+![](http://i.imgur.com/DFn8MzN.jpg)
+
+- 当协议、子域名、主域名、端口号中任意一个不相同的时候都叫做不同域；
+- 在不同域之间相互请求资源就叫做跨域。例如:`htttp://www.abc.com/index.html`请求`http://www.def.com/service.do`.
+- 在例如我们在浏览器输入：`http://localhost/Ajax/jquery_ajax.html`,而这个页面中有一个ajax是这样写的：
+
+		$.ajax({
+			type:'GET',
+			// 垮域请求
+			url:'http://127.0.0.1/Ajax/Employee.do?id=' + $('#id').val(),
+			dataType:'json',
+			success:function(data){
+				if(data.success)
+					$('#queryResult').html(data.msg);
+				else
+					$('#queryResult').html('错误：' + data.msg);
+			},
+			error:function(jqXHR){
+				alert('发生错误！' + jqXHR.status); // 404等状态码
+			}
+		});
+
+虽然127.0.0.1对应localhost，但是它们还是属于不同的域，将会出现以下的错误：
+![](http://i.imgur.com/sgZJAvh.jpg)
+>javascript出于安全方面的考虑，不允许跨域调用其他页面的对象。因为javascript同源策略的限制，a.com下的js无法操作b.com或者是c.a.com域名下的对象。
+
+#### 主域名和子域名 ####
+![](http://i.imgur.com/g93XCoS.jpg)
+
+#### 跨域请求的处理 ####
+### 方式一：代理 ###
+- 通过同域名的web服务器创建一个代理：
+- 北京服务器（域名：www.beijing.com）、上海服务器（域名：www.shanghai.com）；
+- 比如在北京的web服务器的后台(www.beijing.com/proxy-shanghaiservice.do)来调用上海服务器（www.shanghai.com/service.do）的服务，然后再把响应结果返回给前端，这样前端调用北京同域名的服务就和调用上海的服务效果相同了。
+
+### 方式二：JSONP ###
+只能对get请求进行处理。
+在`www.aaa.com`页面中：
+
+	<script src="http://www.bbb.com/jsonp.js"></script>
+	<script>
+		function jsonp (json) {
+			alert(json["name"]);
+		}
+	</script>
+在`www.bbb.com`页面中：
+
+    jsonp({'name':'洪七公','age':24});
+
+### 方式三：使用XHR2 ###
+- html5提供了XMLHttpRequest Level2已经实现了跨域访问和其他的新功能。
+- IE10以下的版本不支持。
+- 在服务端设置响应头为：`Access-Control-Allow-Origin:*`和`Access-Control-Allow-Methods:POST,GET`
 
