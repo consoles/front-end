@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 12px;
+    line-height: 1.7;
+}
+li{
+    list-style: none;
+}
+
+/* 主体内容样式 */
+#content{
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+#content h1{
+    color: #0088bb;
+}
+#content .item{
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px dotted #0088bb;
+}
+#content .item h2{
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid #0088bb;
+    margin-bottom: 10px;
+}
+#content .item ul li{
+    display: inline;
+    margin-right: 10px;
+}
+#content .item ul li a img{
+    width: 230px;
+    height: 230px;
+    border: none;
+}
+
+/* 右侧导航样式 */
+#menu{
+    position: fixed;
+    top: 100px;
+    /* 小技巧：先将left设置为50%定位到页面中部，再从中部向右偏移 */
+    left: 50%;
+    margin-left: 400px;
+    width: 80px;
+}
+#menu ul li a{
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    text-align: center;
+}
+/* 当超链接处于焦点的时候 */
+#menu ul li a:hover,
+#menu ul li a.current{
+    color: #ffffff;
+    background: #0088bb;
+}
+
+/* hack for IE6 */
+* html, * html body {
+    background-image: url(about:blank);
+    background-attachment: fixed;
+}
+
+* html #menu {
+    position: absolute;
+    bottom: auto;
+    top: expression(100+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+}
