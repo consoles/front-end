@@ -1,0 +1,30 @@
+#main{
+    /* CSS多栏布局设置每栏目的宽度是202px，不推荐使用column-count */
+    -webkit-column-width: 202px;
+    -moz-column-width: 202px;
+
+    /* 每两栏之间有2px的红色虚线边框 */
+    -webkit-column-rule: 2px dashed #f00;
+    -moz-column-rule: 2px dashed #f00;
+
+    /* 列间距 */
+    -webkit-column-gap: 5px;
+    -moz-column-gap: 5px;
+
+}
+
+.box{
+    padding: 10px 0 0 15px;
+}
+
+.pic{
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #cc99cc;
+}
+
+.pic img{
+    width: 165px;
+    height: auto;
+}
