@@ -1,0 +1,55 @@
+body{
+    /* 网页底色 */
+    background-color: #333333;
+}
+
+.bg-div{
+    position: relative;
+    background-image: url('../images/river.jpg');
+    width: 1288px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+.bg-div .search-box{
+
+    /*position: relative;*/
+    position: fixed;
+    top: 200px;
+    left: 300px;
+}
+
+/* 给logo和form添加float属性使logo和表单水平对齐 */
+.bg-div .search-box .logo{
+    background-image: url('../images/logo.png');
+    width: 107px;
+    height: 53px;
+    float: left;
+    margin: -5px 20px 0 0;
+}
+
+.bg-div .search-box .serarch-from{
+    float: left;
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #ff00ff;
+}
+
+.bg-div .search-box .serarch-from .search-input-text{
+    float: left;
+    border: 0;
+    height: 25px;
+    line-height: 25px;
+    /* 去掉chrome下的文本输入框处于焦点时的高亮边框 */
+    outline: none;
+
+    width: 350px;
+}
+.bg-div .search-box .serarch-from .search-input-button{
+    float: left;
+    border: 0;
+    background-image: url("../images/search-button.png");
+    width: 29px;
+    height: 29px;
+}
