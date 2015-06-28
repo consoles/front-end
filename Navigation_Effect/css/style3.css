@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 12px;
+    line-height: 1.7;
+    background-color: #888;
+}
+
+li {
+    list-style: none;
+}
+
+#content {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 300px;
+}
+/*请补充此处代码，让右侧广告正确显示*/
+#content .item {
+    width: 100%;
+    height: 540px;
+    position: relative;
+    left: 10%;
+}
+
+#content .item img {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+}
+
+#content #item1 {
+    background: url("http://img.mukewang.com/536c9ea800013ae610000540.jpg") no-repeat center top;
+}
+
+#content #item2 {
+    background: url("http://img.mukewang.com/536c9ecd0001606d10000540.jpg") no-repeat center top;
+}
+
+#content #item3 {
+    background: url("http://img.mukewang.com/536c9f0a0001ccc310000540.jpg") no-repeat center top;
+}
+
+#content #item4 {
+    background: url("http://img.mukewang.com/536c9f6700012e9010000540.jpg") no-repeat center top;
+}
+
+#content #item5 {
+    background: url("http://img.mukewang.com/536c9f800001b28510000540.jpg") no-repeat center top;
+}
+
+/*请补充此处代码，让导航菜单在左侧绝对定位显示*/
+#menu {
+    position: fixed;
+    margin-left: 20px;
+    margin-top: 100px;
+}
+
+#menu h1 {
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background: #ee1111;
+    line-height: 30px;
+}
+
+#menu ul li a {
+    display: block;
+    margin: 5px 0;
+    font-size: 12px;
+    color: #ccc;
+    width: 160px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: left;
+    border-bottom: 1px dashed #999;
+}
+
+#menu ul li a strong {
+    color: #f1f1f1;
+}
+
+#menu ul li a:hover,
+#menu ul li a.current {
+    color: #fff;
+    background: #666;
+}
+
+/*ie6 hack*/
+* html, * html body {
+    background-image: url(about:blank);
+    background-attachment: fixed;
+}
+
+* html #menu {
+    /*position: fixed;*/
+    position: absolute;
+    top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
+}
