@@ -4,8 +4,30 @@
 
 window.onload = function () {
     waterfall('main','box');
-}
 
+    // 此处的数据从后台获取(dataInt是一个对象)
+    var dataInt = {'data':[{'src':'25.jpg'},{'src':'26.jpg'},{'src':'27.jpg'},{'src':'28.jpg'},{'src':'29.jpg'},{'src':'30.jpg'},{'src':'31.jpg'},{'src':'32.jpg'},{'src':'33.jpg'},{'src':'34.jpg'},{'src':'35.jpg'},{'src':'36.jpg'}]};
+    window.onscroll = function () {
+        if(checkScrollSlide()){
+            // 将数据块渲染到页面的尾部
+            var oParent = document.getElementById('main');
+            for(var i = 0;i < dataInt.data.length;i++){
+                var oBox = document.createElement('div');
+                oBox.className = 'box';
+                oParent.appendChild(oBox);
+                var oPic = document.createElement('div');
+                oPic.className = 'pic';
+                oBox.appendChild(oPic);
+                var oImg = document.createElement('img');
+                oImg.src = 'images/' + dataInt.data[i].src;
+                oPic.appendChild(oImg);
+            }
+            waterfall('main','box'); // 新添加的元素也要遵守瀑布流
+            /* 不要这一句就是无限滚动 */
+            //window.onscroll = null;
+        }
+    }
+}
 /**
  * 瀑布流函数
  * @param parent 父元素id
@@ -42,12 +64,12 @@ function waterfall(parent,boxClass){
              * @type {number}
              */
             var minH = Math.min.apply(null,hArr);
-            var indexIndex = getMinIndex(minH,hArr);
+            var minhIndex = getMinIndex(minH,hArr);
             oBoxs[i].style.position = 'absolute';
             oBoxs[i].style.top = minH + 'px';
             //oBoxs[i].style.left = oBoxW * index + 'px';
-            oBoxs[i].style.left = oBoxs[indexIndex].offsetLeft + 'px';
-            hArr[indexIndex] += oBoxs[i].offsetHeight;
+            oBoxs[i].style.left = oBoxs[minhIndex].offsetLeft + 'px';
+            hArr[minhIndex] += oBoxs[i].offsetHeight;
         }
     }
     console.debug(hArr);
@@ -57,18 +79,21 @@ function waterfall(parent,boxClass){
 
 /**
  * 根据类名获取元素
- * @param parent 父元素
+ * @param parent 父元素,如果没有传入父元素，则使用document
  * @param className 类名
  */
 function getByClass(parent,className){
 
-    // 考虑浏览器兼容性，有了浏览器不支持通过类名获取元素
-    if(document.getElementsByClassName){
-       return parent.getElementsByClassName(className);
-    }
+    var temp = parent ? parent : document;
+
+    /**
+     * 考虑到浏览器兼容性，不推荐以下的写法：
+     *
+     * return temp.getElementsByClassName(className);
+     */
 
     var result = [],
-        oElements = parent.getElementsByTagName('*');
+        oElements = temp.getElementsByTagName('*');
 
     for(var i = 0;i < oElements.length;i++){
         if(oElements[i].className == className){
@@ -95,4 +120,23 @@ function getMinIndex(minValue,arr){
             return i;
         }
     }
+}
+
+/**
+ * 当页面滚动时检测是否满足了加载余下的数据块的条件
+ */
+function checkScrollSlide(){
+
+    var oParent = document.getElementById('main'),
+        oBoxes = getByClass(oParent,'box');
+
+    // 加上自身元素的一半实现未滚到底部就进行加载
+    var lastBoxH = oBoxes[oBoxes.length - 1].offsetTop + parseInt(oBoxes[oBoxes.length - 1].offsetHeight / 2);
+    console.log(lastBoxH);
+
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop,    // 滚动条距离顶部
+        height = document.documentElement.clientHeight || document.body.clientHeight; // 浏览器可视窗口
+
+    console.info('时候需要加载图片？' + (lastBoxH < scrollTop + height));
+    return lastBoxH < scrollTop + height;
 }
