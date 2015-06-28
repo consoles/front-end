@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#main{
+    position: relative;
+}
+
+.box{
+    padding: 15px 0 0 15px;
+    float: left;
+}
+
+.pic{
+    padding: 10px;
+    border: 1px solid #cccccc;
+    /* css3圆角边框 */
+    border-radius: 5px;
+    /* css3阴影box-shadow: h-shadow v-shadow blur spread color inset; */
+    box-shadow:10px 10px 10px #cccccc ;
+}
+
+.pic img{
+    /* 瀑布流的特点是等宽不等高 */
+    width: 165px;
+    height: auto;
+}
