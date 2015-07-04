@@ -1,6 +1,7 @@
 body{
     /* 网页底色 */
     background-color: #333333;
+    font-family: "微软雅黑";
 }
 
 .bg-div{
@@ -11,16 +12,14 @@ body{
     margin: 0 auto;
 }
 
-.bg-div .search-box{
-
-    /*position: relative;*/
-    position: fixed;
+.search-box{
+    position: relative;
     top: 200px;
     left: 300px;
 }
 
 /* 给logo和form添加float属性使logo和表单水平对齐 */
-.bg-div .search-box .logo{
+.search-box .logo{
     background-image: url('../images/logo.png');
     width: 107px;
     height: 53px;
@@ -28,7 +27,7 @@ body{
     margin: -5px 20px 0 0;
 }
 
-.bg-div .search-box .serarch-from{
+.search-box .search-form {
     float: left;
     background-color: #ffffff;
     padding: 5px;
@@ -36,7 +35,7 @@ body{
     box-shadow: 10px 10px 10px #ff00ff;
 }
 
-.bg-div .search-box .serarch-from .search-input-text{
+.search-box .search-form .search-input-text{
     float: left;
     border: 0;
     height: 25px;
@@ -46,10 +45,32 @@ body{
 
     width: 350px;
 }
-.bg-div .search-box .serarch-from .search-input-button{
+.search-box .search-form .search-input-button{
     float: left;
     border: 0;
     background-image: url("../images/search-button.png");
     width: 29px;
     height: 29px;
+}
+
+.suggest{
+    width: 388px;
+    background-color: #ffffff;
+    border: 1px solid #999999;
+}
+
+.suggest ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.suggest ul li{
+    padding: 3px;
+    font-size: 14px;
+    line-height: 25px;
+    cursor: pointer;  /* 手型光标 */
+}
+.suggest ul li:hover{
+    text-decoration: underline;
+    background-color: #e5e5e5;
 }
