@@ -16,3 +16,6 @@ input作为按钮（type为button或者submit）的时候有3种状态：
 		<button>button标记<img src="icon.jpg"></button>
 页面的效果为：
 ![](http://i.imgur.com/NrTcqL8.jpg)
+
+## 字符集图标 ##
+将网页上常见的icon做成font（字符集），以字体的方式插入到网页上，减少带宽。淘宝图标字体：[http://g.tbcdn.cn/tb/icon-font/1.1.5/iconfont.eto](http://g.tbcdn.cn/tb/icon-font/1.1.5/iconfont.eto)
