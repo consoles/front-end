@@ -340,6 +340,7 @@ body{
     _height:350px;  /* IE6Hacker */
     border: 1px solid #e8e8e8;
     float: right;
+    background-color: #ffffff;
 }
 .list-box h2{
     font-size: 14px;
@@ -368,4 +369,27 @@ body{
 .page a:hover,.page a:active{
     color: #ffffff;
     background-color: #ff0000;
+}
+
+/* 新闻详细页 */
+.list-box h1{
+    font-family: 微软雅黑;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
+}
+.list-box .newsInfo{
+    color: #666666;
+    text-align: center;
+    border-bottom: 1px dotted #666666;
+}
+.list-box .newsContent{
+    font-size: 14px;
+    padding: 20px;
+    line-height: 25px;
+    text-indent: 2em;
+}
+.list-box .newsContent img{
+    display: block;
+    margin: 10px auto;
 }
