@@ -14,7 +14,7 @@ var eventUtil = {
         if (element.addEventListener) {                       // 支持DOM 2级？
             element.addEventListener(type, handler, false);
         } else if (element.attachEvent) {                      // 支持IE？
-            element.attachEvent(on + type, handler)
+            element.attachEvent('on' + type, handler)
         } else {
             // window.onload = function(){}和window['onclick'] = function(){}完全等价
             element['on' + type] = handler;                     // 切记这里不能用点（而所有的点都可以替代成中括号）
