@@ -19,7 +19,7 @@
 <div class="top">
     <div class="top-content">
         <ul>
-            <li>联系我们</li>
+            <li><a href="#">联系我们</a></li>
             <li><a href="#" onclick="AddFavorite(window.location,document.title)">加入收藏</a></li>
             <li><a href="javascript:void(0);" onclick="SetHome(window.location)">设置首页</a></li>
         </ul>
@@ -119,7 +119,10 @@
         <!-- courses结束 -->
         <div class="sidebar">
             <div class="video">
-                <div class="title"><h2 class="title-left">媒体聚焦</h2></div>
+                <div class="title">
+                    <h2 class="title-left">媒体聚焦</h2>
+                    <span class="title-right"><a href="#">更多&gt;&gt;</a></span>
+                </div>
                 <div class="video-content">
                     <embed src="http://player.youku.com/player.php/sid/XODY3OTY3NzI0/v.swf" allowFullScreen="true" quality="high" width="220" height="140" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
                 </div>
@@ -133,5 +136,49 @@
     <!-- 主题内容展示区main结束 -->
 </div>
 <!-- wrap结束 -->
+<div class="copyright">
+    <div class="copyright-content">
+        <ul>
+            <li><a href="#">关于</a>
+                <ul>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">版权声明</a></li>
+                </ul>
+            </li>
+            <li><a href="#">课程</a>
+                <ul>
+                    <li><a href="#">java开发</a></li>
+                    <li><a href="#">android开发</a></li>
+                    <li><a href="#">php开发</a></li>
+                    <li><a href="#">前端开发</a></li>
+                </ul>
+            </li>
+            <li><a href="#">留言</a>
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">腾讯微博</a></li>
+                    <li><a href="#">QQ空间</a></li>
+                    <li><a href="#">人人网</a></li>
+                </ul>
+            </li>
+            <li><a href="#">关注</a>
+                <ul>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">问题留言</a></li>
+                    <li><a href="#">媒体联络</a></li>
+                    <li><a href="#">在线客服</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img src="images/weixin.png" alt="扫描关注微信" style="vertical-align:middle" />微信关注</a>
+                <ul>
+                    <li><img src="images/qrcode.jpg" alt=""/></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 底部版权区结束 -->
 </body>
 </html>

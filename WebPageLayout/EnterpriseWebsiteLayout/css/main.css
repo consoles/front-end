@@ -152,11 +152,11 @@ body{
 .news{
     width: 340px;
     border: 1px solid #e8e8e8;
-    margin: 0 7px;
 }
 .courses{
     width: 410px;
-    border: 1px solid #8e8e8e;
+    margin: 0 7px;
+    border: 1px solid #e8e8e8;
 }
 .sidebar{
     width: 230px;
@@ -246,7 +246,7 @@ body{
 }
 .video{
     height: 185px;
-    border: 1px solid #8e8e8e;
+    border: 1px solid #e8e8e8;
 }
 .video-content{
     height: 150px;
@@ -254,5 +254,35 @@ body{
 .sidebar-ad{
     height: 55px;
     margin-top: 10px;
-    border: 1px solid #8e8e8e;
+    border: 1px solid #e8e8e8;
+}
+
+/* 底部版权区 */
+.copyright{
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    background-color: #e8e8e8;
+}
+.copyright-content{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.copyright-content li{
+    width: 200px;
+    line-height: 30px;
+    list-style-type: none;
+    font-family: 微软雅黑;
+    text-align: center;
+    background: url("../images/line.png") no-repeat right center;
+    float: left;
+}
+.copyright-content a{
+    text-decoration: none;
+    color: #999999;
+    font-size: 18px;
+}
+.copyright-content li ul li a{
+    font-size: 14px;
 }
