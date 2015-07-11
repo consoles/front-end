@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新闻列表页</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <script src="js/setHomeSetFav.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="top">
+    <div class="top-content">
+        <ul>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#" onclick="AddFavorite(window.location,document.title)">加入收藏</a></li>
+            <li><a href="javascript:void(0);" onclick="SetHome(window.location)">设置首页</a></li>
+        </ul>
+    </div>
+</div>
+<!-- top结束 -->
+<div class="wrap">
+    <div class="logo">
+        <div class="logo-left">
+            <img src="images/logo.jpg" alt="imooc"/>
+        </div>
+        <div class="logo-right">
+            <img src="images/tel.jpg" alt="服务热线"/>24小时服务热线：<span class="tel">1234-567-890</span>
+        </div>
+    </div>
+    <!-- logo结束 -->
+    <div class="nav">
+        <div class="nav-left"></div>
+        <div class="nav-mid">
+            <div class="nav-mid-left">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="list.html">关于慕课</a></li>
+                    <li><a href="list.html">新闻动态</a></li>
+                    <li><a href="list.html">课程中心</a></li>
+                    <li><a href="list.html">在线课程</a></li>
+                    <li><a href="list.html">人才招聘</a></li>
+                </ul>
+            </div>
+            <div class="nav-mid-right">
+                <form>
+                    <input type="text" class="search-text">
+                </form>
+            </div>
+        </div>
+        <!-- nav-mid结束 -->
+        <div class="nav-right"></div>
+    </div>
+    <!-- 导航nav -->
+    <div style="height: 243px">
+        <img src="images/ad.jpg" alt=""/>
+    </div>
+    <!-- 中间大图结束 -->
+    <div class="list-main">
+        <div class="news-type">
+            <h2>新闻中心</h2>
+            <div class="news-type-content">
+                <ul>
+                    <li><a href="list.html">公司新闻</a></li>
+                    <li><a href="list.html">行业新闻</a></li>
+                    <li><a href="list.html">媒体报道</a></li>
+                    <li><a href="list.html">活动专题</a></li>
+                    <li><a href="list.html">精彩视频</a></li>
+                    <li><a href="list.html">资料下载</a></li>
+                    <li><a href="list.html">公司内刊</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="list-box">
+            <h2>新闻中心</h2>
+            <div class="news-list">
+                <ul>
+                    <li><span>2014-06-01</span><a href="news.html">【慕客访谈 用户篇】“有为屌丝”在路上</a></li>
+                    <li><span>2014-06-01</span><a href="news.html">【有奖活动】给父亲的三行书信</a></li>
+                    <li><span>2014-05-30</span><a href="news.html">《程序猿，请晒出你的童年》活动获奖公告</a></li>
+                    <li><span>2014-05-28</span><a href="news.html" title="aa">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a></li>
+                    <li><span>2014-06-01</span><a href="news.html">【慕客访谈 用户篇】“有为屌丝”在路上</a></li>
+                    <li><span>2014-06-01</span><a href="news.html">【有奖活动】给父亲的三行书信</a></li>
+                    <li><span>2014-05-30</span><a href="news.html">《程序猿，请晒出你的童年》活动获奖公告</a></li>
+                    <li><span>2014-05-28</span><a href="news.html" title="aa">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a></li>
+                    <li><span>2014-06-01</span><a href="news.html">【慕客访谈 用户篇】“有为屌丝”在路上</a></li>
+                    <li><span>2014-06-01</span><a href="news.html">【有奖活动】给父亲的三行书信</a></li>
+                    <li><span>2014-05-30</span><a href="news.html">《程序猿，请晒出你的童年》活动获奖公告</a></li>
+                    <li><span>2014-05-28</span><a href="news.html" title="aa">【慕课访谈】破茧成蝶——美女程序员的蜕变史</a></li>
+                </ul>
+            </div>
+            <div class="page">
+                <a href="#">首页</a><a href="#">&lt;</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="#">...</a><a
+                    href="#">&gt;</a><a href="#">末页</a>
+            </div>
+        </div>
+    </div>
+    <!-- list-main结束 -->
+</div>
+<!-- wrap结束 -->
+<div class="copyright">
+    <div class="copyright-content">
+        <ul>
+            <li><a href="#">关于</a>
+                <ul>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">版权声明</a></li>
+                </ul>
+            </li>
+            <li><a href="#">课程</a>
+                <ul>
+                    <li><a href="#">java开发</a></li>
+                    <li><a href="#">android开发</a></li>
+                    <li><a href="#">php开发</a></li>
+                    <li><a href="#">前端开发</a></li>
+                </ul>
+            </li>
+            <li><a href="#">留言</a>
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">腾讯微博</a></li>
+                    <li><a href="#">QQ空间</a></li>
+                    <li><a href="#">人人网</a></li>
+                </ul>
+            </li>
+            <li><a href="#">关注</a>
+                <ul>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">问题留言</a></li>
+                    <li><a href="#">媒体联络</a></li>
+                    <li><a href="#">在线客服</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><img src="images/weixin.png" alt="扫描关注微信" style="vertical-align:middle" />微信关注</a>
+                <ul>
+                    <li><img src="images/qrcode.jpg" alt=""/></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 底部版权区结束 -->
+</body>
+</html>
