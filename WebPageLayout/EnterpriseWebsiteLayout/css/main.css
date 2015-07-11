@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 body{
@@ -141,4 +141,118 @@ body{
 .ad{
     height: 310px;
     overflow: hidden;
+}
+
+/* 内容展示区 */
+.main{
+    height: 250px;
+    margin-top: 5px;
+    background-color: #ffffff;
+}
+.news{
+    width: 340px;
+    border: 1px solid #e8e8e8;
+    margin: 0 7px;
+}
+.courses{
+    width: 410px;
+    border: 1px solid #8e8e8e;
+}
+.sidebar{
+    width: 230px;
+}
+.news,.courses,.sidebar{
+    height: 250px;
+    float: left;
+}
+.title{
+    height: 35px;
+    border-bottom: 2px solid #e8e8e8;
+}
+.title-left{
+    width: 70%;
+    font-family: 微软雅黑;
+    font-size: 16px;
+    font-weight: bold;
+    color: #786f66;
+    float: left;
+    line-height: 35px;
+    padding-left: 20px;
+}
+.title-right{
+    width: 20%;
+    line-height: 35px;
+    padding-right: 10px;
+    float: right;
+    text-align: right;
+}
+.title-right a{
+    text-decoration: none;
+    color: #999999;
+}
+.pic-news{
+    height: 80px;
+    margin-top: 10px;
+    line-height: 22px;
+}
+.pic-news img,.course-pic img{
+    float: left;
+    margin: 0 5px;
+}
+.pic-news a,.course-pic a{
+    text-decoration: none;
+    color: #cc0000;
+}
+.news-list{
+    margin-top: 20px;
+}
+.news-list li{
+   list-style-type: none;
+    background: url("../images/list.jpg") no-repeat;
+    padding-left: 10px;
+    margin: 8px;
+    border-bottom: 1px dotted #cccccc;
+}
+.news-list a:link,.news-list a:visited{
+    text-decoration: none;
+    color: #000000;
+}
+.news-list a:hover,.news-list a:active{
+    text-decoration: underline;
+    color: #ff0000;
+}
+.news-list span{
+    color: #999999;
+    float: right;
+}
+
+.course-pic{
+    height: 120px;
+    margin-top: 10px;
+    line-height: 22px;
+}
+.course-type{
+    width: 372px;
+    height: 37px;
+    margin: 20px auto;
+    background: url("../images/product_type_bg.jpg") no-repeat;
+}
+.course-type li{
+    list-style-type: none;
+    margin: 0 15px;
+    line-height: 37px;
+    float: left;
+    text-align: center;
+}
+.video{
+    height: 185px;
+    border: 1px solid #8e8e8e;
+}
+.video-content{
+    height: 150px;
+}
+.sidebar-ad{
+    height: 55px;
+    margin-top: 10px;
+    border: 1px solid #8e8e8e;
 }
