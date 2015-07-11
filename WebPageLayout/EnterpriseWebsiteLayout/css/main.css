@@ -63,6 +63,72 @@ body{
 }
 .tel{
     font-family: "微软雅黑";
-    font-size: 16px;
+    font-size: 18px;
     color: #aa11bb;
+}
+
+/* 导航区域 */
+.nav{
+    height: 40px;
+    clear: both;
+    overflow: hidden;
+}
+.nav-left{
+    width: 10px;
+    background: url("../images/nav_left.jpg") no-repeat;
+}
+.nav-mid{
+    width: 980px;
+    background: url("../images/nav_bg.jpg") repeat-x;
+}
+.nav-right{
+    width: 10px;
+    background: url("../images/nav_right.jpg") no-repeat;
+}
+.nav-left,.nav-mid,.nav-right{
+    float: left;
+    height: 40px;
+}
+.nav-mid-left,.nav-mid-right{
+    float: left;
+    display: inline;
+}
+.nav-mid-left{
+    width: 680px;
+}
+.nav-mid-left li{
+    float: left;
+    list-style-type: none;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
+}
+.nav-mid-left a:link,.nav-mid-left a:visited{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 微软雅黑;
+}
+.nav-mid-left a:hover,.nav-mid-left a:active{
+    text-decoration: none;
+    color: #ff0;
+    font-size: 16px;
+    font-family: 微软雅黑;
+}
+.nav-mid-right{
+    width: 300px;
+}
+/* 搜索框 */
+.search-text{
+    width: 190px;
+    height: 25px;
+    margin-top: 5px;
+    background: #ffffff url("../images/search.jpg") no-repeat right center;
+    /* 上面的语句等效于下面的4句 */
+    /*background-color: #ffffff;*/
+    /*background-image: url("../images/search.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: right center;*/
+    padding-right: 25px;
+    border: 1px solid #ffffff;
 }
