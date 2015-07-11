@@ -5,6 +5,15 @@
     <title>主页</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <script src="js/setHomeSetFav.js" charset="utf-8"></script>
+    <script src="js/myfocus-2.0.1.min.js"></script>
+    <!-- 引入myfocus风格文件（js+css） -->
+    <script src="js/mf-pattern/mF_YSlider.js"></script>
+    <link href="js/mf-pattern/mF_YSlider.css" rel="stylesheet"/>
+    <script>
+        myFocus.set({
+            id:"picBox"
+        });
+    </script>
 </head>
 <body>
 <div class="top">
@@ -49,7 +58,20 @@
         <!-- nav-mid结束 -->
         <div class="nav-right"></div>
     </div>
-    <!-- nav结束 -->
+    <!-- 导航nav -->
+    <div class="ad" id="picBox">
+        <div class="loading">
+            <img src="images/loading.gif" alt="玩命加载中。。。"/>
+        </div>
+        <div class="pic">
+            <ul>
+                <li><img src="images/ad2.jpg" alt=""/></li>
+                <li><img src="images/ad3.jpg" alt=""/></li>
+                <li><img src="images/ad4.jpg" alt=""/></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 焦点广告图ad结束 -->
 </div>
 <!-- wrap结束 -->
 </body>

@@ -103,6 +103,9 @@ body{
     text-align: center;
     line-height: 40px;
 }
+.nav-mid-left a{
+    display: block;
+}
 .nav-mid-left a:link,.nav-mid-left a:visited{
     text-decoration: none;
     color: #ffffff;
@@ -111,6 +114,7 @@ body{
 }
 .nav-mid-left a:hover,.nav-mid-left a:active{
     text-decoration: none;
+    background-color: tomato;
     color: #ff0;
     font-size: 16px;
     font-family: 微软雅黑;
@@ -131,4 +135,10 @@ body{
     /*background-position: right center;*/
     padding-right: 25px;
     border: 1px solid #ffffff;
+}
+
+/* 焦点图广告图 */
+.ad{
+    height: 310px;
+    overflow: hidden;
 }
