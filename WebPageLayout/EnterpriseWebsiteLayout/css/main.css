@@ -35,3 +35,34 @@ body{
 .top-content a:hover,.top-content a:active{
     color: #f90;
 }
+
+/* 放置logo的容器 */
+.wrap{
+    width: 1000px;
+    margin: 0 auto;
+}
+/* logo区域 */
+.logo{
+    height: 80px;
+    background-color: #ffffff;
+}
+.logo-left{
+    width: 200px;
+    float: left;
+}
+.logo-right{
+    width: 300px;
+    height: 28px;
+    margin-top: 30px;
+    float: right;
+    color: #c9394a;
+}
+.logo-right img{
+    vertical-align: middle; /* 图片和文字中间对齐 */
+    margin-right: 10px;
+}
+.tel{
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: #aa11bb;
+}
