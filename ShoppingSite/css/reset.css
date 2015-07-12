@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* reset */
+body, ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, p, input, select, textarea, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/1.5 "宋体";
+}
+
+img {
+    border: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input, select, textarea {
+    outline: none;
+    border: none;
+    background: none; /* IE6 hacker */
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+    color: #656565;
+}
+
+/*清浮动*/
+.clearfix:after {
+    content: "";
+    *display: block;
+    *clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/* 浮动 */
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+/*election {background-color:#669900; color:#ffffff; text-shadow:none;}*/
+/*::-moz-selection {background-color:#669900; color:#ffffff;text-shadow:none;}*/
+
+/*去掉a的下划线*/
+/*a {blr:expression(this.onFocus=this.blur())} *//*if IE*/
+/*a {outline:none;}*//*if 火狐等现代浏览器浏览器*/
+
+/*省略号*/
+/*white-space:nowrap;overflow:hidden;text-overflow:ellipsis;*/
+/*选择*/
+/*::s*/
+/*英文自动换行*/
+/*word-break: break-all;*/
+
+/*强制不换行*/
+/*white-space:nowrap;*/
+
+/*contenteditable="true"*/
+
+/*-------------------------------------------------*/
+/*clearfix完整版*/
+
+/*.clearfix:before,.clearfix:after { content:""; display:table;}*/
+/*.clearfix:after{clear:both;}*/
+/*.clearfix{*zoom:1;}*/
+
+/*--------------------------------------------------*/
+/*expression(this.onFocus=this.blur())*/

@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/* 公用 */
+.commonWidth{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.leftArea{
+    float: left;
+}
+.rightArea{
+    float: right;
+}
+
+/* topBar */
+.topBar{
+    height: 31px;
+    line-height: 31px;
+    background-color: #f7f7f7;
+}
+.collection{
+    background: url("../images/icon/collection.jpg") left center no-repeat;
+    padding-left: 19px;
+    font-weight: bold;
+}
+.topBar a:hover{
+    color: red;
+}
+
+/* logo */
+.logoBar{
+    height: 85px;
+    background-color: #1d7ad9;
+}
+.logo{
+    padding: 13px 0 0 41px;
+}
+
+/* 搜索 */
+.search-box{
+    width: 430px;
+    padding: 23px 0 0 185px;
+}
+.search-text{
+    width: 360px;
+    height: 35px;
+    line-height: 35px\9; /* CSS hack \9表示所有的IE*/
+    font-family: "Microsoft Yahei";
+    text-indent: 5px;
+    /*padding: 0 5px;*/
+    background-color: #ffffff;
+}
+.search-btn{
+    width: 70px;
+    height: 35px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #ff8c00;
+}
+
+/* 购物车 */
+.shopCar{
+    width: 145px;
+    height: 35px;
+    background-color: #ff8c00;
+    margin: 23px 59px 0 0;
+
+    color: #ffffff;
+    /*font-size: 14px;*/
+    /*line-height: 35px;*/
+    /*font-family: "Microsoft Yahei";*/
+
+    /*以上3句简写如下：*/
+    font: 14px/35px "Microsoft Yahei";
+}
+.shopText{
+    width: 87px;
+    height: 100%;
+    border-right: #e27a00 solid 1px;
+    background: url("../images/icon/shaoIcon.jpg") 10px center no-repeat;
+    text-indent: 40px;
+}
+.shopNum{
+    width: 27px;
+    height: 35px;
+    border-left: #ff9c01 solid 1px;
+    background: url("../images/icon/sj.jpg") 33px center no-repeat;
+    text-align: right;
+    padding-right: 29px;
+}
