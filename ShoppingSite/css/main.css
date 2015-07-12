@@ -46,7 +46,7 @@
     width: 360px;
     height: 35px;
     line-height: 35px\9; /* CSS hack \9表示所有的IE*/
-    font-family: "Microsoft Yahei";
+    font-family: "微软雅黑";
     text-indent: 5px;
     /*padding: 0 5px;*/
     background-color: #ffffff;
@@ -72,7 +72,7 @@
     /*font-family: "Microsoft Yahei";*/
 
     /*以上3句简写如下：*/
-    font: 14px/35px "Microsoft Yahei";
+    font: 14px/35px "微软雅黑";
 }
 .shopText{
     width: 87px;
@@ -88,4 +88,118 @@
     background: url("../images/icon/sj.jpg") 33px center no-repeat;
     text-align: right;
     padding-right: 29px;
+}
+
+/* 导航 */
+.navBox{
+    height: 35px;
+    background-color: #1369c0;
+    font-family: "微软雅黑";
+    color: #ffffff;
+}
+.shopClass{
+    width: 190px;
+    position: relative;
+}
+.shopClass h3{
+    text-align: center;
+    line-height: 35px;
+}
+.shopClass i{
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    background: url("../images/icon/down.jpg") left center no-repeat;
+    margin-left: 11px;
+    overflow: hidden;
+}
+.nav{
+    line-height: 35px;
+}
+.nav li{
+    float: left;
+}
+.nav a{
+    display: inline-block;
+    height: 35px;
+    padding: 0 35px;
+    color: #ffffff;
+}
+.nav .active{
+    background-color: #4593fd;
+}
+/* 商品弹出列表 */
+.showClass-show{
+    background-color: #4593fd;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 100%;
+}
+.shopClass-item{
+    padding: 14px 10px;
+    border-bottom: #3487f2 solid 1px;
+    border-top: #5aa1fe solid 1px;
+}
+.shopClass-item dt{
+    height: 22px;
+    background: url("../images/icon/shop_sj.jpg") right center no-repeat;
+}
+.shopClass-item .b{
+    font-family: "Microsoft Yahei";
+    font-size: 14px;
+    font-weight: bold;
+}
+.shopClass-item a{
+    color: #ffffff;
+}
+.aLink{
+    width: 48px;
+    height: 20px;
+    line-height: 20px;
+    background: url("../images/icon/aLink_bg.png") left center no-repeat;
+    display: inline-block;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* banner */
+.banner-bar{
+    width: 810px;
+    height: 326px;
+    float: right;
+    position: relative;
+    overflow: hidden;
+}
+.imgBox{
+    width: 1620px;
+    height: 326px;
+    position: absolute;
+    left: 0;           /* 使用js将left改变为-810px可以切换到第二个图片 */
+    top: 0;
+}
+.imgBox li{
+    float: left;
+}
+.imgBox img{
+    width: 810px;
+    height: 326px;
+    display: block;
+}
+.imgNum{
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+.imgNum a{
+    display: inline-block;
+    width: 20px;
+    height: 5px;
+    margin: 0 3px;
+    background-color: #ffffff;
+}
+.imgNum .active{
+    background-color: #ff7700;
 }
