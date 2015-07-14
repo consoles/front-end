@@ -61,6 +61,7 @@
 
 /* 购物车 */
 .shopCar{
+    display: inline;
     width: 145px;
     height: 35px;
     background-color: #ff8c00;
@@ -145,6 +146,8 @@
 }
 .shopClass-item dt{
     height: 21px;
+    line-height: 1;
+    overflow: hidden;
     background: url("../images/icon/shop_sj.jpg") right center no-repeat;
 }
 .shopClass-item .b{
@@ -259,7 +262,7 @@
     height: 396px;
     overflow: hidden;
     border:#999999 solid 1px;
-    border-bottom: 2px solid #ff7201;
+    border-bottom: 3px solid #ff7201;
 }
 /* 商品列表右侧 */
 .shopList-top,.shopList-small{
@@ -321,4 +324,33 @@
     font-weight: normal;
     color: #181818;
     line-height: 30px;
+}
+
+.hr_25{
+    height: 25px;
+}
+
+/* 底部 */
+.footer{
+    text-align: center;
+    background-color: #d4d4d4;
+    line-height: 24px;
+    margin-top: 25px;
+    padding: 50px 0;
+}
+.footer i{
+    font-style: normal;
+    margin: 0 5px;
+}
+.footer a{
+    color: #000000;
+}
+.footer a:hover{
+    color: #f60;
+}
+.web{
+    padding-top: 30px;
+}
+.web img{
+    margin: 0 12px;
 }
