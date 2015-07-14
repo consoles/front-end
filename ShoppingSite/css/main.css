@@ -12,6 +12,12 @@
 .rightArea{
     float: right;
 }
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
 
 /* topBar */
 .topBar{
@@ -130,7 +136,7 @@
     background-color: #4593fd;
 }
 /* 商品弹出列表 */
-.showClass-show{
+.shopClass-show {
     background-color: #4593fd;
     position: absolute;
     left: 0;

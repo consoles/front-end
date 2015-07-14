@@ -1,0 +1,115 @@
+/* 产品分类 */
+.product-category{
+
+}
+.product-category .leftArea{
+    width: 185px;
+}
+.product-category .rightArea{
+    width: 810px;
+}
+.product-category .banner-bar{
+    float: none;.
+}
+.product-list .item{
+    width: 25%;
+    *width:24.9%; /* IE6 hacker */
+    margin-bottom: 10px;
+}
+/* 产品分类导航 */
+.leftNav{
+    background-color: #f3f3f3;
+    border: #d7d7d7 solid 1px;
+}
+.nav-title{
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    border-bottom: #d7d7d7 solid 1px;
+    text-align: center;
+}
+.nav-content{
+    padding: 0 18px 4px;  /* 上、左右、下 */
+    border-bottom: #d7d7d7 dotted 1px;
+    margin-bottom: -1px;
+}
+.nav-content h3{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+}
+.nav-content-list{
+    line-height: 25px;
+}
+.nav-content-list li{
+    float: left;
+    width:50%;
+}
+.hr_7{
+    height: 7px;
+    overflow: hidden;
+}
+.hr_15{
+    height: 15px;
+    overflow: hidden;
+}
+.hr_25{
+    height: 25px;
+    overflow: hidden;
+}
+/* 标题 */
+.product-title{
+    height: 34px;
+    border-bottom: #ccc solid 2px;
+}
+.product-title h3{
+    width: 180px;
+    border-bottom: #069dba solid 2px;
+    height: 34px;
+    line-height: 34px;
+    text-indent: 9px;
+
+    /* 以下是IE6 hacker 相对定位提升层级*/
+    margin-bottom: -2px;
+    position: relative;
+}
+/* 商品 */
+.item{
+    height: 265px;
+    float: left;
+}
+.item-content{
+    padding: 0 15px;
+}
+.img-item{
+    height: 170px;
+    text-align: center;
+}
+.img-item img{
+    height: 170px;
+}
+.item p{
+    line-height: 20px;
+}
+.item a{
+    color: #000000;
+}
+.item a:hover{
+    text-decoration: underline;
+}
+.price{
+    padding-top: 10px;
+    color: #d4105a;
+    font-weight: bolder;
+}
+.item span{
+
+}
+.star{
+    width: 13px;
+    height: 12px;
+    margin-right: 5px;
+    display: inline-block;
+    overflow: hidden;
+    background: url("../images/icon/star.gif") left top no-repeat;
+}
