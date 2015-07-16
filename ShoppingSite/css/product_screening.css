@@ -1,0 +1,203 @@
+.vertical li {
+    width: auto;
+    float: none;
+    padding-left: 8px;
+}
+
+.vertical .nav-title, .vertical .nav-content h3 {
+    font-family: 微软雅黑;
+    font-size: 14px;
+}
+
+/* 筛选 */
+.screening-box {
+
+}
+
+.screening {
+    border-bottom: #cccccc 1px solid;
+    font-family: Verdana;
+}
+
+.screening dt {
+    width: 74px;
+    line-height: 32px;
+    text-align: right;
+    float: left;
+    margin-right: 42px;
+}
+
+.limit {
+    width: 55px;
+    line-height: 32px;
+    float: left;
+}
+
+.screening .active {
+    background-color: #1d7ad9;
+    color: #ffffff;
+}
+
+.screening a {
+    padding: 2px;
+}
+
+.screening-list {
+    width: 626px;
+    float: left;
+    line-height: 32px;
+}
+
+.screening-list li {
+    width: 20%;
+    float: left;
+}
+
+.screening-more {
+    border: solid 1px #cccccc;
+    height: 23px;
+    line-height: 23px;
+    margin: 4px 10px 0 0;
+    float: left;
+    padding: 0 11px 0 11px;
+}
+.screening-more a{
+    padding-right: 10px;
+    background: url("../images/icon/sj_grey.gif") right center no-repeat;
+}
+.addInfo{
+    height: 31px;
+    border: #cccccc 1px solid;
+    background-color: #f5f5f5;
+}
+.address{
+    float: left;
+}
+.add-text{
+    float: left;
+    line-height: 31px;
+    padding: 0 6px 0 12px;
+}
+.addInfo .select{
+    margin-top: 4px;
+}
+.screen-text{
+    line-height: 31px;
+    padding-right: 80px;
+}
+.check{
+    position: relative;
+    top: -1px;
+    _top:4px;   /* IE6 */
+}
+/* IE6 */
+.shop-number{
+    position: relative;
+    _top: 4px;
+}
+.check input,.check label{
+    vertical-align: middle;
+}
+.shop-number em{
+    color: red;
+    font-style: normal;
+    font-weight: bolder;
+}
+.addCar{
+    border: 1px #999999 solid;
+    height: 22px;
+    display: inline-block;
+    padding: 0 6px 0 23px;
+    background: url("../images/icon/car.jpg") 6px center no-repeat;
+}
+.screen-list-more{
+    padding-left: 0.5%;
+}
+.screen-list-more .item{
+    width: 33.3%;
+}
+
+/* page */
+.page{
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.page a{
+    height: 24px;
+    display: inline-block;
+    line-height: 24px;
+    border: 1px solid #cccccc;
+    padding: 0 12px;
+    margin: 0 2px;
+}
+.pageNum{
+    width: 29px;
+    padding: 0 3px;
+    border: 1px solid #cccccc;
+    margin-left: 4px;
+    height: 24px;
+    line-height: 24px\9; /* \9表示IE6 hacker */
+    text-align: center;
+}
+.ye{
+    padding: 0 8px 0 6px;
+}
+.page button{
+    width: 44px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #e8e8e8;
+    border: 1px solid #cccccc;
+}
+/* IE6兼容 */
+.page a,.page span,.page input{
+    vertical-align: middle;
+    position: relative;
+}
+
+/* 组件 */
+.select{
+    border: 1px #999999 solid;
+    height: 22px;
+    line-height: 22px;
+    float: left;
+    background-color: #fff;
+    padding: 0 20px 0 10px;
+    position: relative;
+    z-index: 4;
+}
+.select h3{
+    font-size: 12px;
+    font-weight: normal;
+}
+.select span{
+    position: absolute;
+    background: url("../images/icon/sj_blue.jpg") center center no-repeat;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+}
+.show-select{
+    position: absolute;
+    border: 1px #999999 solid;
+    left: -1px;
+    top: 22px;
+    background-color: #fff;
+    width: 100%;
+    display: none;
+}
+.show-select li{
+    padding-left: 10px;
+}
+.hot{
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url("../images/icon/hot.jpg") left top no-repeat;
+    display: inline-block;
+    margin-right: 1px;
+}
