@@ -11,11 +11,12 @@
             var text = send.value;
             send.onclick = function () {
                 // 计时开始
+                send.disabled = true;
+                clearInterval(timer);
                 timer = setInterval(function () {
 
                     times--;
                     if (times >= 0) {
-                        send.disabled = true;
                         send.value = times + '秒后重试';
                     } else {
                         times = 60;
