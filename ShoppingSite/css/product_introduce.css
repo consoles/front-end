@@ -1,0 +1,94 @@
+.grey {
+    background-color: #f0f0f0;
+}
+
+/* 用户位置 */
+.user-position {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 0;
+    font-family: Verdana;
+}
+
+.user-position em, .user-position strong, .user-position a, .user-position span {
+    font-size: 12px;
+}
+
+.user-position em {
+    font-style: normal;
+}
+
+.user-position a:hover {
+    text-decoration: underline;
+}
+
+.description-info {
+    background-color: #fff;
+}
+
+.description {
+    border: 1px #cccccc solid;
+}
+
+.description .leftArea {
+    width: 309px;
+}
+
+.description .rightArea {
+    width: 688px;
+    border-left: #cccccc 1px solid;
+}
+
+/* 图片展示 */
+.description-imgs .big-img {
+    height: 340px;
+    text-align: center;
+}
+
+.small-img {
+    padding-left: 1px;
+    width: 265px;
+    margin: 0 auto;
+}
+
+.small-img .active {
+    border-color: #317ee7;
+    position: relative;
+}
+
+.small-img li {
+    margin-left: -1px;
+    float: left;
+}
+
+.small-img img {
+    border: 1px solid #cccccc;
+}
+
+.description-content {
+    padding: 10px;
+}
+
+.description-content h3 {
+    font: bold 16px/22px "微软雅黑";
+    padding: 13px 25px;
+}
+
+.description-content .dt {
+    width: 75px;
+    line-height: 25px;
+    float: left;
+    color: #666666;
+    text-indent: 17px;
+}
+
+.description-money {
+    font-size: 18px;
+    color: #f30;
+    font-family: Verdana;
+}
+
+.description-money em {
+    font-style: normal;
+    font-size: 12px;
+}

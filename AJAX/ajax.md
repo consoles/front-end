@@ -121,7 +121,7 @@
 ### 方式一：代理 ###
 - 通过同域名的web服务器创建一个代理：
 - 北京服务器（域名：www.beijing.com）、上海服务器（域名：www.shanghai.com）；
-- 比如在北京的web服务器的后台(www.beijing.com/proxy-shanghaiservice.do)来调用上海服务器（www.shanghai.com/service.do）的服务，然后再把响应结果返回给前端，这样前端调用北京同域名的服务就和调用上海的服务效果相同了。
+- 比如在北京的web服务器的后台（www.beijing.com/proxy-shanghaiservice.do）来调用上海服务器（www.shanghai.com/service.do）的服务，然后再把响应结果返回给前端，这样前端调用北京同域名的服务就和调用上海的服务效果相同了。
 
 ### 方式二：JSONP ###
 只能对get请求进行处理。

@@ -1,0 +1,210 @@
+/*在此创建CSS样式*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "微软雅黑";
+}
+
+.wrap {
+    width: 1000px;
+    margin: 10px auto;
+}
+
+.top {
+    height: 80px;
+    line-height: 80px;
+    overflow: hidden;
+}
+
+.logo {
+    float: left;
+}
+
+.top_content {
+    float: left;
+}
+
+.top_content li {
+    list-style: none;
+    float: left;
+}
+
+.top_content li a {
+    line-height: 30px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+.top_content li a:hover, .top_content li a:active {
+    background-color: #c03;
+}
+
+.main {
+    overflow: hidden;
+}
+
+/* ad */
+.ad {
+    height: 310px;
+    overflow: hidden;
+}
+
+.newbar {
+    height: 40px;
+    margin: 10px 0;
+    line-height: 40px;
+}
+
+.newbar_left {
+    background-color: #C03;
+    color: #fff;
+    text-align: center;
+    width: 150px;
+    float: left;
+}
+
+.newbar_right {
+    background-color: #333;
+    color: #fff;
+    float: left;
+    width: 850px;
+}
+
+.newbar_right span {
+    margin-left: 20px;
+}
+
+.course {
+    height: 150px;
+}
+
+.course img {
+    height: 120px;
+    width: 330px;
+}
+
+.course p {
+    height: 20px;
+    text-align: center;
+}
+
+.course_left, .course_mid, .course_right {
+    float: left;
+    border: 1px solid #E8E8E8;
+}
+
+.course_mid {
+    margin: 0 2px;
+}
+
+.main_content {
+    height: 320px;
+    margin: 10px 0;
+}
+
+.news, .activity, .contact {
+    height: 320px;
+    width: 330px;
+    float: left;
+    border: 1px solid #E8E8E8;
+    overflow: hidden;
+}
+
+.activity {
+    margin: 0 2px;
+}
+
+.title {
+    line-height: 35px;
+    height: 35px;
+    font-size: 14px;
+    background-color: #C03;
+    padding-left: 20px;
+    color: #fff;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.news li {
+    list-style: none;
+    height: 80px;
+    margin: 15px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.news_left {
+    width: 40px;
+    border: 1px solid #E8E8E8;
+    float: left;
+    background-color: #C03;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+.news_right {
+    margin-left: 70px;
+}
+
+.news_right h3 {
+    font-size: 14px;
+}
+
+.news_right h3 a:link, .news_right h3 a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+.news_right h3 a:hover, .news_right h3 a:active {
+    text-decoration: none;
+    color: #F00;
+}
+
+.news_right p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.activity img {
+    margin: 20px 20px 0px 20px;
+    height: 140px;
+    width: 290px;
+}
+
+.activity li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.activity li a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #000;
+}
+
+.activity li a:hover, .activity li a:active {
+    color: #F00;
+}
+
+.contact p {
+    font-size: 14px;
+    margin: 5px;
+    line-height: 20px;
+}
+
+.copyright {
+    height: 35px;
+    background-color: #E8E8E8;
+    text-align: center;
+    border: 1px solid #E8E8E8;
+}
+
+.copyright p {
+    padding-top: 13px;
+}

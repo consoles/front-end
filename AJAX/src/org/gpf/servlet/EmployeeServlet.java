@@ -36,7 +36,7 @@ public class EmployeeServlet extends HttpServlet {
 
 //		response.setContentType("text/plain;charset=utf-8");
 		response.setContentType("application/json;charset=utf-8");
-		// 使用HTML5中的XHR2支持跨域的GET和POST请求
+		// 使用HTML5中的XHR2支持跨域的GET和POST请求（允许特定的域访问*表示所有）
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "GET,POST");
 		PrintWriter out = response.getWriter();
