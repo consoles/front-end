@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基于Web Storage的简易留言本</title>
+    <script src="message-pad.js"></script>
+</head>
+<body>
+<textarea name="content" id="content" cols="60" rows="10"></textarea><br/>
+<input type="button" value="添加笔记" onclick="saveData('content')"/>
+<input type="button" value="清空笔记" onclick="clearData()"/>
+
+<p id="msg"></p>
+</body>
+</html>
