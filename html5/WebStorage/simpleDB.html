@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocalStorage实现简易数据库</title>
+    <script src="simpleDB.js"></script>
+</head>
+<body>
+请如实填写以下信息：
+<hr/>
+姓名：<input type="text" id="uname"/><br/>
+Email：<input type="email" id="email"/><br/>
+电话：<input type="tel" id="tel"/><br/>
+生日：<input type="date" id="birthday"/><br/>
+<button onclick="save()">保存</button>
+<hr/>
+<h3>根据姓名检索</h3>
+<input id="key" type="text"></input>
+<button onclick="search('key')">检索</button>
+<article id="profile"></article>
+</body>
+</html>
