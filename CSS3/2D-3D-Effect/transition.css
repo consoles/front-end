@@ -1,0 +1,17 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+
+    /* CSS3过渡动画 */
+    transition: width 2s, height 4s, transform 2s;
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+    transition-delay: 1s; /* 延时1s执行 */
+}
+
+div:hover {
+    width: 200px;
+    height: 200px;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
