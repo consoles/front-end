@@ -1,0 +1,36 @@
+div {
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-color: purple;
+}
+
+#div2 {
+    transform: translate(100px, 100px); /* 右移100px，下移400px */
+
+    /* 以下是兼容性代码 */
+    -webkit-transform: translate(100px, 100px); /* safari chrome */
+    -moz-transform: translate(100px, 100px); /* firefox */
+    -ms-transform: translate(100px, 100px); /* IE */
+    -o-transform: translate(100px, 100px); /* opera */
+}
+
+#div3 {
+    transform: rotate(45deg); /* 旋转45deg */
+}
+
+#div4 {
+    transform: scale(0.5, 2); /* 宽度原来一半，高度原来2倍 */
+}
+
+#div5 {
+    transform: skew(10deg, 20deg);
+}
+
+#div6 {
+    transform: matrix(1, 1, -1, 0, 0, 0); /* 矩阵变换 */
+}
+
+#div7 {
+    transform: translate3d(50px, 100px, 200px);
+}

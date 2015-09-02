@@ -15,7 +15,7 @@ function saveData(id) {
     // 以时间作为键存储数据
     localStorage.setItem(key, value);
     alert('笔记保存成功！');
-    loadData('msg');
+    loadData();
 
     target.select();
 }
@@ -24,7 +24,7 @@ function saveData(id) {
  * 加载数据
  * @param id
  */
-function loadData(id) {
+function loadData() {
 
     var result = "<table border='1'>";
     for (var i = 0; i < localStorage.length; i++) {
@@ -46,9 +46,9 @@ function clearData() {
 
     localStorage.clear();
     alert('笔记已清空！');
-    loadData('msg');
+    loadData();
 }
 
 window.onload = function () {
-    loadData('msg');
+    loadData();
 }
