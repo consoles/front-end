@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: orange;
+    height: 150px;
+}
+
+article {
+    background-color: green;
+    height: 200px;
+
+    /* 左右div的宽度 */
+    padding-left: 150px;
+    padding-right: 100px;
+}
+
+footer {
+    background-color: blue;
+    height: 100px;
+}
+
+/* 浮动元素脱离标准文档流 */
+/* 淘宝双飞翼布局：左右固定，中间自适应 */
+
+.left {
+    width: 150px;
+    height: 20px;
+    float: left;
+    margin-left: -100%;
+    position: relative;
+    left: -150px;
+    background-color: aliceblue;
+}
+
+.middle {
+    width: 100%;
+    height: 20px;
+    float: left;
+    background-color: darkkhaki;
+}
+
+.right {
+    width: 100px;
+    height: 20px;
+    float: left;
+    margin-left: -100px; /* 自身宽度 */
+    position: relative;
+    left: -100px;
+    background-color: blueviolet;
+}
