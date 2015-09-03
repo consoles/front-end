@@ -15,6 +15,8 @@ article {
     /* 左右div的宽度 */
     /*padding-left: 150px;*/
     /*padding-right: 100px;*/
+
+    overflow: hidden;
 }
 
 footer {
@@ -33,23 +35,32 @@ footer {
     /*position: relative;*/
     /*left: -150px;*/
     background-color: aliceblue;
+
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
 }
 
 .middle {
     width: 100%;
-    height: 20px;
     float: left;
     background-color: darkkhaki;
+
+    /*height: 20px;*/
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
 }
 
 .right {
     width: 100px;
-    height: 20px;
     float: left;
     margin-left: -100px; /* 自身宽度 */
     /*position: relative;*/
     /*right: -100px;*/
     background-color: blueviolet;
+
+    /*height: 20px;*/
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
 }
 
 /* 双飞翼布局和圣杯布局的不同之处 */
