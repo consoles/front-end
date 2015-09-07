@@ -1,0 +1,53 @@
+div.cardfan {
+    width: 33%;
+    margin: 4rem auto;
+    position: relative;
+}
+
+div.cardfan img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    border: 12px solid #ffe;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transform-origin: center 600px;
+    transition: all 0.5s linear;
+}
+
+div.cardfan img:nth-child(1) {
+    transform: rotate(-5deg);
+    z-index: 3;
+    filter: grayscale(1);
+}
+
+div.cardfan:hover img:nth-child(1) {
+    transform: rotate(-25deg);
+}
+
+div.cardfan img:nth-child(1):hover {
+    filter: grayscale(0);
+}
+
+div.cardfan img:nth-child(2) {
+    filter: sepia(1);
+    background-color: #5E2612;
+}
+
+div.cardfan img:nth-child(2):hover {
+    filter: sepia(0);
+}
+
+div.cardfan img:nth-child(3) {
+    z-index: -1;
+    transform: rotate(5deg);
+    filter: blur(3px);
+}
+
+div.cardfan:hover img:nth-child(3) {
+    transform: rotate(25deg);
+}
+
+div.cardfan img:nth-child(3):hover {
+    filter: blur(0);
+}

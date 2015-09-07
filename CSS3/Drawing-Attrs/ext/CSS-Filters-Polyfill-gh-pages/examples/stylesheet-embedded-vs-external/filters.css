@@ -1,0 +1,9 @@
+/* Filter definitions */
+.filter1 {
+    filter: grayscale(1);
+}
+
+.filter:hover {
+    filter: none;
+}
+

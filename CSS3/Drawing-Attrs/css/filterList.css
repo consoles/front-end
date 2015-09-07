@@ -1,0 +1,92 @@
+.clearfix::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    font-size: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    width: 120px;
+    height: auto;
+    margin: 15px;
+    float: left;
+    position: relative;
+}
+
+li::after {
+    content: attr(class);
+    display: block;
+    width: 120px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+li img {
+    width: 100%;
+    height: auto;
+    border: 10px solid rgba(0, 120, 0, .8);
+    box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, .5);
+}
+
+.blur img {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.brightness img {
+    -webkit-filter: brightness(150%);
+    filter: brightness(150%);
+}
+
+.contrast img {
+    -webkit-filter: contrast(2);
+    filter: contrast(2);
+}
+
+.saturate img {
+    -webkit-filter: saturate(5);
+    filter: saturate(5);
+}
+
+.grayscale img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.hue-rotate img {
+    -webkit-filter: hue-rotate(270deg);
+    filter: hue-rotate(270deg);
+}
+
+.invert img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+.sepia img {
+    -webkit-filter: sepia(1);
+    filter: sepia(1);
+}
+
+.opacity img {
+    -webkit-filter: opacity(0.5);
+    filter: opacity(0.5);
+}
+
+.drop-shadow img {
+    -webkit-filter: drop-shadow(2px 2px 4px #333);
+    filter: drop-shadow(2px 2px 4px #333);
+}
+
