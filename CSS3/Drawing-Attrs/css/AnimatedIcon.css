@@ -16,7 +16,7 @@ i.cloud {
     /* Fallback */
 
     background-position: 0 center, 25% 0%;
-    background-image: -webkit-radial-gradient(50% 40%, 80% 60%, hsla(0, 0%, 100%, .3), hsla(0, 0%, 100%, 0) 50%, hsla(0, 0%, 0%, .8)), url(../img/mask-icons-whirl.jpg);
+    background-image: -webkit-radial-gradient(50% 40%, 80% 60%, hsla(0, 0%, 100%, .3), hsla(0, 0%, 100%, 0) 50%, hsla(0, 0%, 0%, .8)), url(../images/mask-icons-whirl.jpg);
     -webkit-mask-image: url(../images/mask-icons-cloud_2.svg), url(../images/mask-icons-cloud_2.svg);
     -webkit-mask-position: 0 0, -100px 30px;
     -webkit-mask-composite: source-out;
@@ -52,7 +52,7 @@ i.apple {
 
     background-size: auto, 100px 65px, auto;
     background-position: 0 center, center;
-    background-image: -webkit-radial-gradient(50% 40%, 80% 60%, hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, 0) 30%, hsla(0, 0%, 0%, 0) 30%, hsla(0, 0%, 0%, 0)), linear-gradient(hsla(100, 100%, 60%, .5) 35%, hsla(50, 100%, 60%, .5) 35%, hsla(50, 100%, 60%, .5) 47%, hsla(30, 100%, 60%, .5) 47%, hsla(30, 100%, 60%, .5) 59%, hsla(0, 100%, 60%, .5) 59%, hsla(0, 100%, 60%, .5) 71%, hsla(300, 100%, 60%, .5) 71%, hsla(300, 100%, 60%, .5) 83%, hsla(210, 100%, 60%, .5) 83%), url(../img/mask-icons-wood.jpg);
+    background-image: -webkit-radial-gradient(50% 40%, 80% 60%, hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, 0) 30%, hsla(0, 0%, 0%, 0) 30%, hsla(0, 0%, 0%, 0)), linear-gradient(hsla(100, 100%, 60%, .5) 35%, hsla(50, 100%, 60%, .5) 35%, hsla(50, 100%, 60%, .5) 47%, hsla(30, 100%, 60%, .5) 47%, hsla(30, 100%, 60%, .5) 59%, hsla(0, 100%, 60%, .5) 59%, hsla(0, 100%, 60%, .5) 71%, hsla(300, 100%, 60%, .5) 71%, hsla(300, 100%, 60%, .5) 83%, hsla(210, 100%, 60%, .5) 83%), url(../images/mask-icons-wood.jpg);
     -webkit-mask-image: url(../images/mask-icons-apple.svg), url(../images/mask-icons-apple.svg);
     -webkit-mask-position: 0 0, -60px 0px;
     -webkit-mask-composite: source-out;
