@@ -1,0 +1,95 @@
+body {
+    counter-reset: sec fig;
+    background-color: #eee;
+    color: #666;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    width: 800px;
+    background-color: #fff;
+    padding: 10px 20px 20px 20px;
+    margin: auto auto 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+}
+
+section p {
+    line-height: 1.5;
+}
+
+section:before {
+    counter-increment: sec;
+    font-weight: bold;
+    content: "「 新手任务-" counter(sec) " 」";
+    background-color: #35B558;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 20px;
+}
+
+/* 火狐浏览器是中文编号 */
+@-moz-document url-prefix() {
+    section:before {
+        content: "「 新手任务之" counter(sec, simp-chinese-formal) " 」";
+    }
+}
+
+@-moz-document url-prefix() {
+
+}
+
+section h2 {
+    position: relative;
+    top: -20px;
+    left: 178px;
+}
+
+ol {
+    counter-reset: liCounter;
+    list-style: none;
+}
+
+li::before {
+    counter-increment: liCounter;
+    content: counters(liCounter, ".") ": ";
+    font-weight: bold;
+    color: #FF5C00;
+}
+
+figure {
+    padding: 0;
+    margin: 0 20px 20px 0;
+    display: inline-block;
+    counter-increment: fig;
+}
+
+figure img {
+    width: 300px;
+}
+
+figcaption::before {
+    content: "图" counter(fig, lower-roman) ". ";
+    font-weight: bold;
+    color: #FF5C00;
+    font-size: 110%;
+}
+
+figcaption {
+    margin-top: 10px;
+}
+
+@counter-style simp-chinese-formal {
+    system: additive;
+    range: -9999 9999;
+    additive-symbols: 9000 \7396\4EDF, 8000 \634c\4EDF, 7000 \67d2\4EDF, 6000 \9646\4EDF, 5000 \4f0d\4EDF, 4000 \8086\4EDF, 3000 \53C1\4EDF, 2000 \8CB3\4EDF, 1000 \58F9\4EDF, 900 \7396\4F70, 800 \634C\4F70, 700 \67D2\4F70, 600 \9646\4F70, 500 \4f0d\4F70, 400 \56DB\4F70, 300 \53C1\4F70, 200 \8CB3\4F70, 100 \58F9\4F70, 90 \7396\62FE, 80 \634C\62FE, 70 \67D2\62FE, 60 \9646\62FE, 50 \4f0d\62FE, 40 \8086\62FE, 30 \53C1\62FE, 20 \8CB3\62FE, 10 \58F9\62FE, 9 \7396, 8 \634C, 7 \67D2, 6 \9646, 5 \4f0d, 4 \8086, 3 \53C1, 2 \8CB3, 1 \58F9, 0 \96F6;
+    suffix: '、 ';
+    negative: "\8D1F";
+}
