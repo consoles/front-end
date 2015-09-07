@@ -1,0 +1,51 @@
+.clearfix::after {
+    content: "";
+    width: 0;
+    height: 0;
+    font-size: 0;
+    display: block;
+    clear: both;
+}
+
+.container {
+    width: 980px;
+    margin: auto;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .2);
+    padding: 10px;
+    position: relative;
+}
+
+h2, h3 {
+    font-size: 24px;
+    font-family: "microsoft yahei";
+    font-weight: 500;
+    color: #35B558;
+    line-height: 24px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.5em;
+    color: #666;
+    text-indent: 2em;
+}
+
+.left {
+    float: left;
+    width: 240px;
+    height: auto;
+    shape-outside: polygon(nonzero, 3px 486px, 21px 11px, 220px 43px, 198px 148px, 219px 266px, 216px 336px, 195px 446px, 219px 559px, 21px 588px);
+    shape-margin: 10px;
+}
+
+.right {
+    float: right;
+    width: 500px;
+    height: auto;
+    shape-outside: url('../img/06.png');
+}
+

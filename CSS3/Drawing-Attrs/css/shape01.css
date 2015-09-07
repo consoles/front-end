@@ -1,0 +1,33 @@
+.container {
+    width: 980px;
+    margin: auto;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .2);
+    padding: 10px;
+    position: relative;
+}
+
+h2, h3 {
+    font-size: 24px;
+    font-family: "microsoft yahei";
+    font-weight: 500;
+    color: #35B558;
+    line-height: 1.5;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.5em;
+    color: #666;
+    text-indent: 2em;
+}
+
+
+
+
+
+
+
