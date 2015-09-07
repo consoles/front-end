@@ -1,0 +1,179 @@
+/* Animated Icons using SVG with CSS masks */
+/* Cloud ---------------------------- */
+
+i.cloud::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-linear-gradient(-45deg, hsla(0, 0%, 100%, .5) 0%, hsla(0, 0%, 100%, .15) 50%, hsla(0, 0%, 100%, 0) 50%);
+}
+
+i.cloud {
+    background: url(../images/mask-icons-cloud_2.svg);
+    /* Fallback */
+
+    background-position: 0 center, 25% 0%;
+    background-image: -webkit-radial-gradient(50% 40%, 80% 60%, hsla(0, 0%, 100%, .3), hsla(0, 0%, 100%, 0) 50%, hsla(0, 0%, 0%, .8)), url(../img/mask-icons-whirl.jpg);
+    -webkit-mask-image: url(../images/mask-icons-cloud_2.svg), url(../images/mask-icons-cloud_2.svg);
+    -webkit-mask-position: 0 0, -100px 30px;
+    -webkit-mask-composite: source-out;
+    transition: -webkit-mask-position .4s cubic-bezier(.65, .06, 1, .42);
+}
+
+i.cloud:hover {
+    -webkit-mask-position: 0 0, -100px 0px;
+    transition: -webkit-mask-position .3s cubic-bezier(0, .40, .20, 1);
+}
+
+i.cloud:active {
+    -webkit-mask-composite: xor;
+    -webkit-mask-position: 0 0, -100px -100px;
+    transition: -webkit-mask-position .4s cubic-bezier(.65, .06, 1, .42);
+    animation: cloud-active 1s .4s cubic-bezier(0, .80, 1, .20) infinite;
+}
+
+@keyframes cloud-active {
+    0% {
+        -webkit-mask-position: 0 0, -100px 30px;
+    }
+    100% {
+        -webkit-mask-position: 0 0, -100px -100px;
+    }
+}
+
+/* Apple ---------------------------- */
+
+i.apple {
+    background: url(../images/mask-icons-apple.svg);
+    /* Fallback */
+
+    background-size: auto, 100px 65px, auto;
+    background-position: 0 center, center;
+    background-image: -webkit-radial-gradient(50% 40%, 80% 60%, hsla(0, 0%, 100%, .5), hsla(0, 0%, 100%, 0) 30%, hsla(0, 0%, 0%, 0) 30%, hsla(0, 0%, 0%, 0)), linear-gradient(hsla(100, 100%, 60%, .5) 35%, hsla(50, 100%, 60%, .5) 35%, hsla(50, 100%, 60%, .5) 47%, hsla(30, 100%, 60%, .5) 47%, hsla(30, 100%, 60%, .5) 59%, hsla(0, 100%, 60%, .5) 59%, hsla(0, 100%, 60%, .5) 71%, hsla(300, 100%, 60%, .5) 71%, hsla(300, 100%, 60%, .5) 83%, hsla(210, 100%, 60%, .5) 83%), url(../img/mask-icons-wood.jpg);
+    -webkit-mask-image: url(../images/mask-icons-apple.svg), url(../images/mask-icons-apple.svg);
+    -webkit-mask-position: 0 0, -60px 0px;
+    -webkit-mask-composite: source-out;
+    transition: -webkit-mask-position .4s cubic-bezier(.44, .08, .10, 1);
+}
+
+i.apple:hover {
+    -webkit-mask-position: 0 0, -100px 0px;
+    transition: -webkit-mask-position .2s cubic-bezier(.44, .08, .10, 1);
+}
+
+i.apple:active {
+    -webkit-mask-position: 0 0, -106px 0px;
+    animation: apple-active .6s linear infinite;
+}
+
+@keyframes apple-active {
+    0% {
+        background-position: 0 center, center 0, 50% 34%;
+    }
+    100% {
+        background-position: 0 center, center -65px, 50% 34%;
+    }
+}
+
+/* Robot ---------------------------- */
+
+i.robot {
+    background: url(../images/mask-icons-robot.svg);
+    /* Fallback */
+
+    background-position: 0 center, center;
+    background-image: -webkit-radial-gradient(50% 50%, 60% 80%, hsla(0, 100%, 50%, .7), hsla(0, 100%, 20%, .8) 60%, hsla(0, 100%, 10%, 1)), url(../img/mask-icons-metal.jpg);
+    -webkit-mask-image: url(../images/mask-icons-robot.svg), url(../images/mask-icons-robot.svg);
+    -webkit-mask-position: 0 0, -100px 13px;
+    -webkit-mask-composite: source-over;
+    transition: -webkit-mask-position .3s cubic-bezier(.65, .06, 1, .42);
+}
+
+i.robot:hover {
+    -webkit-mask-position: 0 0, -100px 0px;
+    transition: -webkit-mask-position .2s cubic-bezier(0, .40, .20, 1);
+}
+
+i.robot:active {
+    -webkit-mask-position: 0 0, -107px 0px;
+    transition: -webkit-mask-position .1s cubic-bezier(.44, .08, .10, 1);
+    animation: robot-active .1s .2s cubic-bezier(.70, 0, .30, 1) infinite alternate;
+}
+
+@keyframes robot-active {
+    0% {
+        -webkit-mask-position: 0 0, -107px 0px;
+    }
+    100% {
+        -webkit-mask-position: 0 0, -93px 0px;
+    }
+}
+
+/* Global Icons styles ---------------------------- */
+
+i {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    filter: drop-shadow(0 1px 1px hsla(0, 0%, 100%, .5)) drop-shadow(0 -6px 6px hsla(0, 0%, 100%, .5)) drop-shadow(0 10px 10px hsla(0, 0%, 0%, .3));
+    -webkit-mask-repeat: no-repeat;
+}
+
+i:active {
+    -webkit-transform: translateY(2px);
+    filter: drop-shadow(0 1px 1px hsla(0, 0%, 100%, .5)) drop-shadow(0 -3px 6px hsla(0, 0%, 100%, .5)) drop-shadow(0 5px 10px hsla(0, 0%, 0%, .3));
+}
+
+/* General stuff ----------------------------- */
+
+html {
+    height: 100%;
+    font: 62.5%/1 "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    background: #f0f0f0;
+    background-size: 75px;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+}
+
+h1 {
+    background: url(../images/mask-icons-whirl.jpg);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+#icons {
+    user-select: none;
+    border-radius: 20px;
+    padding: 0 40px;
+    margin: 0 30px;
+    background-color: hsla(0, 0%, 0%, .02);
+    box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, .1), 0 1px 2px hsla(0, 0%, 100%, .3);
+}
+
+#help {
+    color: #aaa;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+#help strong {
+    color: #777;
+}

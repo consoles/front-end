@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px"
+	 height="100px" viewBox="0.5 60.5 200 100" enable-background="new 0.5 60.5 200 100" xml:space="preserve">
+<g id="robot" display="none">
+	<path display="inline" fill="#231F20" d="M75.5,126.5c0,6.627-5.373,12-12,12h-26c-6.627,0-12-5.373-12-12l-5-32
+		c0-6.627,5.373-12,12-12h36c6.627,0,12,5.373,12,12L75.5,126.5z"/>
+</g>
+<g id="robot_1_">
+	<path fill="#231F20" d="M68.5,82.5h-36c-6.627,0-12,5.373-12,12l5,32c0,6.627,5.373,12,12,12h26c6.627,0,12-5.373,12-12l5-32
+		C80.5,87.873,75.127,82.5,68.5,82.5z M39.5,112.5c-3.866,0-7-3.134-7-7s3.134-7,7-7s7,3.134,7,7S43.366,112.5,39.5,112.5z
+		 M53.5,129.5h-6c-1.657,0-3-1.343-3-3s1.343-3,3-3h6c1.657,0,3,1.343,3,3S55.157,129.5,53.5,129.5z M61.5,112.5
+		c-3.866,0-7-3.134-7-7s3.134-7,7-7s7,3.134,7,7S65.366,112.5,61.5,112.5z"/>
+</g>
+<g id="Layer_3">
+	<circle fill="#FF0000" cx="139.5" cy="105.5" r="5"/>
+	<circle fill="#FF0000" cx="161.5" cy="105.5" r="5"/>
+	<ellipse fill="#FF0000" cx="150.5" cy="121.5" rx="10" ry="4"/>
+</g>
+</svg>

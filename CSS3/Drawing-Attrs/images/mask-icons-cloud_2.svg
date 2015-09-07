@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200px" height="100px" viewBox="0 0 200 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Untitled 2</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M88.001,58.849 C88.001,66.8301072 81.8307215,73.3693906 74,73.9570146 L28,74 C20.1697532,73.3688339 14,66.8297675 14,58.849 C14,51.1759353 19.7031683,44.8355438 27.1019653,43.8353651 C26.6229097,42.3602526 26.364,40.7858763 26.364,39.151 C26.364,30.783 33.147,24 41.515,24 C47.298212,24 52.3243747,27.2397888 54.877641,32.0035192 C57.096018,29.5451744 60.307139,28 63.879,28 C70.573,28 76,33.427 76,40.121 C76,41.4445555 75.7878355,42.7185786 75.3956626,43.9109132 C82.5515007,45.1214374 88.001,51.3485199 88.001,58.849 Z" id="cloud" fill="#231F1F" sketch:type="MSShapeGroup"></path>
+        <path d="M138,60 L150,48 L162,60 L154,60 L154,74 L146,74 L146,60 L138,60 Z" id="arrow" fill="#ED1C24" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>
