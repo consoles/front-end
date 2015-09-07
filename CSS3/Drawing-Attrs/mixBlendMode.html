@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>元素混合模式测试</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mixBlendMode.css"/>
+    <script src="js/prefixfree.min.js" type="text/javascript"></script>
+    <script src="../../lib/jquery-2.1.1.js" type="text/javascript"></script>
+</head>
+<body>
+<select id="modeSelector" name="modeSelector">
+    <option value="normal">normal</option>
+    <option value="multiply">multiply</option>
+    <option value="screen">screen</option>
+    <option value="overlay">overlay</option>
+    <option value="darken">darken</option>
+    <option value="lighten">lighten</option>
+    <option value="color-dodge">color-dodge</option>
+    <option value="color-burn">color-burn</option>
+    <option value="hard-light">hard-light</option>
+    <option value="soft-light">soft-light</option>
+    <option value="difference">difference</option>
+    <option value="exclusion">exclusion</option>
+    <option value="hue">hue</option>
+    <option value="saturation">saturation</option>
+    <option value="color">color</option>
+    <option value="luminosity">luminosity</option>
+</select>
+<svg id="glasses" width="400px" height="120px" viewBox="0 0 40 12">
+    <rect width="40" height="1"/>
+    <rect width="40" height="1" y="11"/>
+    <rect width="1" height="12"/>
+    <rect width="1" height="12" x="19.5"/>
+    <rect width="1" height="12" x="39"/>
+    <rect class="filter" width="18.5" height="10" fill="cyan" x="1" y="1"/>
+    <rect class="filter" width="18.5" height="10" x="20.5" y="1" fill="red"/>
+</svg>
+<script type="text/javascript">
+    $glasses = $("#glasses");
+    $modeSelector = $('#modeSelector');
+    $modeResult = $('#modeResult');
+    $(document).mousemove(function (e) {
+        var x = e.pageX - 125;
+        var y = e.pageY - 160;
+        var transform = 'left:' + x + 'px;' + 'top:' + y + 'px;';
+        $glasses.attr("style", transform);
+    });
+    $modeSelector.change(function () {
+        var value = $modeSelector.val();
+        $(".filter").css('mix-blend-mode', value);
+    });
+</script>
+</body>
+</html>

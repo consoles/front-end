@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>背景混合模式实验</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bgBlendMode.css"/>
+    <script src="../../lib/jquery-2.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/prefixfree.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<figure class="normal"></figure>
+<figure class="multiply"></figure>
+<figure class="screen"></figure>
+<figure class="overlay"></figure>
+<figure class="darken"></figure>
+<figure class="lighten"></figure>
+<figure class="color-dodge"></figure>
+<figure class="color-burn"></figure>
+<figure class="hard-light"></figure>
+<figure class="soft-light"></figure>
+<figure class="difference"></figure>
+<figure class="exclusion"></figure>
+<figure class="hue"></figure>
+<figure class="saturation"></figure>
+<figure class="color"></figure>
+<figure class="luminosity"></figure>
+<style class="swatch" id="background_color"></style>
+<script type="text/javascript">
+    // Change y-axis control to "lightness" or "saturation"
+    y_axis = "saturation"
+    width = $(window).width();
+    height = $(window).height();
+    $(window).resize(function () {
+        width = $(window).width();
+        height = $(window).height();
+    });
+    var $bg = $("#background_color");
+    $(window).mousemove(function (e) {
+        var x = e.pageX;
+        var y = e.pageY;
+        var hue = Math.round((x / width) * 256);
+        var saturation = 100 - Math.round((y / height) * 100);
+        var lightness = 100 - Math.round((y / height) * 100);
+        if (y_axis == "saturation") {
+            var hsl = 'hsl(' + hue + ',' + saturation + '%,50%)';
+        } else {
+            var hsl = 'hsl(' + hue + ',50%,' + lightness + '%)';
+        }
+        var style = 'figure { background-color: ' + hsl + '; color: ' + hsl + '; } ';
+        $bg.text(style);
+    });
+    $("figure").mousedown(function () {
+        $("figure").removeClass("maximized");
+        $("body").addClass("viewing");
+        $(this).addClass("maximized");
+    }).mouseup(function () {
+        $("body").removeClass("viewing");
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: url(../images/bg.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+svg {
+    position: relative;
+    width: 400px;
+    height: 120px;
+    border-radius: .25rem;
+    margin: 200px 50px;
+}
+
+#modeSelector {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.filter {
+    /*mix-blend-mode: multiply;*/
+}
+
+rect:not(.filter) {
+    fill: whitesmoke;
+}

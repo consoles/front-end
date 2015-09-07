@@ -1,0 +1,135 @@
+<html>
+<head>
+    <style>
+
+        body {
+            font-size: 11px;
+            margin: 0;
+            user-select: none;
+            font-family: Menlo, monospace;
+        }
+
+        .properties {
+            box-sizing: border-box;
+            padding: 6px 4px 2px;
+            list-style: none;
+            color: rgb(48, 57, 66);
+        }
+
+        .properties li {
+            white-space: auto;
+            padding-left: 30px;
+        }
+
+        .value {
+            line-height: 1.6em;
+        }
+
+        .property {
+            margin-left: -20px;
+            color: rgb(200, 0, 0);
+        }
+
+        .js-action {
+            display: inline-block;
+            margin: 0;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            padding: 0.1em 0.15em;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .js-action[disabled] {
+            display: none;
+        }
+
+        .js-action,
+        nav a {
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .js-active {
+            background: rgb(255, 220, 80);
+        }
+
+        .js-action--create {
+            background-image: url(images/icon_2876.svg);
+            background-size: auto 60%;
+            margin: 0 1px 0 0;
+        }
+
+        .js-action--edit {
+            background-image: url(images/icon_39925.svg);
+            background-size: auto 80%;
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            background: rgb(55, 121, 217);
+            top: 1.4em;
+            margin-left: -0.5em;
+            z-index: 2;
+            /* mask for the arrow head tooltip*/
+            -webkit-clip-path: polygon(nonzero, 0 0.8em, 0.6em 0.8em, 1.2em 0.2em, 1.8em 0.8em, 100% 0.8em, 100% 100%, 0px 100%);
+        }
+
+        .js-action--create.js-active > nav {
+            display: flex;
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 1.4em 0.5em 0.5em;
+            color: white;
+            height: 1.2em;
+        }
+
+        nav a:hover {
+            background-color: rgba(38, 84, 150, 0.8);
+        }
+
+        nav :first-child,
+        nav :last-child {
+            padding: 1.4em 0.75em 0.5em;
+        }
+
+        .warning {
+            background: #fcffd5;
+            padding: 1em;
+            line-height: 1.5em;
+            height: 100%;
+            display: none;
+        }
+
+        .ico {
+            width: 1.2em;
+            height: 1.2em;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .ico:not(.js-active):hover {
+            background-color: #eee;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="warning js-support">
+    It looks like this browser does not support CSS Shapes.<br>
+    Learn about <a href="https://github.com/oslego/chrome-css-shapes-editor/wiki/CSS-Shapes-Feature-Support"
+                   target="_blank">feature support</a>.
+</div>
+
+<ol class="properties">
+    <!-- filled in dynamically with #template build from selected element's computed style / shape properties -->
+</ol>
+
+</body>
+</html>

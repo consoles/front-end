@@ -1,0 +1,163 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    text-align: center;
+    display: flex;
+    user-select: none;
+    background: black;
+    backface-visibility: hidden;
+    cursor: zoom-in;
+}
+
+figure {
+    flex: 1;
+    background-color: transparent;
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+}
+
+figure:nth-child(1) {
+    background-position: 1%;
+}
+
+figure:nth-child(2) {
+    background-position: 2%;
+}
+
+figure:nth-child(3) {
+    background-position: 3%;
+}
+
+figure:nth-child(4) {
+    background-position: 4%;
+}
+
+figure:nth-child(5) {
+    background-position: 5%;
+}
+
+figure:nth-child(6) {
+    background-position: 6%;
+}
+
+figure:nth-child(7) {
+    background-position: 7.0%;
+}
+
+figure:nth-child(8) {
+    background-position: 8%;
+}
+
+figure:nth-child(9) {
+    background-position: 9%;
+}
+
+figure:nth-child(10) {
+    background-position: 10%;
+}
+
+figure:nth-child(11) {
+    background-position: 11%;
+}
+
+figure:nth-child(12) {
+    background-position: 12%;
+}
+
+figure:nth-child(13) {
+    background-position: 13%;
+}
+
+figure:nth-child(14) {
+    background-position: 14.0%;
+}
+
+figure:nth-child(15) {
+    background-position: 15%;
+}
+
+figure:nth-child(16) {
+    background-position: 16%;
+}
+
+figure:before {
+    display: block;
+    font: smaller monospace;
+    content: attr(class);
+    padding-top: .25rem;
+    color: black;
+}
+
+figure:hover {
+    box-shadow: inset 0 1.25rem;
+}
+
+.multiply {
+    background-blend-mode: multiply;
+}
+
+.screen {
+    background-blend-mode: screen;
+}
+
+.overlay {
+    background-blend-mode: overlay;
+}
+
+.darken {
+    background-blend-mode: darken;
+}
+
+.lighten {
+    background-blend-mode: lighten;
+}
+
+.color-dodge {
+    background-blend-mode: color-dodge;
+}
+
+.color-burn {
+    background-blend-mode: color-burn;
+}
+
+.hard-light {
+    background-blend-mode: hard-light;
+}
+
+.soft-light {
+    background-blend-mode: soft-light;
+}
+
+.difference {
+    background-blend-mode: difference;
+}
+
+.exclusion {
+    background-blend-mode: exclusion;
+}
+
+.hue {
+    background-blend-mode: hue;
+}
+
+.saturation {
+    background-blend-mode: saturation;
+}
+
+.color {
+    background-blend-mode: color;
+}
+
+.luminosity {
+    background-blend-mode: luminosity;
+}
+
+.viewing {
+    cursor: zoom-out;
+}
+
+.viewing figure:not(.normal):not(.maximized) {
+    display: none;
+}
