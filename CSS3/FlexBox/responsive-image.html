@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>响应式图片</title>
+    <script src="../../lib/picturefill.js"></script>
+    <!-- 响应式图片的兼容性 -->
+</head>
+<body>
+<div class="imagesContainer">
+    <h2>picture source media实现响应式布局</h2>
+    <picture>
+        <source media="(max-width:480px)" srcset="images/480x320.gif">
+        <source media="(max-width:640px)" srcset="images/640x427.gif">
+        <source media="(max-width:720px)" srcset="images/720x480.gif">
+        <source media="(max-width:900px)" srcset="images/900x600.gif">
+        <img src="images/900x600.gif" alt="响应式图片"/>
+    </picture>
+</div>
+</body>
+</html>
