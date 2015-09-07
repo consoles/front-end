@@ -1,0 +1,90 @@
+h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #666666;
+}
+
+table.responsive {
+    width: 98%;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+table.responsive th, table.responsive td {
+    border: 1px solid #000000;
+    padding: .5em 1em;
+}
+
+/* 表头 */
+table.responsive th {
+    background-color: #35b558;
+}
+
+/* 链接 */
+table.responsive .actions a {
+    color: #ff9c00;
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+/* 表格第一列和最后一列居中对齐 */
+table.responsive .number, table.responsive .actions {
+    text-align: center;
+}
+
+/* 响应式布局：当页面缩小的时候表头消失、表格反转 */
+@media (max-width: 480px) {
+    table.responsive {
+        box-shadow: none;
+        border: none;
+    }
+
+    table.responsive thead {
+        display: none;
+    }
+
+    table.responsive tr, table.responsive td {
+        display: block;
+        border: none;
+        position: relative;
+    }
+
+    table.responsive tr {
+        margin-bottom: 1em;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, .2);
+    }
+
+    table.responsive .number {
+        text-align: left;
+        background-color: #f0f;
+        padding-left: 28%;
+    }
+
+    table.responsive .number::before {
+        content: '课程序号';
+        position: absolute;
+        left: .5em;
+        top: .5em;
+        font-weight: bold;
+    }
+
+    table.responsive .name {
+        text-align: left;
+        padding-left: 28%;
+    }
+
+    table.responsive .name::before {
+        content: '课程名称';
+        position: absolute;
+        left: .5em;
+        top: .5em;
+        font-weight: bold;
+    }
+
+    table.responsive .actions {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
