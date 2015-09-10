@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #333333;
+}
+
+.box {
+    width: 800px;
+    height: 280px;
+    margin: 50px auto;
+}
+
+.box .link {
+    width: 205px;
+    height: 280px;
+    margin: 0 20px;
+    float: left;
+    position: relative;
+}
+
+.link .icon {
+    /* span为内联元素，不具备宽高 */
+    width: 100%;
+    height: 190px;
+    display: inline-block;
+    transition: 0.2s ease-in;
+}
+
+/* 3个小图标的背景图片 */
+.link-miss .icon {
+    background: url("mission.png") no-repeat center center;
+}
+
+.link-play .icon {
+    background: url("play.png") no-repeat center center;
+}
+
+.link-touch .icon {
+    background: url("touch.png") no-repeat center center;
+}
+
+/* 悬停转动、缩放 */
+.link .icon:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.button {
+    display: block;
+    width: 180px;
+    height: 50px;
+    text-decoration: none;
+    text-indent: 20px;
+    line-height: 50px;
+    color: #2dcb70;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border: 2px solid rgba(255, 255, 255, .8);
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: url("allow.png") no-repeat 120px center;
+    transition: .4s ease;
+    position: relative;
+}
+
+.button:hover {
+    border: 2px solid rgba(255, 255, 255, 1);
+    background-position: 140px center;
+}
+
+.button .line {
+    display: block;
+    position: absolute;
+    background: none;
+    transition: .3s linear;
+}
+
+.button:hover .line {
+    background: #ffffff;
+}
+
+/* 按钮4周的边框 */
+.button .line-top {
+    width: 0;
+    height: 2px;
+    left: -110%;
+    top: -2px;
+}
+
+.button:hover .line-top {
+    width: 100%;
+    left: -2px;
+}
+
+.button .line-bottom {
+    width: 0;
+    height: 2px;
+    right: -110%;
+    bottom: -2px;
+}
+
+.button:hover .line-bottom {
+    width: 100%;
+    right: -2px;
+}
+
+.button .line-left {
+    width: 2px;
+    height: 0;
+    left: -2px;
+    bottom: -110%;
+}
+
+.button:hover .line-left {
+    height: 100%;
+    bottom: -2px;
+}
+
+.button .line-right {
+    width: 2px;
+    height: 0;
+    right: -2px;
+    top: -110%;
+}
+
+.button:hover .line-right {
+    height: 100%;
+    top: -2px;
+}
+
+/* 提示框 */
+.box .tip {
+    position: absolute;
+    padding: 0 14px;
+    height: 35px;
+    line-height: 35px;
+    color: #ff5500;
+    background-color: #2dcb70;
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: none;
+    margin: 0 auto;
+    border-radius: 3px;
+    opacity: 0; /* 最开始的透明度是0（看不见） */
+}
+
+/* 文字 */
+.tip em {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* 小三角 */
+.tip span {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 7px transparent solid;
+    border-top-color: #2dcb70; /* 三角的方向朝下，如果朝上换成bottom */
+    left: 50%;
+    margin-left: -3px;
+    bottom: -14px;
+}
