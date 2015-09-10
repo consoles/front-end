@@ -1,0 +1,86 @@
+body {
+    background-color: #eeeeee;
+}
+
+.container {
+    width: 960px;
+    height: 450px;
+    margin: 60px auto;
+    position: relative;
+}
+
+.pic {
+    width: 150px;
+}
+
+.container img {
+    padding: 10px 10px 15px;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    box-shadow: 2px 2px 5px rgba(50, 50, 50, .6);
+    border-radius: 5px;
+    z-index: 1;
+    transition: all 0.5s ease-in;
+    position: absolute;
+}
+
+.container img:hover {
+    box-shadow: 15px 15px 20px rgba(50, 50, 50, .4);
+    transform: rotate(0deg) scale(1.5);
+    z-index: 2;
+}
+
+.pic1 {
+    left: 100px;
+    top: 200px;
+    transform: rotate(-5deg);
+}
+
+.pic2 {
+    left: 200px;
+    top: 0;
+    transform: rotate(-20deg);
+}
+
+.pic3 {
+    right: 0;
+    bottom: 0;
+    transform: rotate(5deg);
+}
+
+.pic4 {
+    right: 200px;
+    bottom: -70px;
+    transform: rotate(-30deg);
+}
+
+.pic5 {
+    left: 400px;
+    top: 50px;
+    transform: rotate(40deg);
+}
+
+.pic6 {
+    right: 300px;
+    top: 200px;
+    transform: rotate(-20deg);
+}
+
+.pic7 {
+    right: 150px;
+    top: 80px;
+    transform: rotate(20deg);
+}
+
+.pic8 {
+    right: 450px;
+    top: 280px;
+    transform: rotate(10deg);
+}
+
+.pic9 {
+    left: 20px;
+    top: 20px;
+    transform: rotate(-5deg);
+}
+
