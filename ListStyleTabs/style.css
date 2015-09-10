@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 789px;
+    height: auto;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.list-box {
+    margin: 0 auto;
+    width: 700px;
+    height: 42px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.list {
+    float: right;
+    padding-top: 10px;
+}
+
+.list-box ul li {
+    width: 30px;
+    height: 26px;
+    float: left;
+    display: block;
+    background: url('listype-icon.png') no-repeat;
+    cursor: pointer;
+}
+
+#list-1 {
+    background-position: 0 -26px;
+}
+
+#list-2 {
+    background-position: -30px -26px;
+}
+
+/* 网格布局的样式 */
+.changeList .li-1-o {
+    width: 240px;
+    height: 200px;
+    border: 1px solid #aaaaaa;
+    float: left;
+    margin: 0 0 20px 20px;
+}
+
+/* 垂直列表的样式 */
+.changeList .li-2-v {
+    height: 170px;
+}
