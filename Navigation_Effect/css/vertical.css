@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4em;
+    min-height: 600px;
+}
+
+.adminMenuWrap {
+    position: relative;
+    float: left;
+    width: 160px;
+    background-color: #222222;
+}
+
+.adminMenu {
+    clear: left;
+    margin: 12px 0;
+    list-style: none;
+    width: 160px;
+    background-color: #222222;
+}
+
+.menu {
+    min-height: 34px;
+    cursor: pointer;
+}
+
+.menu a {
+    padding: 10px 0;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    text-indent: 40px;
+}
+
+.menu a:hover {
+    background-color: #000000;
+    color: greenyellow;
+}

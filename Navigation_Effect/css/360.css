@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("../images/bg.jpg");
+    font-size: 12px;
+    font-family: "微软雅黑", Arial,;
+}
+
+#header {
+    height: 31px;
+    min-width: 990px;
+    padding: 9px 10px 0 0;
+    position: relative;
+}
+
+#hd_nav {
+    float: right;
+}
+
+ul {
+    list-style: none;
+}
+
+#hd_nav li {
+    border-right: 1px solid rgba(255, 255, 255, .2);
+    float: left;
+    height: 14px;
+    padding: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#hd_nav .skin a {
+    position: relative;
+    padding-left: 22px;
+}
+
+#hd_nav a {
+    color: #ffffff;
+    height: 14px;
+    line-height: 14px;
+}
+
+#hd_nav li .ico {
+    background: url("http://p7.qhimg.com/d/inn/774669ac/t01bc32feb0bbb5c4e0.png") no-repeat;
+    position: absolute;
+    left: 0;
+}
+
+#hd_nav .skin .ico {
+    background-position: 0 -270px;
+    width: 16px;
+    height: 15px;
+    top: -1px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.login-reg {
+    padding-left: 41px;
+    position: relative;
+}
+
+.avatar {
+    border-radius: 18px;
+    box-shadow: 0 1px 5px rgba(87, 87, 87, .5);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: -2px;
+}
+
+.login {
+    margin-left: 30px;
+}
+
+.reg {
+    margin-left: 5px;
+}
