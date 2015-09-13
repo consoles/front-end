@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    font-size: 14px;
+}
+
+.div {
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px 30px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.div h3 {
+    color: #0099ff;
+    font-size: 20px;
+}
+
+.div .tooltip {
+    color: #0099ff;
+    cursor: pointer;
+}
+
+/* 提示框的样式 */
+.tooltip-box {
+    display: block;
+    background-color: #fff;
+    line-height: 1.6;
+    border: 1px solid #66ccff;
+    color: #333333;
+    padding: 20px;
+    font-size: 12px;
+    border-radius: 5px;
+    overflow: auto;
+}
