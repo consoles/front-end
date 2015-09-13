@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.toTopBtn {
+    width: 40px;
+    height: 80px;
+    position: fixed;
+    background-color: #ff0000;
+    bottom: 30px;
+    margin-left: 500px;
+    left: 50%;
+    transition: width 2s, height 2s, background-color 2s, transform 1s;
+}
+
+.toTopBtn:hover {
+    width: 50px;
+    height: 100px;
+    background-color: #008000;
+    transform: rotate(360deg);
+}
