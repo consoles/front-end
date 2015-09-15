@@ -2,16 +2,17 @@ div {
     width: 100px;
     height: 100px;
     background-color: blue;
+    text-align: center;
+    line-height: 100px;
 
     /* CSS3过渡动画 */
-    transition: width 2s, height 4s, transform 2s;
-    -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
-    transition-delay: 1s; /* 延时1s执行 */
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s, border-radius 2s, background-color 2s;
 }
 
 div:hover {
     width: 200px;
     height: 200px;
-    transform: rotate(360deg);
+    background-color: #ff0000;
+    border-radius: 50%;
     -webkit-transform: rotate(360deg);
 }

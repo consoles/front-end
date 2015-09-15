@@ -1,4 +1,4 @@
-div {
+.box1 {
     width: 100px;
     height: 100px;
     background-color: red;
@@ -62,5 +62,35 @@ div {
         background-color: red;
         left: 0;
         top: 0
+    }
+}
+
+.box2 {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    background-color: #ff00ff;
+}
+
+.box2:hover {
+    -webkit-animation: hover-animate 1s ease-in infinite;
+}
+
+@-webkit-keyframes hover-animate {
+    0% {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    50% {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #ff0000;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
     }
 }

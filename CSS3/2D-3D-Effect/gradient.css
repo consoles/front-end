@@ -1,0 +1,23 @@
+.liner-gradient {
+    width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.liner-gradient p {
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 1px #999 solid;
+    line-height: 100px;
+    margin-right: 100px;
+    font-size: 20px;
+}
+
+.liner-gradient p:first-child {
+    background: -webkit-linear-gradient(top, #09f 20px, #fff, #0c0);
+}
+
+.liner-gradient p:last-child {
+    background: -webkit-linear-gradient(20deg, #09f, #fff, #0c0);
+}

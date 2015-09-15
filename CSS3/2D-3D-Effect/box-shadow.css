@@ -1,0 +1,33 @@
+.box-shadow {
+    width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.box-shadow:after {
+    clear: both;
+    content: " ";
+    display: block;
+    overflow: hidden;
+}
+
+.box-shadow p {
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 1px solid #999;
+    line-height: 100px;
+    background-color: #f9f9f9;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+/* 外阴影 */
+.box-shadow p:first-child {
+    box-shadow: 5px 5px 3px 2px rgba(0, 0, 0, .3);
+}
+
+/* 内阴影 */
+.box-shadow p:last-child {
+    box-shadow: inset 5px 5px 3px 2px rgba(0, 0, 0, .3);
+}
