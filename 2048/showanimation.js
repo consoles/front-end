@@ -27,6 +27,14 @@ function update_score(score) {
 }
 
 /**
+ * 更新时间
+ * @param time
+ */
+function updata_time(time) {
+    $('#time').text(checkTime(time) + 's');
+}
+
+/**
  * 格子移动时的动画效果
  * @param fromX
  * @param fromY

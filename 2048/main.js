@@ -16,7 +16,11 @@ var endX = 0,               // 移动端触摸屏幕时结束点的x坐标
 var success_string = '挑战成功！',   // 游戏提示信息
     gameover_string = '游戏结束。';
 
-var timer1, timer2;
+var timer, timer1, timer2;         // 用于开关定时器
+
+var startTime, endTime;      // 游戏开始时间和结束时间
+
+var time = 0;               // 耗时，用于在页面实时显示
 
 /**
  * DOM加载完成后初始化棋盘
@@ -29,6 +33,13 @@ $(function () {
     $('#new_game_btn').click(function () {
         new_game();
     });
+
+    // 页面时钟
+    timeDate();
+
+    // 耗时
+    clearInterval(timer);
+    timer = setInterval('updata_time(++time)', 1000);
 });
 
 /**
@@ -41,6 +52,7 @@ function new_game() {
     // 在随机的2个格子生成数字
     generate_one_number();
     generate_one_number();
+    startTime = new Date().getTime();
 }
 
 /**
@@ -460,6 +472,8 @@ function is_game_over() {
  */
 function gameover() {
 
-    alert(gameover_string);
+    clearInterval(timer);
+    endTime = new Date().getTime();
+    alert(gameover_string + '耗时：' + Math.floor((endTime - startTime) / 1000) + '秒！');
     return;
 }

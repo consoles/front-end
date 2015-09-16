@@ -43,6 +43,13 @@ header p {
     margin: 5px auto;
 }
 
+#timer {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+}
+
 #score {
     color: rgba(255, 0, 0, .9);
     transform: scale(1.2);

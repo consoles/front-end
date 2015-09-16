@@ -225,3 +225,31 @@ function nomove(board) {
 
     return !(can_move_down(board) || can_move_up(board) || can_move_right(board) || can_move_left(board));
 }
+
+
+/**
+ * 当时钟数字不足2位数时补0
+ */
+function checkTime(i) {
+    return i < 10 ? '0' + i : i;
+}
+
+/**
+ * 走动的页面时钟
+ */
+function timeDate() {
+
+    var now = new Date(),
+
+        year = now.getFullYear(),
+        month = now.getMonth() + 1,
+        day = now.getDate(),
+        h = checkTime(now.getHours()),
+        m = checkTime(now.getMinutes()),
+        s = checkTime(now.getSeconds()),
+        weekday = '星期' + '日一二三四五六'.charAt(now.getDay());
+
+    $('#timer').text(year + "年" + month + "月" + day + "日 " + weekday + ' ' + h + ":" + m + ":" + s);
+
+    setTimeout(timeDate, 1000);
+}
