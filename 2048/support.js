@@ -74,12 +74,43 @@ function nospace(board) {
 }
 
 /**
+ * 2048私人定制：一（文字版2048）
+ * @param number
+ */
+function get_text(number) {
+
+    var content = [
+        {"num": 2, "text": "小白"},
+        {"num": 4, "text": "实习生"},
+        {"num": 8, "text": "码农"},
+        {"num": 16, "text": "程序员"},
+        {"num": 32, "text": "工程师"},
+        {"num": 64, "text": "项目经理"},
+        {"num": 128, "text": "部门主管"},
+        {"num": 256, "text": "经理秘书"},
+        {"num": 512, "text": "总经理"},
+        {"num": 1024, "text": "执行官"},
+        {"num": 2048, "text": "董事长"},
+        {"num": 4096, "text": "嘉城女婿"},
+        {"num": 8192, "text": "神"}
+    ];
+
+    for (var i = 0; i < content.length; i++) {
+        //console.log(content[i].num + '--->' + content[i].text);
+        if (number == content[i].num) {
+            return content[i].text;
+        }
+    }
+    return '未知职位！';
+}
+
+/**
  * 可以向左移动？
  */
 function can_move_left(board) {
 
     for (var i = 0; i < row; i++) {
-        for (var j = 2; j >= 0; j--) {
+        for (var j = 1; j < col; j++) {
             if (board[i][j] != 0) {
                 if (board[i][j - 1] == 0 || board[i][j] == board[i][j - 1]) {
                     return true;
@@ -182,5 +213,5 @@ function no_block_vertical(col, row1, row2, board) {
  */
 function nomove(board) {
 
-    return !(can_move_down(board) && can_move_up(board) && can_move_right(board) && can_move_left(board));
+    return !(can_move_down(board) || can_move_up(board) || can_move_right(board) || can_move_left(board));
 }

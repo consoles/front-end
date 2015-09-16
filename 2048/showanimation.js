@@ -11,6 +11,8 @@ function show_number_with_animation(i, j, rand_number) {
     $number_cell.css('color', get_number_color(rand_number));
     $number_cell.text(rand_number);
 
+    $number_cell.text(get_text(rand_number)); // 2048私人定制（文字版）
+
     $number_cell.animate({
         width: cell_side_length,
         height: cell_side_length,

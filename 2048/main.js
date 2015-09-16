@@ -94,13 +94,16 @@ function update_board_view() {
                 $number_cell.css('left', get_pos_left(i, j));
                 $number_cell.css('background-color', get_number_background_color(board[i][j]));
                 $number_cell.css('color', get_number_color(board[i][j]));
-                $number_cell.text(board[i][j]);
+                //$number_cell.text(board[i][j]);
+
+                $number_cell.text(get_text(board[i][j])); // 2048私人定制（文字版）
             }
             has_conflicted[i][j] = false;
         }
     }
     $('.number-cell').css('line-height', cell_side_length + 'px');
-    $('.number-cell').css('font-size', 0.6 * cell_side_length + 'px');
+    //$('.number-cell').css('font-size', 0.6 * cell_side_length + 'px');
+    $('.number-cell').css('font-size', '20px');// 2048私人定制（文字版）
 }
 
 /**
