@@ -96,14 +96,15 @@ function update_board_view() {
                 $number_cell.css('color', get_number_color(board[i][j]));
                 //$number_cell.text(board[i][j]);
 
-                $number_cell.text(get_text(board[i][j])); // 2048私人定制（文字版）
+                //$number_cell.text(get_text(board[i][j])); // 2048私人定制（文字版）
+                $number_cell.html(get_img(board[i][j]));
             }
             has_conflicted[i][j] = false;
         }
     }
     $('.number-cell').css('line-height', cell_side_length + 'px');
     //$('.number-cell').css('font-size', 0.6 * cell_side_length + 'px');
-    $('.number-cell').css('font-size', '20px');// 2048私人定制（文字版）
+    //$('.number-cell').css('font-size', '20px');// 2048私人定制（文字版）
 }
 
 /**

@@ -105,6 +105,16 @@ function get_text(number) {
 }
 
 /**
+ * 拼接图片的DOM元素
+ * @param number
+ * @returns {string}
+ */
+function get_img(number) {
+
+    return '<img src="' + number + '.jpg" />';
+}
+
+/**
  * 可以向左移动？
  */
 function can_move_left(board) {
