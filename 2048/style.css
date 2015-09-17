@@ -1,32 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     background-color: rgba(183, 141, 4, 0.80);
 }
+
+/* 引入外部字体 */
+
+@font-face {
+    font-family: 'jdzhonyuanjian';
+    src: url('jdzhonyuanjian.eot');
+    src: url('jdzhonyuanjian.eot?#iefix') format('embedded-opentype'),
+    url('jdzhonyuanjian.woff') format('woff'),
+    url('jdzhonyuanjian.ttf') format('truetype'),
+    url('jdzhonyuanjian.svg#jdzhonyuanjian') format('svg');
+}
+
 header {
     display: block;
     margin: 20px auto;
     width: 100%;
     text-align: center;
 }
-
 header h1 {
-    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-family: jdzhonyuanjian;
     font-size: 40px;
+    color: rgba(80, 20, 220, .6);
+    text-shadow: 2px 2px 2px #000, 0 0 10px #fff, 0 0 20px #ff0;
     font-weight: bolder;
     margin: 0 auto;
 }
-
 header #new_game_btn {
     display: block;
-    margin: 5px auto;
+    margin: 10px auto;
     width: 100px;
     padding: 10px;
     background-color: #8f7a66;
-    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-family: "微软雅黑";
     outline: none;
     color: #ffffff;
     border-radius: 10px;
     box-shadow: 5px 5px 2px rgba(255, 47, 44, 0.80);
-
     -webkit-transition: transform 1s;
 }
 header #new_game_btn:hover {
@@ -110,4 +125,66 @@ header p {
 .number-cell > img:hover {
     transform: scale(1.5);
     outline: solid 2px rgba(255, 255, 0, .5);
+}
+
+.music-btn-container {
+    position: absolute;
+    left: 60%;
+    top: 77px;
+}
+
+.music-btn-container:after {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    content: " ";
+}
+
+.music-btn-container .item {
+    width: 100px;
+    height: 50px;
+    float: left;
+    margin-right: 5px;
+}
+
+.music-btn-container .item button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    background-color: rgba(183, 141, 4, 0.80);
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.music-btn-container .item button p {
+    height: 50px;
+    line-height: 50px;
+    color: rgba(255, 10, 10, .9);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: "Source Sans Pro", Verdana, sans-serif;
+    border: 2px;
+    transition: all .5s;
+}
+
+.music-btn-container .item button p:first-child {
+    background: -webkit-linear-gradient(top, #04f, #fff 20px, #0d0);
+    transform: translateZ(25px);
+}
+
+.music-btn-container .item button p:last-child {
+    background: -webkit-linear-gradient(40deg, #04f, #fff, #0d0);
+    transform: translateZ(25px) rotateX(-90deg);
+    margin-top: -50px;
+}
+
+.music-btn-container .item button:hover {
+    transform: rotateX(90deg);
+}
+
+.music-btn-container .item button:hover p:last-child {
+    margin-top: 0;
+    transform: translateZ(0) rotateX(-90deg);
 }

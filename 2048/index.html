@@ -10,14 +10,14 @@
     <script src="support.js"></script>
     <script src="showanimation.js"></script>
     <script src="main.js"></script>
+    <script src="music.js"></script>
     <title>js实现2048</title>
 </head>
 <body>
 <header>
-    <h1>网页版2048</h1>
+    <h1>2048图片版</h1>
     <button id="new_game_btn">新游戏</button>
     <p>分数：<span id="score">0</span></p>
-
     <p>已用时长：<span id="time">00s</span></p>
 </header>
 <div class="container">
@@ -44,6 +44,26 @@
         <div class="grid-cell" id="grid_cell_3_2"></div>
         <div class="grid-cell" id="grid_cell_3_3"></div>
 
+    </div>
+</div>
+<audio autoplay id="bg_music">
+    <source src="bg-music.mp3" type="audio/mpeg"/>
+    您的浏览器不支持html5音频
+</audio>
+<div class="music-btn-container">
+    <div class="item">
+        <button id="pause_play_music_btn">
+            <p>暂停</p>
+
+            <p>PAUSE</p>
+        </button>
+    </div>
+    <div class="item">
+        <button id="replay_music_btn">
+            <p>重播</p>
+
+            <p>REPLAY</p>
+        </button>
     </div>
 </div>
 </body>

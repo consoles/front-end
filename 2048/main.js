@@ -37,9 +37,7 @@ $(function () {
     // 页面时钟
     timeDate();
 
-    // 耗时
-    clearInterval(timer);
-    timer = setInterval('updata_time(++time)', 1000);
+
 });
 
 /**
@@ -53,6 +51,10 @@ function new_game() {
     generate_one_number();
     generate_one_number();
     startTime = new Date().getTime();
+    time = 0;
+    // 耗时
+    clearInterval(timer);
+    timer = setInterval('updata_time(++time)', 1000);
 }
 
 /**
