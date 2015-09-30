@@ -1,0 +1,153 @@
+body {
+    background: url("../images/body.png") center top;
+    height: 100%; /* 兼容性 */
+}
+
+html {
+    height: 100%; /* 兼容性 */
+}
+
+/* 蒙版 */
+#mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    opacity: .5;
+    filter: alpha(opacity=50); /* IE8以下浏览器都不支持 opacity css样式，可以使用IE自带的“滤镜”来实现 */
+    display: none;
+}
+
+/* 引导区 */
+#searchTip {
+    width: 980px;
+    height: 800px;
+
+    /* 水平居中的技巧 */
+    position: absolute;
+    left: 50%;
+    margin-left: -490px;
+
+    display: none;
+}
+
+/* 引导区中的小单元 */
+#searchTip div {
+    position: absolute;
+    display: none;
+}
+
+#searchTip div a {
+    position: absolute;
+    width: 95px;
+    height: 32px;
+    text-indent: -999px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#searchTip div span {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    text-indent: -999px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.stepA {
+    width: 745px;
+    height: 329px;
+    background: url("../images/guide11.png");
+    position: absolute;
+    left: -7px;
+    top: 130px;
+}
+
+.stepA span {
+    top: 145px;
+    left: 685px;
+}
+
+.stepA a {
+    top: 231px;
+    left: 493px;
+}
+
+.stepB {
+    background: url("../images/guide21.png");
+    width: 647px;
+    height: 405px;
+    position: absolute;
+    top: 6px;
+    left: 322px;
+}
+
+.stepB span {
+    top: 198px;
+    left: 330px
+}
+
+.stepB a {
+    left: 149px;
+    top: 307px;
+}
+
+.stepC {
+    background: url("../images/guide31.png");
+    width: 654px;
+    height: 257px;
+    position: absolute;
+    top: 295px;
+    left: 155px;
+}
+
+.stepC span {
+    left: 588px;
+    top: 46px;
+}
+
+.stepC a {
+    top: 155px;
+    left: 400px;
+}
+
+.stepD {
+    background: url("../images/guide41.png");
+    width: 558px;
+    height: 346px;
+    position: absolute;
+    top: 83px;
+    left: 155px;
+}
+
+.stepD span {
+    top: 135px;
+    left: 493px;
+}
+
+.stepD a {
+    left: 307px;
+    top: 246px;
+}
+
+.stepE {
+    background: url("../images/guide51.png");
+    width: 397px;
+    height: 342px;
+    position: absolute;
+    top: 80px;
+    left: 258px;
+}
+
+.stepE span {
+    top: 135px;
+    left: 341px;
+}
+
+.stepE a {
+    left: 155px;
+    top: 247px;
+}
