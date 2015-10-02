@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JQueryUI常用效果</title>
+    <script src="../lib/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" href="../lib/jquery-ui-1.11.4.custom/jquery-ui.min.css"/>
+    <script src="../lib/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="../lib/jquery-ui-1.11.4.custom/"></script>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc0b3;
+        }
+
+        .changediv {
+            width: 200px;
+            height: 200px;
+            background-color: #ff00ff;
+        }
+
+        #toggle {
+            width: 100px;
+            height: 100px;
+            background-color: #0c0933;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="toggle"></div>
+<script>
+    $('#div1').click(function () {
+        $(this).addClass('changediv', 1000, 'easeInOutCubic', function () {
+            console.log('动画完成！');
+        });
+    });
+    // 百叶窗
+    $('#toggle').click(function () {
+        $(this).toggle('bind');
+    });
+</script>
+</body>
+</html>

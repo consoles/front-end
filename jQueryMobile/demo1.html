@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Mobile范例</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.3.2/jquery.mobile-1.3.2.css"/>
+    <!-- 一个页面就是一个web app -->
+</head>
+<body>
+<!-- 首页，id为index的默认显示 -->
+
+<div data-role="page" id="index" data-theme="c">
+    <div data-role="header" data-position="fixed">
+        <a href="#" data-icon="bars" data-iconpos="left" data-role="button">后退</a>
+
+        <h1>头部1</h1>
+        <a href="#">前进</a>
+    </div>
+    <div data-role="content" class="ui-content">
+        <p>内容1</p>
+
+        <p>内容1</p>
+
+        <p>内容1</p>
+        <a class="ui-btn ui-btn-inline ui-btn-down-a ui-shadow">我是按钮1</a>
+        <a class="ui-btn ui-btn-inline ui-btn-down-b ui-btn-icon-right">我是按钮2</a>
+        <input type="submit" class="ui-shadow"/>
+        <!-- data-transition指定页面切换效果 -->
+        <a href="#index2" data-transition="slide">跳转到第二页</a>
+        <!-- listView,添加过滤器 -->
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="请输入搜索内容" data-filter-theme="c">
+            <li>
+                <a href="#">
+                    <h3>标题1</h3>
+
+                    <p>内容1</p>
+
+                    <p>内容1</p>
+
+                    <p>内容1</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h3>标题2</h3>
+
+                    <p>内容2</p>
+
+                    <p>内容2</p>
+
+                    <p>内容2</p>
+                </a>
+            </li>
+            <li><a href="#">item3</a></li>
+            <li><a href="#">item4</a></li>
+            <li><a href="#">item5</a></li>
+        </ul>
+        <!-- 表单元素,ui-field-contain类表名表单自适应 -->
+        <form>
+            <div class="ui-field-contain">
+                <label for="start">始发站</label>
+                <input type="text" id="start"/>
+            </div>
+            <div class="ui-field-contain">
+                <label for="end">到达站</label>
+                <input type="text" id="end"/>
+            </div>
+            <div class="ui-field-contain">
+                <label for="count">车次</label>
+                <input type="text" id="count"/>
+            </div>
+        </form>
+        <!-- 响应式表格 -->
+        <table data-role="table" data-mode="reflow" class="ui-responsive">
+            <thead>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            </thead>
+            <tr>
+                <td>11</td>
+                <td>22</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td>222</td>
+                <td>333</td>
+            </tr>
+        </table>
+    </div>
+    <a href="#" class="ui-btn" id="ajaxBtn">点我加载</a>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="" data-icon="star" class="ui-btn-active">生活</a></li>
+                <li><a href="" data-icon="camera" data-iconpos="top">学习</a></li>
+                <li><a href="" data-icon="grid">工作</a></li>
+                <li><a href="" data-icon="gear">编程</a></li>
+            </ul>
+        </div>
+        <h1>底部1</h1>
+    </div>
+</div>
+
+<div data-role="page" id="index2">
+    <div data-role="header" data-position="fixed">
+        <h1>头部2</h1>
+    </div>
+    <div data-role="content" class="ui-content">
+        <p>内容2</p>
+
+        <p>内容2</p>
+
+        <p>内容2</p>
+        <a href="#index" data-transition="pop">回到首页</a>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h1>底部2</h1>
+    </div>
+    <!-- 折叠式菜单 -->
+    <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+        <div data-role="collapsible">
+            <h3>Section 1</h3>
+
+            <p>I'm the collapsible content for section 1</p>
+        </div>
+        <div data-role="collapsible">
+            <h3>Section 2</h3>
+
+            <p>I'm the collapsible content for section 2</p>
+        </div>
+        <div data-role="collapsible" data-collapsed-icon="gear" data-expanded-icon="delete">
+            <h3>Section 3</h3>
+
+            <p>I'm the collapsible content for section 3</p>
+        </div>
+    </div>
+    <ul data-role="listview" data-filter-reveal="true">
+        <li><a href="#">item1</a></li>
+        <li><a href="#">item2</a></li>
+        <li><a href="#">item3</a></li>
+        <li><a href="#">item4</a></li>
+        <li><a href="#">item5</a></li>
+    </ul>
+</div>
+<script src="../lib/jquery-2.1.1.js"></script>
+<script src="../lib/jquery.mobile-1.3.2/jquery.mobile-1.3.2.js"></script>
+<script>
+    /**
+     * 页面第一次加载的时候依次执行下面3个事件
+     *
+     * 注意：虽然多个文件写在一个html文档中，但是同一文件中的页面切换也会导致此事件
+     * 当所有的页面加载完成后不再执行
+     */
+    $(document).on('pagebeforecreate', function () {
+        console.log('pagebeforecreate');
+    });
+    $(document).on('pagecreate', function () {
+        console.log('pagecreate')
+    });
+    $(document).on('pageinit', function () {
+        console.log('pageinit');
+    });
+
+    /**
+     * 页面过渡事件
+     */
+    $(document).on('pagebeforehide', '#index', function () {
+        console.info('index pagebeforehide');
+    });
+    $(document).on('pagehide', '#index', function () {
+        console.info('index pagehide');
+    });
+    $(document).on('pagebeforeshow', '#index2', function () {
+        console.info('index2 pagebeforeshow');
+    });
+    $(document).on('pageshow', '#index2', function () {
+        console.info('index2 show');
+    });
+
+    /**
+     * 非常重要：
+     *
+     * 注意：在jQuery中我们使用$(document).ready([fn]);
+     * 但是在JQuery Mobile中我们推荐使用
+     * $(document).on('pageinit','#page',[fn]);
+     */
+
+    /**
+     * ajax跨域
+     */
+    $(document).on('pageinit', '#index', function () {
+        var url = 'http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getStationAndTimeByStationName?UserID=';
+
+        $('#ajaxBtn').click(function () {
+            $.mobile.loading('show'); // 加载的时候显示loading
+            $.get(url, {TrainCode: 'G1'}, function (data) {
+                console.log(data);
+                $.mobile.loading('hide'); // 加载完成后loading隐藏
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>焦点图</title>
+    <style>
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .banner {
+            width: 800px;
+            height: 450px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner_imgs {
+            width: 500%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*添加css3动画*/
+            transition: .5s;
+        }
+
+        .banner_imgs li {
+            float: left;
+        }
+
+        .banner_imgs img {
+            width: 800px;
+            display: block;
+        }
+
+        .number {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+        }
+
+        .number a {
+            display: inline-block;
+            width: 20px;
+            background-color: #fff;
+            height: 6px;
+            overflow: hidden;
+        }
+
+        .number .on {
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('warp');
+            //获取ul
+            var oUl = document.getElementById('img');
+            var aLi = oUl.getElementsByTagName('li');
+            //获取可点击的按钮
+            var oNum = document.getElementById('num');
+            var aBtns = oNum.getElementsByTagName('a');
+            var iNow = 0;
+            var timer = null;
+
+            //封装
+            function autoPlay() {
+                for (var i = 0; i < aBtns.length; i++) {
+                    aBtns[i].className = '';
+                }
+                aBtns[iNow].className = 'on';
+                oUl.style.left = -iNow * aLi[0].offsetWidth + 'px';
+            }
+
+            //自动播放
+            timer = setInterval(function () {
+                if (iNow == aBtns.length - 1) {
+                    iNow = -1;
+                }
+                iNow++;
+                autoPlay();
+            }, 1000)
+
+
+            //鼠标移入停止 和 开启
+            oDiv.onmouseover = function () {
+                clearInterval(timer);
+            }
+            oDiv.onmouseout = function () {
+                timer = setInterval(function () {
+                    if (iNow == aBtns.length - 1) {
+                        iNow = -1;
+                    }
+                    iNow++;
+                    autoPlay();
+                }, 1000)
+            }
+
+            //循环添加事件
+            for (var i = 0; i < aBtns.length; i++) {
+                //为每个按钮添加索引值
+                aBtns[i].index = i;
+                aBtns[i].onmouseover = function () {
+                    //传递索引值，让当前项hover的时候，把当前对应的索引值 传递至iNow
+                    iNow = this.index;
+                    autoPlay();
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div class="banner" id="warp">
+    <ul class="banner_imgs" id="img">
+        <li>
+            <a href="javascript:;"><img src="http://img.mukewang.com/53ad2498000174af13660768.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="http://img.mukewang.com/53ad25df0001300613660768.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="http://img.mukewang.com/53ad26010001ac1113660768.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="http://img.mukewang.com/53ad26170001a86013660768.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="http://img.mukewang.com/53ad26320001289e13660768.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+    <div class="number" id="num">
+        <a href="javascript:;" class="on"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+    </div>
+</div>
+</body>
+
+</html>

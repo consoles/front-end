@@ -336,6 +336,13 @@
     height: 25px;
 }
 
+.hr_15 {
+    height: 15px;
+}
+
+.hr_45 {
+    line-height: 45px;
+}
 /* 底部 */
 .footer{
     text-align: center;

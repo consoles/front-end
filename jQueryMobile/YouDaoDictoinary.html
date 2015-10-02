@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery Mobile有道词典</title>
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.css"/>
+    <link rel="stylesheet" href="../lib/myFocus%20Demo%20v2.0.1/js/mf-pattern/mF_YSlider.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!-- 主页(首屏) -->
+<div data-role="page" id="index">
+    <div data-role="header">
+        <h1>词典</h1>
+    </div>
+    <div data-role="content">
+        <!-- 轮播图 -->
+        <div id="focusPicBox" class="introduction">
+            <div class="loading">
+                <img src="images/loading.gif" alt="玩命加载中。。。"/>
+            </div>
+            <div class="pic">
+                <ul>
+                    <li><a href="#wiki"><img src="images/1.jpg" style="width: 300px" alt="图片1"/></a></li>
+                    <li><a href="#wiki"><img src="images/2.jpg" style="width: 300px" alt="图片2"/></a></li>
+                    <li><a href="#wiki"><img src="images/3.jpg" style="width: 300px" alt="图片3"/></a></li>
+                    <li><a href="#wiki"><img src="images/4.jpg" style="width: 300px" alt="图片4"/></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 搜索框 -->
+        <input type="text" placeholder="在此输入要翻译的内容" data-type="search"/>
+
+        <div class="hr_10" style="height: 10px;"></div>
+        <!-- 第一组：listView（4个item）带缩略图（点击之后进入奇闻趣事） -->
+        <ul data-role="listview" data-split-icon="gear" class="main-listview">
+            <li class="list-item">
+                <a href="#somethingStrange">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small class="good">307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="">
+                    <img src="images/thumbnail/album-af.jpg" alt=""/>
+
+                    <h2>她和最潮大叔平起平坐</h2>
+
+                    <p>这个人生赢家只有14岁</p>
+                    <small>奇闻异事</small>
+                    <small>307</small>
+                </a>
+            </li>
+        </ul>
+        <!-- 第二组：listView（9个item） -->
+        <!-- 加载更多（从服务端动态更新） -->
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-transition="slide">词典</a></li>
+                <li><a href="#wiki" data-transition="slide">百科</a></li>
+                <li><a href="#translate" data-transition="slide">翻译</a></li>
+                <li><a href="#discover" data-transition="slide">发现</a></li>
+                <li><a href="#my" data-transition="slide">我的</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 奇闻趣事 -->
+<div data-role="page" id="somethingStrange">
+    <div data-role="header" data-position="fixed">
+        <a href="#index" data-icon="bars" data-iconpos="left" data-role="button">后退</a>
+
+        <h1>今日精选</h1>
+    </div>
+    <div data-role="content">
+        你好啊
+    </div>
+    <div data-role="footer" data-position="fixed">
+
+    </div>
+</div>
+
+<!-- 百科 -->
+<div data-role="page" id="wiki">
+    <div data-role="header">
+        <h1>百科</h1>
+    </div>
+    <div data-role="content">
+        <!-- 搜索框 -->
+        <input type="text" placeholder="搜索百科" data-type="search"/>
+
+        <div class="wiki">
+            <dl>
+                <dt>网络流行词</dt>
+
+                <dd><a href="">LOL</a></dd>
+                <dd><a href="">卷福</a></dd>
+                <dd><a href="">soap opera</a></dd>
+                <dd><a href="">萝莉控</a></dd>
+                <dd><a href="">NSFW</a></dd>
+                <dd><a href="">腐女</a></dd>
+            </dl>
+            <dl>
+                <dt>智商颜值奇高女神</dt>
+
+                <dd><a href="">哈佛毕业的影后</a></dd>
+                <dd><a href="">常春藤的小魔女</a></dd>
+                <dd><a href="">牛津性感小反派</a></dd>
+                <dd><a href="">好莱坞女神</a></dd>
+            </dl>
+            <dl>
+                <dt>大家都在看</dt>
+
+                <dd><a href="">李娜</a></dd>
+                <dd><a href="">TFBoys</a></dd>
+                <dd><a href="">足联主席布拉特</a></dd>
+                <dd><a href="">华鼎奖</a></dd>
+            </dl>
+            <dl>
+                <dt>学会冷知识</dt>
+
+                <dd><a href="">水最贵的国家</a></dd>
+                <dd><a href="">中国最长的姓氏</a></dd>
+                <dd><a href="">美国最孤独公路</a></dd>
+                <dd><a href="">伊能静姓伊能</a></dd>
+            </dl>
+        </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-transition="slide">词典</a></li>
+                <li><a href="#wiki" data-transition="slide">百科</a></li>
+                <li><a href="#translate" data-transition="slide">翻译</a></li>
+                <li><a href="#discover" data-transition="slide">发现</a></li>
+                <li><a href="#my" data-transition="slide">我的</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 翻译 -->
+<div data-role="page" id="translate">
+    <div data-role="content">
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <!-- 下拉列表 -->
+                <select name="language" id="language">
+                    <option value="auto">语言自动检测</option>
+                    <option value="e2c">英文-->中文</option>
+                    <option value="c2e">中文-->英文</option>
+                    <option value="j2c">日语-->中文</option>
+                    <option value="c2j">中文-->日语</option>
+                    <option value="k2c">韩语-->中文</option>
+                    <option value="c2k">中文-->韩语</option>
+                    <option value="f2c">法语-->中文</option>
+                    <option value="c2f">中文-->法语</option>
+                </select>
+            </div>
+            <div class="ui-block-b">
+                <!-- 按钮 -->
+                <button id="translateBtn">翻译</button>
+            </div>
+        </div>
+        <textarea placeholder="在此输入要翻译的文本" id="translateContent">
+
+        </textarea>
+    </div>
+    <div data-role="header" data-position="fixed">
+        <h1>翻译</h1>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-transition="slide">词典</a></li>
+                <li><a href="#wiki" data-transition="slide">百科</a></li>
+                <li><a href="#translate" data-transition="slide">翻译</a></li>
+                <li><a href="#discover" data-transition="slide">发现</a></li>
+                <li><a href="#my" data-transition="slide">我的</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 发现 -->
+<div data-role="page" id="discover">
+    <div data-role="header" data-position="fixed">
+        <h1>发现</h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview">
+            <li></li>
+            <li><a href="#circle"><img src="images/icons/de.png" alt="" class="ui-li-icon ui-corner-all"/>圈子</a></li>
+            <li></li>
+        </ul>
+
+        <ul data-role="listview">
+            <li><a href="#word"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>单词本</a></li>
+            <li><a href="#yunbook"><img src="images/icons/gb.png" alt="" class="ui-li-icon ui-corner-all"/>云图书</a></li>
+            <li></li>
+        </ul>
+
+        <ul data-role="listview">
+            <li><a href="#school"><img src="images/icons/gb.png" alt="" class="ui-li-icon ui-corner-all"/>学堂</a></li>
+            <li><a href="#spoken_language"><img src="images/icons/gf.png" alt="" class="ui-li-icon ui-corner-all"/>口语大师</a>
+            </li>
+            <li><a href="#man_translate"><img src="images/icons/us.png" alt=""
+                                              class="ui-li-icon ui-corner-all"/>人工翻译</a></li>
+            <li></li>
+        </ul>
+        <ul data-role="listview">
+            <li><a href="#activity"><img src="images/icons/de.png" alt="" class="ui-li-icon ui-corner-all"/>活动中心</a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-transition="slide">词典</a></li>
+                <li><a href="#wiki" data-transition="slide">百科</a></li>
+                <li><a href="#translate" data-transition="slide">翻译</a></li>
+                <li><a href="#discover" data-transition="slide">发现</a></li>
+                <li><a href="#my" data-transition="slide">我的</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 圈子 -->
+<div data-role="page" id="circle">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 单词本 -->
+<div data-role="page" id="word">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 云图书 -->
+<div data-role="page" id="yunbook">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 学堂 -->
+<div data-role="page" id="spoken_language">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 口语大师 -->
+<div data-role="page" id="school">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 人工翻译 -->
+<div data-role="page" id="man_translate">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 活动中心 -->
+<div data-role="page" id="activity">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+
+<!-- 我的 -->
+<div data-role="page" id="my">
+    <div data-role="header" data-position="fixed">
+        <h1>我的</h1>
+    </div>
+    <div data-role="content">
+        <div class="photoBox">
+            <img src="" alt="图片" width="480px" height="240px"/>
+        </div>
+        <ul data-role="listview">
+            <li><a href="#login"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>登录/注册</a></li>
+            <li></li>
+        </ul>
+        <ul data-role="listview">
+            <li><a href="#my_post"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>我的帖子</a></li>
+            <li><a href="#my_reply"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>我的回复</a>
+            </li>
+            <li></li>
+        </ul>
+
+        <ul data-role="listview">
+            <li><a href="#settings"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>基本设置</a>
+            </li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-transition="slide">词典</a></li>
+                <li><a href="#wiki" data-transition="slide">百科</a></li>
+                <li><a href="#translate" data-transition="slide">翻译</a></li>
+                <li><a href="#discover" data-transition="slide">发现</a></li>
+                <li><a href="#my" data-transition="slide">我的</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 登录 -->
+<div data-role="page" id="login">
+    <div data-role="header">
+        <a href="#index" data-icon="arrow-l" data-iconpos="left" data-role="button">后退</a>
+
+        <h2>登录</h2>
+    </div>
+    <div data-role="content">
+        <form>
+            <fieldset>
+                <label for="username">账号</label>
+                <input type="text" id="username" placeholder="网易邮箱（如163账号）"/>
+                <label for="password">密码</label>
+                <input type="password" id="password"/>
+                <button id="loginBtn">登录</button>
+            </fieldset>
+        </form>
+        <a href="">注册网易邮箱</a>
+        使用其他账号登录 <br/>
+
+        <div class="other_login">
+            <div class="sina">
+                <a href="">新浪微博<img src="" alt=""/></a>
+            </div>
+            <div class="qq">
+                <a href="">QQ登录<img src="" alt=""/></a>
+            </div>
+        </div>
+    </div>
+    <div data-role="footer"></div>
+</div>
+<!-- 我的帖子 -->
+<!-- 用户登录？显示帖子:重定向到登陆页 -->
+<div data-role="page" id="my_post">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 我的回复 -->
+<!-- 用户登录？显示回复:重定向到登陆页 -->
+<div data-role="page" id="my_reply">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 基本设置 -->
+<div data-role="page" id="settings">
+    <div data-role="header">
+        <a href="#index" data-icon="arrow-l" data-iconpos="left" data-role="button">后退</a>
+
+        <h2>基本设置</h2>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview">
+            <li><a href="#account"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>个人账号</a></li>
+            <li><a href="#message"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>消息中心</a></li>
+            <li><a href="#collections"><img src="images/icons/fi.png" alt=""
+                                            class="ui-li-icon ui-corner-all"/>查看收藏笔记</a></li>
+            <li><a href="#notepad"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>我的单词本</a>
+            </li>
+            <li><a href="#youdao_group"><img src="images/icons/fi.png" alt=""
+                                             class="ui-li-icon ui-corner-all"/>有道词典小组</a></li>
+            <li><a href="#more"><img src="images/icons/fi.png" alt="" class="ui-li-icon ui-corner-all"/>更多</a></li>
+        </ul>
+    </div>
+    <div data-role="footer"></div>
+</div>
+<!-- 用个人账号 -->
+<!-- 用户登录？用户中心页：登陆页 -->
+<div data-role="page" id="account">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 消息中心 -->
+<!-- 登录校验 -->
+<div data-role="page" id="message">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 我的收藏 -->
+<div data-role="page" id="collections">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 我的单词本 -->
+<div data-role="page" id="notepad">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 有道词典小组 -->
+<div data-role="page" id="youdao_group">
+    <div data-role="header"></div>
+    <div data-role="content"></div>
+    <div data-role="footer"></div>
+</div>
+<!-- 更多 -->
+<div data-role="page" id="more">
+    <div data-role="header">
+        <h1>更多</h1>
+    </div>
+    <div data-role="content">
+        <p>基本设置</p>
+        <ul data-role="listview">
+            <li>
+                <a href="">
+                    <h1>自动从云端获取全部解释信息</h1>
+
+                    <p>有WLAN时自动从云端获取全部数据</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h1>首页内容更新</h1>
+
+                    <p>仅在WLAN时更新首页内容</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h1>开启快速查词</h1>
+                    <select data-role="slider" style="float: right">
+                        <option value="off">OFF</option>
+                        <option value="on">ON</option>
+                    </select>
+
+                    <p>在顶部通知栏不启用快速查询</p>
+                </a>
+            </li>
+            <li><a href="">复制查词</a></li>
+            <li><a href="">允许横屏</a></li>
+            <li><a href="">设置下载内容存储路径</a></li>
+        </ul>
+        <p>推送设置</p>
+        <ul data-role="listview">
+            <li>
+                <a href="">
+                    <h1>系统推荐</h1>
+
+                    <p>贴心为您推荐最实用的优质内容</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h1>夜间接收消息</h1>
+
+                    <p>指晚上22：00-早晨8:00接收消息</p>
+                </a>
+            </li>
+        </ul>
+        <p>单词本设置</p>
+        <ul data-role="listview">
+            <li>
+                <a href="">
+                    浏览单词时自动发音
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    复习时单词自动发音
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    单词本复习提醒设置
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    添加到单词本时加入复习计划
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    每日加入复习的单词
+                    <p>30个</p>
+                </a>
+            </li>
+        </ul>
+        <p>其他</p>
+        <ul data-role="listview">
+            <li><a href="">满意度调查</a></li>
+            <li><a href="">评分支持下吧</a></li>
+        </ul>
+    </div>
+    <div data-role="footer">
+
+    </div>
+</div>
+<script src="../lib/jquery-2.1.1.js"></script>
+<script src="../lib/jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script src="../lib/myFocus%20Demo%20v2.0.1/js/myfocus-2.0.1.min.js"></script>
+<script src="../lib/myFocus%20Demo%20v2.0.1/js/mf-pattern/mF_YSlider.js"></script>
+<script>
+    // 焦点图
+    myFocus.set({
+        id: "focusPicBox"
+    });
+</script>
+</body>
+</html>

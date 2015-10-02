@@ -19,10 +19,11 @@ $(function () {
             waterfall();
         }
     });
+
 });
 
 function waterfall(){
-    var $boxs = $('#main > div');                       // 所有的元素
+    var $boxs = $('#main>div');                       // 所有的元素
     var w = $boxs.eq(0).outerWidth();                   // 每一列的宽度
     var cols = Math.floor($(window).width() / w);       // 列数
 
@@ -30,7 +31,7 @@ function waterfall(){
 
     var hArr = [];
     $boxs.each(function (index,element) {
-        //console.log(index + '--->' + element);
+        console.log(index + '--->' + element);
         if(index < cols){
             hArr[index] = $boxs.eq(index).outerHeight(); // 把第一行的高度放到一个数组中
         }else{

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JqueryUI常用控件</title>
+    <script src="../lib/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" href="../lib/jquery-ui-1.11.4.custom/jquery-ui.min.css"/>
+    <script src="../lib/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="../lib/jquery-ui-1.11.4.custom/"></script>
+    <script src="widgets.js"></script>
+    <style>
+        .ui-menu:after {
+            content: '.';
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+
+        .ui-menu .ui-menu-item {
+            display: inline-block;
+            float: left;
+            margin: 0;
+            padding: 10px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<!-- 手风琴 -->
+<div id="accordion">
+    <h3>选项1</h3>
+
+    <div>
+        <p>内容1</p>
+    </div>
+    <h3>选项2</h3>
+
+    <div>
+        <p>内容2</p>
+    </div>
+    <h3>选项3</h3>
+
+    <div>
+        <p>内容3</p>
+    </div>
+</div>
+<!-- 表单自动完成 -->
+<label for="tags">Tags</label>
+<input type="text" id="tags"/>
+<!-- 日期选择控件,可以直接使用html5中的日期类型的表单替代 -->
+<p>请输入日期：<input type="text" id="datepicker"/></p>
+<!-- 对话框 -->
+<div class="dialog" title="对话框标题">
+    <p>对话框内容</p>
+</div>
+<button id="show_dialog_btn">展示对话框</button>
+<!-- 进度条 -->
+<div id="progressbar"></div>
+<!-- 菜单 -->
+<ul id="menu" style="width: 200px">
+    <li>
+        <a href="#">Java</a>
+        <ul>
+            <li>java se</li>
+            <li>java me</li>
+            <li>java ee</li>
+        </ul>
+    </li>
+    <li><a href="#">C</a></li>
+    <li><a href="#">C++</a></li>
+    <li><a href="#">PHP</a></li>
+</ul>
+<!-- 滑竿 -->
+<div id="slider"></div>
+<span id="span">0</span>
+<!-- 范围调整 -->
+<input id="input"/>
+<!-- 选项卡 -->
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Nunc tincidunt</a></li>
+        <li><a href="#tabs-2">Proin dolor</a></li>
+        <li><a href="#tabs-3">Aenean lacinia</a></li>
+    </ul>
+    <div id="tabs-1">
+        <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi
+            sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus
+            auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci.
+            Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius
+            sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+    </div>
+    <div id="tabs-2">
+        <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc.
+            Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut
+            tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam.
+            Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc.
+            Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat,
+            tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris
+            consectetur tortor et purus.</p>
+    </div>
+    <div id="tabs-3">
+        <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula
+            accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti
+            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel
+            enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium
+            nec, feugiat nec, luctus a, lacus.</p>
+
+        <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla
+            facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec
+            mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam
+            scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor,
+            tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo.
+            Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+    </div>
+</div>
+</body>
+</html>
