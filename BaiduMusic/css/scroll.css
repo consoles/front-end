@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#flash {
+    width: 980px;
+    height: 420px;
+    background-color: #cc33cc;
+    margin: 100px auto 0;
+    position: relative;
+}
+
+/* 左右切换按钮 */
+#flash a.prev, #flash a.next {
+    width: 70px;
+    height: 70px;
+    display: none;
+    position: absolute;
+}
+
+a.prev {
+    float: left;
+    left: -35px;
+    top: 190px;
+    background-image: url('../images/prev.png');
+}
+
+a.prev:hover {
+    background-image: url('../images/aprev.png');
+}
+
+a.next {
+    float: right;
+    right: -35px;
+    top: 190px;
+    background-image: url("../images/next.png");
+}
+
+a.next:hover {
+    background-image: url('../images/anext.png');
+}
+
+/* 图片 */
+#flash .scroll {
+    width: 980px;
+    height: 420px;
+    background-color: #ccff33;
+    overflow: hidden;
+    position: relative;
+}
+
+#flash .scroll .img-list {
+    width: 9988px;
+    height: 420px;
+    position: absolute;
+    left: 0; /* 改变它的值即可 */
+}
+
+#flash .scroll .img-list img {
+    float: left; /* 左浮动消除边距 */
+}
+
+/* 分页按钮 */
+#flash .pagination {
+    width: 190px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -95px;
+}
+
+#flash .pagination span {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 13px;
+    background: url('../images/but1.png') center no-repeat;
+}
+
+#flash .pagination span.active {
+    background: url('../images/but2.png') center no-repeat;;
+}
