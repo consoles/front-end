@@ -10,32 +10,32 @@ body {
 
 @font-face {
     font-family: 'jdzhonyuanjian';
-    src: url('jdzhonyuanjian.eot');
-    src: url('jdzhonyuanjian.eot?#iefix') format('embedded-opentype'),
-    url('jdzhonyuanjian.woff') format('woff'),
-    url('jdzhonyuanjian.ttf') format('truetype'),
-    url('jdzhonyuanjian.svg#jdzhonyuanjian') format('svg');
+    src: url('../font/jdzhonyuanjian.eot');
+    src: url('../font/jdzhonyuanjian.eot?#iefix') format('embedded-opentype'),
+    url('../font/jdzhonyuanjian.woff') format('woff'),
+    url('../font/jdzhonyuanjian.ttf') format('truetype'),
+    url('../font/jdzhonyuanjian.svg#jdzhonyuanjian') format('svg');
 }
-
+.container{
+    position: relative;
+}
 header {
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
     width: 100%;
     text-align: center;
 }
 header h1 {
     font-family: jdzhonyuanjian;
-    font-size: 40px;
     color: rgba(80, 20, 220, .6);
     text-shadow: 2px 2px 2px #000, 0 0 10px #fff, 0 0 20px #ff0;
-    font-weight: bolder;
     margin: 0 auto;
 }
 header #new_game_btn {
     display: block;
-    margin: 10px auto;
+    margin: 5px auto;
     width: 100px;
-    padding: 10px;
+    padding: 5px;
     background-color: #8f7a66;
     font-family: "微软雅黑";
     outline: none;
@@ -50,17 +50,23 @@ header #new_game_btn:hover {
 }
 
 header p {
-    display: block;
-    height: 40px;
-    line-height: 40px;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
     font-family: "微软雅黑", Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     margin: 5px auto;
+}
+header > p:nth-child(3){
+    
+}
+header > p:last-child{
+   padding-left: 10px;
 }
 
 #timer {
-    display: block;
-    margin: 10px auto;
+    /*display: block;*/
+    /*margin: 10px auto;*/
     text-align: center;
     font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
 }
@@ -85,9 +91,9 @@ header p {
 }
 
 #grid_container {
-    width: 460px;
-    height: 460px;
-    padding: 20px;
+    width: 450px;
+    height: 450px;
+    padding: 10px;
     margin: 0 auto;
     background-color: #bbada0;
     border-radius: 10px;
@@ -114,23 +120,27 @@ header p {
 }
 
 .number-cell > img {
-    width: 92px;
-    height: 92px;
-    margin-top: 3px;
+    width: 100%;
+    height: 100%;
+    /*margin-top: 3px;*/
     border: 2px solid #333333;
     border-radius: 5px;
     transition: transform 1s ease-in;
 }
 
 .number-cell > img:hover {
+	position: relative; /* 添加定位提升优先级 */
+    z-index: 10;
     transform: scale(1.5);
     outline: solid 2px rgba(255, 255, 0, .5);
 }
 
 .music-btn-container {
-    position: absolute;
-    left: 60%;
-    top: 77px;
+    margin-top: 5px;
+    position: relative;
+    width: 100px;
+    height: 50px;
+    left: 50%;
 }
 
 .music-btn-container:after {
@@ -139,7 +149,15 @@ header p {
     overflow: hidden;
     content: " ";
 }
-
+.music-btn-container div:first-child{
+    left: -100%;
+    margin-left: -50%;
+    position: absolute;
+}
+.music-btn-container div:last-child{
+    position: absolute;
+    left: 50%;
+}
 .music-btn-container .item {
     width: 100px;
     height: 50px;

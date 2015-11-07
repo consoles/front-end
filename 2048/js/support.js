@@ -111,7 +111,7 @@ function get_text(number) {
  */
 function get_img(number) {
 
-    return '<img src="' + number + '.jpg" />';
+    return '<img src="images/' + number + '.jpg" />';
 }
 
 /**

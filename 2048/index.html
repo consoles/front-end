@@ -2,15 +2,9 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <link rel="stylesheet" href="../lib/normalize.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <script src="../lib/jquery-2.1.1.js"></script>
-    <script src="support.js"></script>
-    <script src="showanimation.js"></script>
-    <script src="main.js"></script>
-    <script src="music.js"></script>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="http://cdn.bootcss.com/normalize/3.0.3/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
     <title>js实现2048</title>
 </head>
 <body>
@@ -21,7 +15,6 @@
     <p>已用时长：<span id="time">00s</span></p>
 </header>
 <div class="container">
-    <div id="timer"></div>
     <div id="grid_container">
 
         <div class="grid-cell" id="grid_cell_0_0"></div>
@@ -45,26 +38,64 @@
         <div class="grid-cell" id="grid_cell_3_3"></div>
 
     </div>
+    <div class="music-btn-container">
+        <div class="item">
+            <button id="pause_play_music_btn">
+                <p>暂停</p>
+                <p>PAUSE</p>
+            </button>
+        </div>
+        <div class="item">
+            <button id="replay_music_btn">
+                <p>重播</p>
+                <p>REPLAY</p>
+            </button>
+        </div>
+    </div>
+    <div id="timer"></div>
+    <footer style="text-align:center"><a href="https://github.com/consoles/html_css_javascript/tree/master/2048">fork me on github</a></footer>
 </div>
 <audio autoplay id="bg_music">
-    <source src="bg-music.mp3" type="audio/mpeg"/>
+    <source src="music/bg-music.mp3" type="audio/mpeg"/>
     您的浏览器不支持html5音频
 </audio>
-<div class="music-btn-container">
-    <div class="item">
-        <button id="pause_play_music_btn">
-            <p>暂停</p>
-
-            <p>PAUSE</p>
-        </button>
-    </div>
-    <div class="item">
-        <button id="replay_music_btn">
-            <p>重播</p>
-
-            <p>REPLAY</p>
-        </button>
-    </div>
-</div>
+<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/support.js"></script>
+<script src="js/showanimation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/music.js"></script>
+<!-- 百度分享 -->
+<script>
+  window._bd_share_config={
+    "common":{
+        "bdSnsKey":{},
+        "bdText":"野马也，尘埃也，生物之以息相吹也。",
+        "bdDesc":"我在http://139.129.12.12发现了一个超好玩的游戏一起来试试吧。",
+        "bdUrl":"http://139.129.12.12/demos/2048/",
+        "bdMini":"2",
+        "bdMiniList":false,
+        "bdPic":"http://7xlan5.com1.z0.glb.clouddn.com/images/2048.png",
+        "bdStyle":"0",
+        "bdSize":"16"
+    },
+    "slide":{
+        "type":"slide",
+        "bdImg":"4",
+        "bdPos":"right",
+        "bdTop":"200"
+    },
+    "image":{
+        "tag":"normal",
+        "viewList":["qzone","tsina","tqq","renren","weixin"],
+        "viewText":"分享到：",
+        "viewSize":"16"
+    },
+    "selectShare":{
+        "bdContainerClass":null,
+        "bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]
+    }
+};
+with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 </body>
 </html>
