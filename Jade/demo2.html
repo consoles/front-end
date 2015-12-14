@@ -1,0 +1,74 @@
+<!--Created by gaopengfei on 2015/12/14.
+--><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>The Jade Varibles</title>
+</head>
+<body>
+<!-- The varible declare and assignment,use the `-` bebind the var-->
+<!-- Use the #{} to get the varible just like java's Freemark.-->
+<div>jade</div>
+<!-- We can also do some operation to this varible-->
+<div>JADE</div>
+<!-- The varible with the html tag will be ESCAPED automatically,Such as:-->
+<div>&lt;script&gt;alert(1);&lt;/script&gt;</div>
+<!-- If we want to do no escape,use the `!` to instead the `#`-->
+<div>
+    <script>alert(1);</script>
+</div>
+<!-- The expression `=` is the same as the `#`-->
+<div>&lt;script&gt;alert(1);&lt;/script&gt;</div>
+<div>
+    <script>alert(1);</script>
+</div>
+<!-- If we just want to show the `#{}`，we use the following：-->
+<div>#{htmlData}</div>
+<!-- The difference between the `=` and the `#{}` is the undefined value,The first echo none if the data is undefined,the last throw a Error.-->
+<input name="hello">
+<!--input(value=#{undefinedVal})-->
+<hr>
+<h2>Flow Control</h2>
+
+<h3>Loop</h3>
+<!-- Walk the object-->
+<p>张三</p>
+
+<p>12</p>
+<!-- Use the each-->
+<p>张三-->name</p>
+
+<p>12-->age</p>
+<!-- A nested loop-->
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<dl>
+    <dt>1</dt>
+    <dd>A1</dd>
+    <dd>B1</dd>
+    <dt>2</dt>
+    <dd>A2</dd>
+    <dd>B2</dd>
+    <dd>C2</dd>
+</dl>
+<ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<h2>Condition Test</h2>
+<!-- if-else-->
+<p>真</p>
+<!-- unless-->
+<p>反向判断</p>
+<!-- case-when:just like the switch-case-->
+<p>1,2</p>
+</body>
+</html>

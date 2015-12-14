@@ -1,0 +1,68 @@
+//
+   Created by gaopengfei on 2015/12/14.
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title The Jade Varibles
+    body
+        // The varible declare and assignment,use the `-` bebind the var
+        - course = 'jade'
+        // Use the #{} to get the varible just like java's Freemark.
+        div #{course}
+        // We can also do some operation to this varible
+        div #{course.toUpperCase()}
+        // The varible with the html tag will be ESCAPED automatically,Such as:
+        - var htmlData = '<script>alert(1);</script>'
+        div #{htmlData}
+        // If we want to do no escape,use the `!` to instead the `#`
+        div !{htmlData}
+        // The expression `=` is the same as the `#`
+        div= htmlData
+        div!= htmlData
+        // If we just want to show the `#{}`，we use the following：
+        div \#{htmlData}
+        // The difference between the `=` and the `#{}` is the undefined value,The first echo none if the data is undefined,the last throw a Error.
+        input(value=undefinedVal,name='hello')
+        //input(value=#{undefinedVal})
+        hr
+        h2 Flow Control
+        h3 Loop
+        // Walk the object
+        - var p = {name:'张三',age:12};
+        - for(var k in p)
+        p= p[k]
+        // Use the each
+        - each k,v in p
+        p #{k}-->#{v}
+        - var arr = [1,2,3,4,5]
+        // A nested loop
+        ul
+            - each item in arr
+            li=item
+        - var sections = [{id:1,items:['A1','B1']},{id:2,items:['A2','B2','C2']}];
+        dl
+            - each section in sections.length > 0 ? sections :[{id:0,items:['none']}]
+            dt=section.id
+            - each item in section.items
+            dd=item
+        - var num = 0;
+        ul
+            while num < 5
+                li=num++
+        h2 Condition Test
+        // if-else
+        if true
+            p 真
+        else
+            p 假
+        // unless
+        unless false
+            p 反向判断
+        // case-when:just like the switch-case
+        case 1
+            when 1
+            when 2
+                p 1,2
+            when 3: p 3
+            default: p default
