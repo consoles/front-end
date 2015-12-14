@@ -1,0 +1,57 @@
+//
+   Created by gaopengfei on 2015/12/14.
+
+doctype html
+<!--[if IE 8]><html class='ie8'><! [endif]-->
+<!--[if IE 9]><html class='ie8'><! [endif]-->
+<!--[if !IE]><!--><html><!--<! [endif]-->
+head
+    meta(charset='utf-8')
+    title the html head are here
+body
+    h1 learn jade.To compile,use command `jade *.jade`,if use WebStorm,this will be automatic.
+    p the default style looks uglily,use the `-P` option to make the html look more beautiful.
+    p use the `-w` options to build a goal the if the file changes,the compile whe be compiled automatic.This option is interfated in the WebStorm IDE too.
+    hr
+    p the single tag label is the same as the doucle tag label in the jade.For example:the `div` is the same as the `hr`
+    hr
+    div We can use `id`、`class` just like jQuery and CSS selector，the example are as following：
+    div.main This is a div with a class main
+    section#container(class='con') This is a section with a id named containe and a class named con.
+    footer#footer.footer.common This is a footer with a id="fooer",and with two class footer and common.
+    hr
+    p use the `()` after the tag name to add attribute of the tag,such as:
+    hr
+    a(href='http://www.baidu.com',title='百度',data-uid='101') a href linked to baidu.com
+    p.
+        the code here will be display
+        as the orignal,
+        this is the <strong>multiline</strong> text.
+        Be sure the dot flag is
+        near the the tag!
+        Unless the dot flag will be parse to normal text!
+    p
+        | the
+        strong nested
+        | tag
+
+    h2 Comment
+    // This is single line comment,will appearence to the html document
+    //- This is non-buffer comment,will never apperence to the html document!
+    //-
+        div
+            span
+                strong the content,the jadde block comment.
+
+    div 测试中文支持
+    // Because the content in the dot flag will be shown as orignal,we can pus style and script in this
+    style.
+        .box {
+            width: 100px;
+            height: 100px;
+            color: #000099;
+        }
+    div.box 容器
+    script.
+        console.log('The js are here.');
+</html>
