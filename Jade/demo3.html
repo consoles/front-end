@@ -1,0 +1,45 @@
+<!--
+Created by gaopengfei on 2015/12/15.
+
+--><!DOCTYPE html>
+<html>
+<head>
+    <title>Jade模板引擎之mixin</title>
+</head>
+<body>
+<h1>神奇的mixin</h1>
+<!-- define a mixin-->
+<!-- we can use `+` to use mixin-->
+<p>imooc jade study</p>
+<!-- render data to mixin-->
+<p>汤姆</p>
+<ul class="courses">
+    <li>html</li>
+    <li>CSS</li>
+    <li>javascript</li>
+</ul>
+<!-- the nested mixin-->
+<h4>杰克</h4>
+
+<p>杰克</p>
+<ul class="courses">
+    <li>html</li>
+    <li>CSS</li>
+    <li>javascript</li>
+</ul>
+<!-- use mixin to build a nested code block-->
+<h4>slogon</h4>
+
+<p>Good job!</p>
+<!-- 传递属性-->
+<p class="magic">属性</p>
+
+<p id="attrid" class="magic2">attrs</p>
+<!-- 未知属性个数-->
+<ul class="magic">
+    <li>node</li>
+    <li>jade</li>
+    <li>html</li>
+</ul>
+</body>
+</html>

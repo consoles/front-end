@@ -1,0 +1,53 @@
+//
+   Created by gaopengfei on 2015/12/15.
+
+doctype html
+html
+    head
+        title Jade模板引擎之mixin
+    body
+        h1 神奇的mixin
+
+        // define a mixin
+        mixin lesson
+            p imooc jade study
+        // we can use `+` to use mixin
+        +lesson
+
+        // render data to mixin
+        mixin study(name,courses)
+            p #{name}
+            ul.courses
+            each course in courses
+                li= course
+        +study('汤姆',['html', 'CSS', 'javascript'])
+
+        // the nested mixin
+        mixin group(student)
+            h4 #{student.name}
+            +study(student.name,student.courses)
+        +group({name: '杰克', courses: ['html', 'CSS', 'javascript']})
+
+        // use mixin to build a nested code block
+        mixin team(slogon)
+            h4 #{slogon}
+            if block
+                block
+            else
+                p no team
+        +team('slogon')
+            p Good job!
+
+        // 传递属性
+        mixin attr(name)
+            p(class!=attributes.class) #{name}
+        +attr('属性')(class='magic')
+        mixin attrs(name)
+            p&attributes(attributes) #{name}
+        +attrs('attrs')(class='magic2',id='attrid')
+        // 未知属性个数
+        mixin magic(name,...items)
+            ul(class='#{name}')
+            each item in items
+                li= item
+        +magic('magic','node','jade','html')
