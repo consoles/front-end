@@ -1,0 +1,29 @@
+
+<!-- Jade模板引擎，render和renderFile
+Created by gaopengfei on 2015/12/15.
+
+-->
+<!-- 环境准备：`npm install jade coffee-script less markdown --save`-->
+<p>打开jade.js的源码，可以看到`compile`、`compileFile`、`render`、`renderFile`几个方法</p>
+<h2>准备</h2>
+<ul>
+  <li>1.新建一个文件`server.js`</li>
+  <li>2.详情查看该文件</li>
+</ul>
+<hr/>
+<h2>test markdown support</h2><p>Hi,This is <strong>Markdown</strong></p>
+<h2>test less support(这里的less插件有问题)</h2>
+<!--style-->
+<!--    :less-->
+<!--        body{-->
+<!--            p{-->
+<!--                color: #003300;-->
+<!--            }-->
+<!--        }-->
+<h2>test coffee script</h2>
+<script>(function() {
+  console.log('This is coffee');
+
+}).call(this);
+
+</script>
