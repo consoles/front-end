@@ -1,7 +1,13 @@
+
 <!-- 使用runtime.js
 Created by gaopengfei on 2015/12/15.
 
 -->
-<div id="runtime">
-    <script src="node_mudules/jade/runtime.js"></script>
-</div>
+<div id="runtime"></div>
+<script src="node_modules/jade/runtime.js"></script>
+<script src="runtime.js"></script>
+<script>
+  var runtimeNode = document.getElementById('runtime');
+  var runtimeHtml = template({isRuntime: true});
+  runtimeNode.innerHTML = runtimeHtml;
+</script>

@@ -1,8 +1,10 @@
-//
+// 在客户端使用jade，jade可以下载到浏览器中可以被单独使用
+// 但是仅仅支持比较先进的浏览器。
+// 推荐的做法是将jade模板预编译成js脚本，然后使用jade的runtime.js在浏览器中调用
    Created by gaopengfei on 2015/12/15.
 
 div
-    h3 jade runtime call
+    h3 jade runtime call #{isRuntime}
     p this is from jade pre-compile
-    p we use the `jade --client runtime.jade` to create a file named `runtime.js`
+    p we use the `jade --client --no-debug runtime.jade` to create a file named `runtime.js`
     p we can use `runtime.js` in other jade files
