@@ -28,14 +28,16 @@ var scale_y = d3.scale.linear()
     .domain([0,d3.max(data)])
     .range([g_height,0]);
 
-var line_generator = d3.svg.line()
+var area_generator = d3.svg.area()
     .x(function(d,i){return scale_x(i);})
-    .y(function(d){return scale_y(d);})
+    .y0(g_height)
+    .y1(function(d){return scale_y(d);})
     .interpolate('cardinal');
 
 d3.select('g')
     .append('path')
-    .attr('d',line_generator(data));
+    .attr('d',area_generator(data))
+    .style('fill','green');
 
 // coordinate system 坐标系
 var x_axis = d3.svg.axis().scale(scale_x),
