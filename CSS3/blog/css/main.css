@@ -1,0 +1,68 @@
+nav{
+    background: #ccc;
+    height: 50px;
+}
+
+#banner{
+    background: #777;
+    height: 700px;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    float: right;
+}
+nav ul li,nav .logo{
+    display: inline-block;
+    line-height: 50px;
+    margin-right: 20px;
+}
+nav ul li a{
+    line-height: 50px;
+    text-decoration: none;
+    display: inline-block;
+    height: inherit;
+    color: #fff;
+}
+
+nav ul li.logo{
+    float: left;
+    padding: 10px;
+}
+#banner .inner {
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 160px;
+}
+
+#banner .inner h1{
+    margin: 0;
+}
+
+button{
+    border: none;
+    background: #333;
+    color: #eee;
+    padding: 10px;
+}
+#banner button{
+    padding: 14px 60px;
+}
+
+#banner .innner .more{
+    margin-top: 300px;
+}
+.sub-heading{
+    line-height: 30px;
+    margin:30px;
+}
+.logo{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px; /* 单词之间的距离 */
+}
+.logo a{
+    color: #fff;
+}
