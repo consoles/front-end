@@ -4,7 +4,12 @@
 
 var width = 500,
     height = 250,
-    margin = {left:50,top:30,right:20,bottom:20};
+    margin = {
+        left:50,
+        top:30,
+        right:20,
+        bottom:20
+    };
 
 var g_width = width - margin.left - margin.right,
     g_height = height - margin.top - margin.bottom;
@@ -21,16 +26,22 @@ var g = d3.select('svg')
             .attr('transform','translate('+margin.left+','+margin.top+')');
 
 var data = [1,3,5,7,8,4,3,7];
+
 var scale_x = d3.scale.linear()
                 .domain([0,data.length - 1]) // 输入范围
                 .range([0,g_width]);         // 输出范围
+
 var scale_y = d3.scale.linear()
     .domain([0,d3.max(data)])
     .range([g_height,0]);
 
 var line_generator = d3.svg.line()
-    .x(function(d,i){return scale_x(i);})
-    .y(function(d){return scale_y(d);})
+    .x(function(d,i){
+        return scale_x(i);
+    })
+    .y(function(d){
+        return scale_y(d);
+    })
     .interpolate('cardinal');
 
 d3.select('g')

@@ -13,13 +13,15 @@ var svg_width = (bar_width + bar_padding) * data.length,
 var svg = d3.select('#container')
             .append('svg')
             .attr('width',svg_width)
-            .attr('height',svg_width)
+            .attr('height',svg_width);
 
 var bar = svg.selectAll('g')
              .data(data)
              .enter()
              .append('g')
-             .attr('transform',function(d,i){return 'translate(' + i * (bar_width + bar_padding) + ',0)';});
+             .attr('transform',function(d,i){
+                 return 'translate(' + i * (bar_width + bar_padding) + ',0)';
+             });
 
 var scale = d3.scale.linear()
                     .domain([0,d3.max(data)])
