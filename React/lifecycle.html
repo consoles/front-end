@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React生命周期</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="../lib/react-0.13.3/build/react.js"></script>
+<script src="../lib/react-0.13.3/build/JSXTransformer.js"></script>
+<script type="text/jsx">
+    var Hello = React.createClass({
+        // init the style
+        getInitialState:function(){
+            console.log('init');
+            return {
+                background:'red',
+                frontSize:'12px'
+            }
+        },
+        // get the style from the init state
+        render:function(){
+            return <div style={this.state}>Hello {this.props.name}</div>;
+        },
+        componentWillMount:function(){
+            console.log('will');
+        },
+        componentDidMount:function(){
+            console.log('did');
+            // set the state after the 2sec
+//            var _self = this;
+//            window.setTimeout(function(){
+//                _self.setState({
+//                    background:'yellow',
+//                    fontSize:'18px'
+//                });
+//            },2000);
+            // 可以使用ES5中的bind将上面的代码重构为如下:
+            window.setTimeout(function(){
+                console.log('this:',this);
+                this.setState({
+                    background:'yellow',
+                    fontSize:'18px'
+                });
+            }.bind(this),2000);
+
+            // when the value of the state change,the Component will change the state
+            // from the current state to the 'updating' state and then re-render itself
+        }
+    });
+    React.render(<Hello name="imooc"></Hello>,document.body);
+</script>
+</body>
+</html>

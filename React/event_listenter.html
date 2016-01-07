@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React 事件监听</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="../lib/react-0.13.3/build/react.js"></script>
+<script src="../lib/react-0.13.3/build/JSXTransformer.js"></script>
+<script type="text/jsx">
+    var TestClickComponent = React.createClass({
+        clickHandler:function(event){
+            var tipElement = React.findDOMNode(this.refs.tip);
+            if (tipElement.style.display === 'none') {
+                tipElement.style.display = 'inline';
+            } else {
+                tipElement.style.display = 'none';
+            }
+            event.stopPropagation();
+            event.preventDefault();
+        },
+        render:function(){
+            return (
+                    <div>
+                        <button onClick={this.clickHandler}>显示|隐藏</button>
+                        <span ref="tip">测试click事件</span>
+                    </div>
+            );
+        }
+    });
+
+    var TestInputComponent = React.createClass({
+        getInitialState:function(){
+            return {
+                inputContent:''
+            };
+        },
+        changeHandler:function(event){
+            this.setState({
+                inputContent:event.target.value
+            });
+            event.stopPropagation();
+            event.preventDefault();
+        },
+        render:function(){
+            return (
+                    <div>
+                        <input onChange={this.changeHandler} />
+                        <span>{this.state.inputContent}</span>
+                    </div>
+            );
+        }
+    });
+    // add a div element to wrapper two React component to make it become a single React Element
+    React.render(
+            <div>
+                <TestClickComponent/>
+                <hr />
+                <TestInputComponent/>
+            </div>,
+            document.getElementById('container')
+    );
+</script>
+</body>
+</html>
