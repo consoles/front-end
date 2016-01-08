@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>demo1-helloworld</title>
+    <style>
+        .test{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="helloworld"></div>
+<div id="test"></div>
+<div id="color"></div>
+<script src="../lib/react-0.13.3/build/react.js"></script>
+<script src="../lib/react-0.13.3/build/JSXTransformer.js"></script>
+<!-- 注意此处的类型 -->
+<script type="text/jsx">
+    var style = {
+        color: 'red',
+        border: '1px solid #333'
+    };
+    // 创建一个HelloWorld组件
+    var HelloWorld = React.createClass({
+
+        getName: function () {
+            if (this.props.name)
+                return this.props.name;
+            else
+                return 'World';
+        },
+        render: function () {
+            // 在jsx中可以直接使用html代码
+
+            //return <p>Hello World</p>
+
+            // 三目运算
+            // return <p>Hello {this.props.name ? this.props.name : 'World'}</p>
+            var name = this.getName();
+            //return <p>Hello,{name}</p>
+            return <p>Hello,{this.props.name || 'World'} {this.props.title}</p>
+        }
+    });
+
+    var Test = React.createClass({
+        render:function (){
+            return <div className="red">This is just for fun</div>
+        }
+    });
+
+    var Color = React.createClass({
+        render:function(){
+            return <div style={{background:'green'}}>inline style</div>
+        }
+    });
+    Color = React.createClass({
+        render:function(){
+            var styleObj = {
+                background:'yellow',
+                fontSize:'20px'
+            };
+            return <div style={styleObj}>inline style</div>
+        }
+    });
+
+    React.render(<div style={style}>
+        <HelloWorld name="React 的 name属性" title="title属性"></HelloWorld>
+    </div>, document.getElementById('helloworld')); // 将组件渲染到body中
+    React.render(<Test></Test>,document.getElementById('test'));
+    React.render(<Color></Color>,document.getElementById('color'));
+</script>
+</body>
+</html>
