@@ -403,3 +403,76 @@
     display: block;
     margin: 0 auto;
 }
+/* 商品评价 */
+.shop-des-tit{
+    line-height: 38px;
+    height: 38px;
+    font-size: 14px;
+    color: #CCCCCC;
+    padding-left: 10px;
+}
+.score-box{
+    padding-left: 10px;
+    height: 120px;
+}
+.score{
+    font-family: "微软雅黑";
+    float: left;
+    margin-right: 10px;
+}
+.score em{
+    font-size: 18px;
+    color: #65657d;
+    font-style: normal;
+}
+.score span{
+    color: #000099;
+    font-size: 50px;
+}
+.score-speed{
+    float: left;
+    width: 450px;
+    line-height: 16px;
+    font-size: 12px;
+    margin-top: 10px;
+    position: relative;
+}
+.score-speed-text{
+    height: 16px;
+    overflow: hidden;
+    color: #ffffff;
+    background-color: #bdbdbd;
+    margin-bottom: 10px;
+}
+.score-speed-text li{
+    float: left;
+}
+.score-speed-text .speed-1{
+    width: 114px;
+    text-indent: 26px;
+}
+.score-speed-text .speed-2{
+    width: 82px;
+}
+.score-speed-text .speed-3{
+    width: 76px;
+}
+.score-speed-text .speed-4{
+    width: 65px;
+}
+.score-num{
+    position: absolute;
+    left: 94%;
+    top: -21px;
+    text-align: center;
+    width: 25px;
+    height: 14px;
+    background-color: #7f7f7f;
+}
+/* 小三角 */
+.score-num i{
+    border: 4px dashed transparent;
+    border-top: solid #7f7f7f;
+    width: 0;
+    height: 0;
+}
