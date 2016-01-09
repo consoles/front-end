@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG编辑器</title>
+    <link rel="stylesheet" href="css/svg_editor.css">
+</head>
+<body>
+<div id="toolbox">
+    <h2>创建</h2>
+    <form action="" id="create-shape">
+        <button type="button" create="rect">Rect</button>
+        <button type="button" create="circle">Circle</button>
+        <button type="button" create="ellipse">Ellipse</button>
+        <button type="button" create="line">Line</button>
+    </form>
+    <h2>形状</h2>
+    <form action="" id="shape-attrs">
+        请先创建图形
+    </form>
+    <h2>外观和变换</h2>
+    <form action="" id="look-and-transform" disabled="disabled">
+        <p>
+            <label for="fill" style="display: inline">填充</label>
+            <input type="color" id="fill" value="#ffffff">
+        </p>
+        <p>
+            <label style="display: inline">描边</label>
+            <input type="color" id="stroke" value="#ff0000">
+            <input type="range" id="strokeWidth" value="1">
+        </p>
+        <p>
+            <label for="translateX">translateX</label>
+            <input type="range" id="translateX" min="-400" max="400" value="0">
+            <label for="translateY">translateY</label>
+            <input type="range" id="translateY" min="-400" max="400" value="0">
+            <label for="rotate">rotate</label>
+            <input type="range" id="rotate" min="-180" max="180" value="0">
+            <label for="scale">scale</label>
+            <input type="range" id="scale" min="-1" max="2" value="1" step=".01">
+        </p>
+    </form>
+</div>
+<div id="canvas"></div>
+<script src="js/svg_editor.js"></script>
+</body>
+</html>

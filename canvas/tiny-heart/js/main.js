@@ -165,8 +165,6 @@ function onMouseMove(e){
 
 function restart(){
     if (data.gameOver){
-        // TODO
-        alert('重新开始.');
         window.cancelAnimationFrame(gameLoopFrame);
         initGameLogic();
         gameLoop();
