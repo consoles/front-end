@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>jQuery FullPage.js</title>
+    <link rel="stylesheet" href="../../lib/fullPage.js/dist/jquery.fullpage.css"/>
+    <link rel="stylesheet" href="css/demo1.css"/>
+</head>
+<body>
+<div id="header">顶部</div>
+<ul id="fullpageMenu">
+    <li data-menuanchor="#page1"><a href="#page1">1 Section</a></li>
+    <li data-menuanchor="#page2"><a href="#page2">2 Section</a></li>
+    <li data-menuanchor="#page3"><a href="#page3">3 Section</a></li>
+    <li data-menuanchor="#page4"><a href="#page4">4 Section</a></li>
+</ul>
+<div id="fullpage">
+    <div class="section">
+        <h1>第1屏的内容</h1>
+    </div>
+    <div class="section">
+        <h1>第2屏的内容</h1>
+
+        <div class="slide">幻灯片1</div>
+        <div class="slide">幻灯片2</div>
+        <div class="slide">幻灯片3</div>
+        <div class="slide">幻灯片4</div>
+        <div class="slide">幻灯片5</div>
+    </div>
+    <!-- 直接定位到第3屏 -->
+    <div class="section active">
+        <h1>第3屏的内容</h1>
+    </div>
+    <div class="section">
+        <h1>第4屏的内容</h1>
+    </div>
+</div>
+<script src="../../lib/jquery-2.1.1.js"></script>
+<script src="../../lib/fullPage.js/dist/jquery.fullpage.js"></script>
+<script src="../../lib/move.js/move.js"></script>
+<script src="js/demo1.js"></script>
+</body>
+</html>

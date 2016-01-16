@@ -1,0 +1,16 @@
+body {
+    background: #f08a24;
+}
+
+#header {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    font-size: 20px;
+}
+
+#fullpageMenu {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
