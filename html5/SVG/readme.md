@@ -1,5 +1,7 @@
 ## SVG
 
+使用xml来描述图形,![这个网站](http://codinginparadise.org/projects/svgweb/samples/demo.html)展示了一些常见的图标的SVG.
+
 ### 使用方法
 
 - open directly in the browser
@@ -63,6 +65,14 @@ s,l:[0,100]
 我们可以在[这个网站](http://paletton.com/)找到基于hsl的贝塞尔曲线的完美的配色方案.
 
 笔刷(`<pattern>`)主要用于纹理的填充
+
+### SVG中的path
+
+[MDN SVG](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Paths)
+
+![绘制弧](http://img.mukewang.com/5663b1ec00012a6607200450.jpg)
+
+*直线是一次贝塞尔曲线*
 
 ### 注意点
 

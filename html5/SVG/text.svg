@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <pattern id="grid" x="0" y="0" width="20" height="20">
+            <path stroke="#f0f0f0" fill="none" d="M0,0H20V20" />
+        </pattern>
+    </defs>
+    <rect width="1200" height="1000" fill="url(#grid)" />
+
+    <text x="100" y="100" dx="20 40 60 80 100" dy="20 40 60 80 100" style="font-size:50px;font-family:'Arial'">ABCDE</text>
+    <path d="M100,0V200M0,100H200" stroke="red" />
+</svg>
