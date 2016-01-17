@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- 整个图形填充5*4个小单元 -->
+        <pattern id="p1" x="0" y="0" width="0.2" height="0.25">
+            <circle cx="10" cy="10" r="5" fill="red" />
+            <polygon points="30 10 60 50 0 50" fill="green" />
+        </pattern>
+    </defs>
+    <rect x="100" y="100" fill="url(#p1)" stroke="blue" width="400" height="300" />
+</svg>

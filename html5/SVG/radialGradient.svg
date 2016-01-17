@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- fx,fy可以指定偏离 -->
+        <radialGradient id="grad2" x1="0.5" y1="0.5" r="0.5" fx="0.6" fy="0.8">
+            <stop offset="0" stop-color="#1497fc" />
+            <stop offset="0.5" stop-color="#a469be" />
+            <stop offset="1" stop-color="#fe8c00" />
+        </radialGradient>
+    </defs>
+    <rect x="100" y="100" fill="url(#grad2)" width="500" height="150" />
+</svg>

@@ -41,6 +41,29 @@ tagName可以是上面的rect,circle
 - 世界是无穷大的
 - 视野是观察世界的一个矩形区域
 
+### 颜色,渐变和笔刷
+
+颜色有rgb模式和hsl模式.
+
+由于显示硬件的原理就是rgb,所以rgb颜色更容易被显示硬件所解析,缺点是不符合人类描述颜色的习惯,HSL的三个分量分别表示颜色,饱和度和亮度,格式是:
+
+![HSL颜色模式](http://7xlan5.com1.z0.glb.clouddn.com/images%2Fhsl-color-mode.png)
+
+```bash
+hsl(h,s%,l%)
+```
+取值范围:
+h:[0,359]
+s,l:[0,100]
+优点是符合人类的描述颜色的习惯.
+
+关于透明度,我们可以使用`rgba(r,g,b,a)`和`hsla(h,s%,l%,a)`表示透明度的颜色.也可以使用`opacity`属性
+表示元素的透明度,a和opacity的取值范围是[0,1].
+
+我们可以在[这个网站](http://paletton.com/)找到基于hsl的贝塞尔曲线的完美的配色方案.
+
+笔刷(`<pattern>`)主要用于纹理的填充
+
 ### 注意点
 
 html标签`<button>`在`form`中的默认是`submit`,点击会自动进行提交,如果想要阻止默认事件需要使用`type="button"`.
