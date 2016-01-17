@@ -77,4 +77,4 @@ document.getElementById('test').style.paddingLeft = '200px';
 
 组件监听遵循驼峰命名,每个事件处理程序对应一个EventHandler.
 
-更多React的介绍参见:![wiki](http://t.imooc.com/wiki/504)
+更多React的介绍参见:[wiki](http://t.imooc.com/wiki/504)
