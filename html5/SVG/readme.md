@@ -1,6 +1,6 @@
 ## SVG
 
-使用xml来描述图形,![这个网站](http://codinginparadise.org/projects/svgweb/samples/demo.html)展示了一些常见的图标的SVG.
+使用xml来描述图形,[这个网站](http://codinginparadise.org/projects/svgweb/samples/demo.html)展示了一些常见的图标的SVG.
 
 ### 使用方法
 
