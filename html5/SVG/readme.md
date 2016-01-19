@@ -2,6 +2,25 @@
 
 使用xml来描述图形,[这个网站](http://codinginparadise.org/projects/svgweb/samples/demo.html)展示了一些常见的图标的SVG.
 
+### 项目代码说明:
+
+- basic.svg,smile.svg: 单独使用SVG
+- css.html:在CSS中使用svg
+- img.html:在img标签中使用svg
+- nest.html:在html中嵌入svg标签
+- viewbox.html:svg视窗,视野,世界
+- linearGradient.svg:线性渐变
+- radialGradient.svg:径向渐变
+- pattern.html:笔刷
+- animation1.html:SVG的基于SMIL的动画
+- animation2.html:沿着特定轨迹移动的动画
+- text.svg,tspan.svg:svg文本
+- text_path.html:路径文本
+- svg_editor.html:svg编辑器(svg基础语法)
+- sin_text.html:符合正弦曲线的文本
+- svg_sky.html:漫天星,灯塔,湖面(clip,mask)
+- force.html:svg生成力的矢量图(速度,加速度,位移,摩擦力,弹簧模型)
+
 ### 使用方法
 
 - open directly in the browser
@@ -74,6 +93,17 @@ s,l:[0,100]
 
 *直线是一次贝塞尔曲线*
 
+### 动画
+
+所谓的动画就是值关于时间的一个函数(timing function)
+![动画原理](http://7xlan5.com1.z0.glb.clouddn.com/images%2F%E5%8A%A8%E7%94%BB%E5%8E%9F%E7%90%86.png)
+
+在SVG中动画的实现依赖[SMIL](https://developer.mozilla.org/zh-CN/docs/Web/SVG/SVG_animation_with_SMIL)
+
+### 力导向图(弹簧模型)
+
+![力导向图的原理](http://7xlan5.com1.z0.glb.clouddn.com/images%2Fsvg-script-animation.png)
+
 ### 注意点
 
 html标签`<button>`在`form`中的默认是`submit`,点击会自动进行提交,如果想要阻止默认事件需要使用`type="button"`.
@@ -106,3 +136,16 @@ q.value;
 ```js
 [1,2,3,4,5].join('-'); // 1-2-3-4-5
 ```
+
+`concat()`方法用于连结2个数组(原来的数组并不变化)例如:
+
+```js
+let arr1 = [1,2,3],
+		arr2 = [4,5];
+
+let arr3 = arr1.concat(arr2); // [1,2,3,4,5]
+arr1; 												// [1,2,3]		
+arr2; 												// [4,5]		
+```
+
+*SVG中基于SMIL的动画未来将被废弃,完全可以使用CSS3中的动画来代替.*

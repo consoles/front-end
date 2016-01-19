@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG动画-轨迹移动</title>
+</head>
+<style>
+    html,body,svg{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<svg viewBox="-400 -400  800 800">
+    <rect x="-25" y="-25" width="50" height="50" fill="#f00">
+        <animateMotion dur="3s" rotate="auto" repeatCount="indefinite" fill="remove">
+            <mpath xlink:href="#motion_path"></mpath>
+        </animateMotion>
+    </rect>
+    <path id="motion_path" d="M 0 0L 100 100A 200 200 0 1 0 0 -100" stroke="#f0f" fill="none"/>
+</svg>
+</body>
+</html>
