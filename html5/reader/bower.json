@@ -1,0 +1,15 @@
+{
+  "name": "reader",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.1",
+    "animate.css": "https://github.com/daneden/animate.css.git#~3.5.1",
+    "jquery-base64": "https://github.com/carlo/jquery-base64.git",
+    "zepto": "~1.1.6",
+    "jquery-jsonp": "https://github.com/jaubourg/jquery-jsonp.git#~2.4.0"
+  },
+  "devDependencies": {
+    "chai": "~3.4.2",
+    "mocha": "~2.3.4"
+  }
+}

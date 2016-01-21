@@ -1,0 +1,33 @@
+{
+  "rules": {
+    "no-alert": 1,
+    "no-bitwise": 1,
+    "no-console":1,
+    "no-debugger":1,
+    "no-empty": 1,
+    "default-case":1,
+    "eqeqeq": 1,
+    "no-eq-null": 1,
+    "guard-for-in": 1,
+    "quotes": [
+      2,
+      "single"
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "semi": [
+      2,
+      "always"
+    ]
+  },
+  "globals": {
+    "$": false
+  },
+  "env": {
+    "browser": true,
+    "es6":true,
+    "node": true
+  }
+}

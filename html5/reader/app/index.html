@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="html5阅读器">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <title>html5阅读器</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css"/>
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div id="root" class="container">
+        <!-- 中间层,用于点击事件 -->
+        <div class="m-artical-action">
+            <div class="artical-action-mid" id="action_mid"></div>
+        </div>
+        <!-- 顶部面板 -->
+        <div id="top_nav" class="top-nav animated" style="display:none">
+            <div class="icon-back"></div>
+            <div class="nav-title">返回书架</div>
+        </div>
+
+        <!-- 小说内容部分,包括标题和正文 -->
+        <div id="fiction_chapter_title"></div>
+        <div id="fiction_container" class="m-read-content"></div>
+
+        <!-- 正文下面的上一章和下一章按钮 -->
+        <div class="m-button-bar">
+            <ul class="u-tab">
+                <li id="pre_button">上一章</li>
+                <li id="next_button">下一章</li>
+            </ul>
+        </div>
+        
+        <!-- 底部面板 -->
+        <div class="nav-pannel-bk font-container animated" style="display:none"></div>
+        <div id="font_container" class="nav-pannel font-container animated" style="display:none">
+            <div class="child-mod">
+                <span>字号</span>
+                <button id="large_font_button" class="font-size-button">大</button>
+                <button id="small_font_button" class="font-size-button">小</button>
+            </div>
+            <div class="child-mod">
+                <span>背景</span>
+                <div class="bk-container">
+                    <div class="bk-container-current"></div>
+                </div>
+                <div class="bk-container">
+                    <div class="bk-container-current"></div>
+                </div>
+                <div class="bk-container">
+                    <div class="bk-container-current"></div>
+                </div>
+                <div class="bk-container">
+                    <div class="bk-container-current"></div>
+                </div>
+                <div class="bk-container">
+                    <div class="bk-container-current"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-nav-bk bottom-navbar animated" style="display:none"></div>
+        <div class="bottom-nav bottom-navbar animated" style="display:none">
+            <div class="item menu-button" id="menu_button">
+                <div class="item-wrap">
+                    <div class="icon-menu"></div>
+                    <div class="icon-text">目录</div>
+                </div>
+            </div>
+            <div id="font_button" class="item current">
+                <div class="item-wrap">
+                    <div class="icon-ft"></div>
+                    <div class="icon-text">字体</div>
+                </div>
+            </div>
+            <div id="night_day_toggle_button" class="item">
+                <div class="item-wrap" id="day_icon" style="display:none">
+                    <div class="icon-day"></div>
+                    <div class="icon-text">白天</div>
+                </div>
+                <div class="item-wrap" id="night_icon">
+                    <div class="icon-night"></div>
+                    <div class="icon-text">夜间</div>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <!-- endbuild -->
+    <!-- 引入zepto的目的是保证后面的2个jQuery插件能够正常使用 -->
+    <script src="/bower_components/zepto/zepto.js"></script>
+    <script>window.jQuery = $;</script>
+    <script src="/bower_components/jquery-base64/jquery.base64.js"></script>
+    <script src="/bower_components/jquery-jsonp/src/jquery.jsonp.js"></script>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
