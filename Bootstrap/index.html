@@ -425,6 +425,9 @@
 <script>
     'use strict';
     $(function () {
+
+        $('#about').modal('show')
+        // 点击菜单实现标签页切换
         $('#menu_navbar').find('.navbar-collapse').find('a').click(function (e) {
             let href = $(this).attr('href');
             let tabId = $(this).data('tab');
