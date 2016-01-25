@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>IT教育网2015课程学习情况</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone {
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+    <script type="text/javascript" src="../js/H5ComponentPie.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentPie.css">
+
+    <!-- 引入环图的资源 -->
+    <script type="text/javascript" src="../js/H5ComponentRing.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentRing.css">
+
+<body>
+<!-- 用于开发测试 H5ComponentRing 对象（环图组件） -->
+<div class="iphone">
+
+</div>
+
+<script type="text/javascript">
+
+    var cfg = {
+        type: 'ring',
+
+        width: 400,
+        height: 400,
+
+        data: [
+            ['Js', .7, '#ff7676'],
+        ],
+        css: {
+            top: 100,
+            opacity: 0
+        },
+        animateIn: {
+            opacity: 1,
+            top: 200,
+        },
+        animateOut: {
+            opacity: 0,
+            top: 100,
+        },
+        center: true,
+    }
+
+    var h5 = new H5ComponentRing('myBarComponent', cfg);
+    $('.iphone').append(h5);
+
+
+    var leave = true;
+    $('body').click(function () {
+        leave = !leave;
+        $('.h5_component').trigger(leave ? 'onLeave' : 'onLoad')
+    });
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>课程作业4：H5ComponentBar扩展，垂直柱图实现</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone {
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+    <!-- 任务一：(1)引入需要继承的水平柱图对象js文件 -->
+    <script type="text/javascript" src="../js/H5ComponentBar.js"></script>
+
+    <!-- 引入柱图-垂直的资源 -->
+    <script type="text/javascript" src="../js/H5ComponentBar_v.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBar_v.css">
+
+<body>
+<!-- 用于开发测试 H5ComponentBar_v 对象（垂直柱图组件） -->
+<div class="iphone">
+
+</div>
+
+<script type="text/javascript">
+
+    var cfg = {
+
+        // 任务一： （2）修正配置文件的组件类型(type)定义为 ? （注意：这个类型名称的定义关系到样式设置）
+        type: 'bar_v',
+
+        width: 530,
+        height: 400,
+        data: [
+            ['Js', .4, '#ff7676'],
+            ['CSS3', .1],
+            ['HTML5', .2],
+            ['PHP', .05],
+            ['jQuery', .35]
+        ],
+        css: {
+            top: 100,
+            opacity: 0
+        },
+        animateIn: {
+            opacity: 1,
+            top: 200,
+        },
+        animateOut: {
+            opacity: 0,
+            top: 100,
+        },
+        center: true,
+    }
+
+    var h5 = new H5ComponentBar_v('myBarComponent', cfg);
+    $('.iphone').append(h5);
+
+
+    var leave = true;
+    $('body').click(function () {
+        leave = !leave;
+        $('.h5_component').trigger(leave ? 'onLeave' : 'onLoad')
+    }).click();
+
+</script>
+
+</body>
+
+</html>

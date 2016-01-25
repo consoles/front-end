@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2015年学习情况</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .component {
+            width: 50%;
+            height: 50px;
+            margin-bottom: 20px;
+            border-color: #eee;
+        }
+    </style>
+    <script src="../../lib/jquery-2.1.1.js"></script>
+    <script src="../../lib/fullPage.js/jquery.fullPage.js"></script>
+</head>
+<body>
+<div id="h5">
+    <div id="page-1" class="page section">
+        <div class="component logo">logo</div>
+        <div class="component slogan">slogan</div>
+    </div>
+    <div id="page-2" class="page section">
+        <div class="component desc">描述信息</div>
+    </div>
+    <div id="page-3" class="page section">
+        <div class="component bar">柱状图</div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#h5').fullpage({
+            onLeave: function (index, nextIndex, direction) {
+//                    debugger;
+            },
+            afterLoad: function (anchorLink, index) {
+//                    debugger;
+            }
+        });
+
+        $('.page').on('onLeave', function () {
+            console.log($(this).attr('id'), '==>>', 'onLeave');
+        });
+        $('.page').on('onLoad', function () {
+            console.log($(this).attr('id'), '==>>', 'onLoad');
+        });
+        $('.component').on('onLeave', function () {
+            $(this).fadeOut();
+            return false;
+        });
+        $('.component').on('onLoad', function () {
+            $(this).fadeIn();
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

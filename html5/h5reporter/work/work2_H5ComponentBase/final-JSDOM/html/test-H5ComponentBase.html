@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>课程作业2：H5ComponentBase升级支持相对定位 - JS修改 DOM 位置实现</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone {
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+<body>
+<!-- 用于开发测试 H5ComponentBase 对象（基本的图文组件） -->
+<div class="iphone">
+
+</div>
+
+<script type="text/javascript">
+
+    var cfg_src = {
+        type: 'base',
+        width: 500,
+        height: 100,
+        text: '我是原始组件,top:100,height:50',
+        css: {backgroundColor: '#ccc', top: 100},
+        center: true,
+    }
+
+    $('.iphone').append(new H5ComponentBase('src', cfg_src));
+
+
+    //  任务一：(1)编写新组件的配置文件
+    var cfg_relative = {
+        type: 'base',
+        width: 500,
+        height: 100,
+        text: '我是新组件,top:100,height:50',
+        css: {backgroundColor: 'pink', top: 100},
+        center: true,
+        relativeTo: 'src',
+    }
+
+    //  任务一：(2)把新组件返回的Dom元素添加到 .iphone 元素中进行呈现
+    $('.iphone').append(new H5ComponentBase('relative', cfg_relative));
+
+
+    var leave = true;
+    $('body').click(function () {
+        leave = !leave;
+        $('.h5_component').trigger(leave ? 'onLeave' : 'onLoad')
+    });
+    $('body').click();
+
+</script>
+
+</body>
+
+</html>

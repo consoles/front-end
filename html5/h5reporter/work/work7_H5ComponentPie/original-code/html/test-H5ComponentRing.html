@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>课程作业7：H5ComponentPie扩展，环图实现</title>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone {
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+
+    <!-- 任务一：(1)引入必要的资源，包括 jquery.js、H5componentBase相关资源（css、js）、H5ComponentPie相关资源(css、js)，环图自身的资源（css、js）共计7个文件。 -->
+
+
+<body>
+<!-- 用于开发测试 H5ComponentRing 对象（环图组件） -->
+<div class="iphone">
+
+</div>
+
+<script type="text/javascript">
+
+    var cfg = {
+
+        // 任务一：(2)配置文件缺少类型(type)和数据(data)的定义，完成这两个配置。注意，环图只支持一项数据。
+
+        width: 400,
+        height: 400,
+
+
+        css: {
+            top: 100,
+            opacity: 0
+        },
+        animateIn: {
+            opacity: 1,
+            top: 200,
+        },
+        animateOut: {
+            opacity: 0,
+            top: 100,
+        },
+        center: true,
+    }
+
+    //  任务一：(3)完成 组件对象(h5) 的定义（var h5 = ...??），注意这里 new 的对象是 环图组件对象
+
+    $('.iphone').append(h5);
+
+
+    var leave = true;
+    $('body').click(function () {
+        leave = !leave;
+        $('.h5_component').trigger(leave ? 'onLeave' : 'onLoad')
+    }).click();
+
+</script>
+
+</body>
+
+</html>
