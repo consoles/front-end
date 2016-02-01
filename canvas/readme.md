@@ -20,6 +20,7 @@
 - stars.html：绘制满天星空，月亮和大地
 - text.html:文字的渲染
 - tangram.html：绘制七巧板
+- ui_controllers.html：给canvas添加html UI控件
 - ellipse.html：canvas兼容性的检测以及context接口的扩充
 
 ### summary
@@ -133,6 +134,15 @@ textAlign(水平)、textBaseline(垂直)
 ### 文本度量
 
 我们可以使用`context.measureText(text).width`取得绘制文本的宽度。
+
+### canvas交互
+
+获得鼠标在canvas中的坐标。
+
+```js
+var x = event.clientX - canvas.getBoundingClientRect().left;
+var y = event.clientY - canvas.getBoundingClientRect().top;
+```
 
 ### 阴影
 

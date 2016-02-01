@@ -5,7 +5,7 @@
     <title>使用clip制作探照灯的效果</title>
 </head>
 <body>
-<canvas id="canvas" width="1024" height="800">
+<canvas id="canvas" width="1024" height="600">
     <h1>当前浏览器不支持html5</h1>
 </canvas>
 <script src="js/canvas.js"></script>
@@ -34,6 +34,7 @@
 
         var canvas = cxt.canvas;
         cxt.clearRect(0, 0, canvas.width, canvas.height);
+
         cxt.save();
 
         cxt.beginPath();
@@ -54,6 +55,7 @@
         cxt.fillStyle = '#fff';
         cxt.fill();
         cxt.restore();
+
         cxt.clip();
 
         cxt.font = 'bold 150px Arial';

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用canvas绘图图像</title>
+</head>
+<body>
+<canvas id="canvas" width="1152" height="768" style="display: block; margin: 0 auto;border: 1px solid #AAAAAA"></canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    window.onload = function () {
+
+        var img = new Image();
+        img.src = 'img.jpg';
+        img.onload = function () {
+            context.drawImage(img, 20, 20, 400, 300, 300, 300, 200, 150);
+        }
+    };
+</script>
+</body>
+</html>

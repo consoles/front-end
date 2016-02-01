@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>更复杂的canvas滤镜算法</title>
+</head>
+<body>
+<h1>请在服务器下运行</h1>
+
+<div style="margin: 20px auto;width: 1700px">
+    <canvas id="canvasa" width="700" height="490"></canvas>
+    <canvas id="canvasb" width="700" height="490"></canvas>
+</div>
+<div style="clear: both"></div>
+<div style="text-align: center;margin-top: 50px;font-size: 20px">
+    <a href="javascript:greyEffect();">灰度滤镜</a>
+    <a href="javascript:blackEffect();">黑白滤镜</a>
+    <a href="javascript:reverseEffect();">反色滤镜</a>
+    <a href="javascript:blurEffect();">模糊滤镜</a>
+    <a href="javascript:mosicEffect();">马赛克滤镜</a>
+</div>
+
+<script>
+
+    var canvasa = document.getElementById('canvasa');
+    var canvasb = document.getElementById('canvasb');
+
+    var ctxa = canvasa.getContext('2d');
+    var ctxb = canvasb.getContext('2d');
+
+    var img = new Image();
+    window.onload = function () {
+        img.src = 'autumn.jpg';
+        img.onload = function () {
+            ctxa.drawImage(img, 0, 0, canvasa.width, canvasa.height);
+        };
+    };
+
+    function greyEffect() {
+        var imgData = ctxa.getImageData(0, 0, canvasa.width, canvasa.height);
+        var pixelData = imgData.data;
+
+        for (var i = 0; i < canvasb.width * canvasb.height; i++) {
+            var r = pixelData[4 * i + 0];
+            var g = pixelData[4 * i + 1];
+            var b = pixelData[4 * i + 2];
+
+            // 计算灰度
+            var grey = r * 0.3 + g * 0.59 + b * 0.11;
+            pixelData[4 * i + 0] = grey;
+            pixelData[4 * i + 1] = grey;
+            pixelData[4 * i + 2] = grey;
+        }
+
+        ctxb.putImageData(imgData, 0, 0, 0, 0, canvasb.width, canvasb.height);
+    }
+
+    function blackEffect() {
+        var imgData = ctxa.getImageData(0, 0, canvasa.width, canvasa.height);
+        var pixelData = imgData.data;
+
+        for (var i = 0; i < canvasb.width * canvasb.height; i++) {
+            var r = pixelData[4 * i + 0];
+            var g = pixelData[4 * i + 1];
+            var b = pixelData[4 * i + 2];
+
+            // 计算灰度
+            var grey = r * 0.3 + g * 0.59 + b * 0.11;
+            var v;
+            if (grey > 255 / 2) {
+                v = 255;
+            } else {
+                v = 0;
+            }
+            pixelData[4 * i + 0] = v;
+            pixelData[4 * i + 1] = v;
+            pixelData[4 * i + 2] = v;
+        }
+
+        ctxb.putImageData(imgData, 0, 0, 0, 0, canvasb.width, canvasb.height);
+    }
+
+    function reverseEffect() {
+        var imgData = ctxa.getImageData(0, 0, canvasa.width, canvasa.height);
+        var pixelData = imgData.data;
+
+        for (var i = 0; i < canvasb.width * canvasb.height; i++) {
+            var r = pixelData[4 * i + 0];
+            var g = pixelData[4 * i + 1];
+            var b = pixelData[4 * i + 2];
+
+            pixelData[4 * i + 0] = 255 - r;
+            pixelData[4 * i + 1] = 255 - g;
+            pixelData[4 * i + 2] = 255 - b;
+        }
+
+        ctxb.putImageData(imgData, 0, 0, 0, 0, canvasb.width, canvasb.height);
+    }
+
+    function blurEffect() {
+
+        var tmpImgData = ctxa.getImageData(0, 0, canvasa.width, canvasa.height);
+        var tmpPixelData = tmpImgData.data;
+
+        var imgData = ctxa.getImageData(0, 0, canvasa.width, canvasa.height);
+        var pixelData = imgData.data;
+
+        var blurR = 3;
+        var totalNum = (2 * blurR + 1) * (2 * blurR + 1);
+        for (var i = blurR; i < canvasb.height - blurR; i++) {
+            for (var j = blurR; j < canvasb.width - blurR; j++) {
+
+                var totalr = 0, totalg = 0, totalb = 0;
+                // 以i,j为中心的8个点
+                for (var dx = -blurR; dx <= blurR; dx++) {
+                    for (var dy = -blurR; dy <= blurR; dy++) {
+                        var x = i + dx;
+                        var y = j + dy;
+
+                        var p = x * canvasb.width + y;
+                        totalr += tmpPixelData[p * 4 + 0];
+                        totalg += tmpPixelData[p * 4 + 1];
+                        totalb += tmpPixelData[p * 4 + 2];
+                    }
+                }
+                var p = i * canvasb.width + j;
+
+                pixelData[p * 4 + 0] = totalr / totalNum;
+                pixelData[p * 4 + 1] = totalg / totalNum;
+                pixelData[p * 4 + 2] = totalb / totalNum;
+            }
+        }
+
+        ctxb.putImageData(imgData, 0, 0, 0, 0, canvasb.width, canvasb.height);
+    }
+
+    function mosicEffect() {
+        var tmpImgData = ctxa.getImageData(0, 0, canvasa.width, canvasa.height);
+        var tmpPixelData = tmpImgData.data;
+
+        var imgData = ctxa.getImageData(0, 0, canvasa.width, canvasa.height);
+        var pixelData = imgData.data;
+
+        var size = 8; // 马赛克块变长
+        var totalNum = size * size;
+        for (var i = 0; i < canvasb.height; i += size) {
+            for (var j = 0; j < canvasb.width; j += size) {
+
+                var totalr = 0, totalg = 0, totalb = 0;
+                // 循环以每一个马赛克块的每一个点
+                for (var dx = 0; dx < size; dx++) {
+                    for (var dy = 0; dy < size; dy++) {
+                        var x = i + dx;
+                        var y = j + dy;
+
+                        var p = x * canvasb.width + y;
+                        totalr += tmpPixelData[p * 4 + 0];
+                        totalg += tmpPixelData[p * 4 + 1];
+                        totalb += tmpPixelData[p * 4 + 2];
+                    }
+                }
+                var p = i * canvasb.width + j;
+                var resr = totalr / totalNum;
+                var resg = totalg / totalNum;
+                var resb = totalb / totalNum;
+
+                for (var dx = 0; dx < size; dx++) {
+                    for (var dy = 0; dy < size; dy++) {
+                        var x = i + dx;
+                        var y = j + dy;
+
+                        var p = x * canvasb.width + y;
+                        pixelData[p * 4 + 0] = resr;
+                        pixelData[p * 4 + 1] = resg;
+                        pixelData[p * 4 + 2] = resb;
+                    }
+                }
+
+            }
+        }
+
+        ctxb.putImageData(imgData, 0, 0, 0, 0, canvasb.width, canvasb.height);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas放大镜</title>
+</head>
+<body>
+<canvas id="canvas" width="1152" height="768" style="display: block; margin: 0 auto;border: 1px solid #AAAAAA"></canvas>
+<canvas id="offCanvas" style="display: none;"></canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var img = new Image();
+
+    var isMouseDown = false;
+
+    var scale;
+
+    var offCanvas = document.getElementById('offCanvas');
+    var offCanvasCxt = offCanvas.getContext('2d');
+    window.onload = function () {
+        img.src = 'img-lg.jpg';
+        img.onload = function () {
+            offCanvas.width = img.width;
+            offCanvas.height = img.height;
+            scale = offCanvas.width / canvas.width;
+
+            context.drawImage(img, 0, 0, canvas.width, canvas.height);
+            offCanvasCxt.drawImage(img, 0, 0);
+        };
+    };
+
+    /**
+     *  绘制放大镜
+     *
+     */
+    function drawManifier(point) {
+
+        var imgLG_cx = point.x * scale;
+        var imgLG_cy = point.y * scale;
+
+        var mr = 200;
+        var sx = imgLG_cx - mr;
+        var sy = imgLG_cy - mr;
+
+        var dx = point.x - mr;
+        var dy = point.y - mr;
+
+        context.save();
+        context.beginPath();
+        context.lineWidth = 10;
+        context.strokeStyle = '#069';
+        context.arc(point.x, point.y, mr, 0, Math.PI * 2);
+        context.stroke();
+        context.clip();
+
+        context.drawImage(offCanvas, sx, sy, 2 * mr, 2 * mr, dx, dy, 2 * mr, 2 * mr);
+        context.restore();
+    }
+
+    /**
+     * 是否要画放大镜，在哪里画？
+     * @param isShowManifier
+     * @param point
+     */
+    function drawCanvasWithManifier(isShowManifier, point) {
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+        if (isShowManifier) {
+            drawManifier(point);
+        }
+
+    }
+    canvas.onmousedown = function (e) {
+        e.preventDefault();
+        var point = window2canvas(e.clientX, e.clientY);
+        console.log(point);
+
+        isMouseDown = true;
+        drawCanvasWithManifier(true, point);
+    };
+
+    canvas.onmousemove = function (e) {
+        e.preventDefault();
+        if (isMouseDown) {
+            var point = window2canvas(e.clientX, e.clientY);
+            drawCanvasWithManifier(true, point);
+        }
+    };
+
+    canvas.onmouseup = function (e) {
+        e.preventDefault();
+        isMouseDown = false;
+        drawCanvasWithManifier(false);
+    };
+
+    canvas.onmouseout = function (e) {
+        e.preventDefault();
+        isMouseDown = false;
+        drawCanvasWithManifier(false);
+    };
+
+    function window2canvas(x, y) {
+
+        var bbox = canvas.getBoundingClientRect();
+        return {
+            x: x - bbox.left,
+            y: y - bbox.top
+        };
+    }
+</script>
+</body>
+</html>

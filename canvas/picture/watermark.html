@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用离屏canvas生成水印</title>
+</head>
+<body style="background-color: #001100">
+<canvas id="canvas" width="1152" height="768" style="display: block; margin: 0 auto;border: 1px solid #AAAAAA"></canvas>
+<input id="scale_range" type="range" min="0.5" max="3.0" step="0.01" value="1.0"
+       style="display: block;margin: 20px auto;width: 800px"/>
+<canvas id="watermark_canvas" style="border: 1px solid #AAAAAA;display: none;"></canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var img = new Image();
+    var slider = document.getElementById('scale_range');
+
+    var watermarkCanvas = document.getElementById('watermark_canvas');
+    var watermarkContext = watermarkCanvas.getContext('2d');
+    window.onload = function () {
+
+        var scale = slider.value;
+
+        img.src = 'img-lg.jpg';
+        img.onload = function () {
+            context.drawImage(img, 0, 0, canvas.width, canvas.height);
+            context.drawImage(watermarkCanvas, canvas.width - watermarkCanvas.width, canvas.height - watermarkCanvas.height);
+            slider.onmousemove = function () {
+                scale = slider.value;
+                drawImageByScale(scale);
+            };
+        };
+
+        // set up watermark canvas
+        watermarkCanvas.width = 250;
+        watermarkCanvas.height = 70;
+        watermarkContext.font = '20px Arial';
+        watermarkContext.lineWidth = 1;
+        watermarkContext.fillStyle = 'rgba(255,255,255,0.5)';
+        watermarkContext.textBaseline = 'middle';
+        watermarkContext.fillText('Designed By consoles.', 20, 50);
+    };
+
+    function drawImageByScale(scale) {
+
+        var imgWidth = 1152 * scale;
+        var imgHeight = 768 * scale;
+
+        var dx = (canvas.width - imgWidth) / 2;
+        var dy = (canvas.height - imgHeight) / 2;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(img, dx, dy, imgWidth, imgHeight);
+        context.drawImage(watermarkCanvas, canvas.width - watermarkCanvas.width, canvas.height - watermarkCanvas.height);
+    }
+</script>
+</body>
+</html>

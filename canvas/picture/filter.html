@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas滤镜效果</title>
+</head>
+<body>
+<h1>请在服务器下运行</h1>
+
+<div style="margin: 20px auto;width: 1700px">
+    <canvas id="canvasa" width="800" height="560" style=""></canvas>
+    <canvas id="canvasb" width="800" height="560" style=""></canvas>
+</div>
+<div style="clear: both"></div>
+<div style="text-align: center;margin-top: 50px;font-size: 20px">
+    <a href="javascript:filter();">Filter</a>
+</div>
+
+<script>
+
+    var canvasa = document.getElementById('canvasa');
+    var canvasb = document.getElementById('canvasb');
+
+    var ctxa = canvasa.getContext('2d');
+    var ctxb = canvasb.getContext('2d');
+
+    var img = new Image();
+    window.onload = function () {
+        img.src = 'autumn.jpg';
+        img.onload = function () {
+            ctxa.drawImage(img, 0, 0, canvasa.width, canvasa.height);
+        };
+    };
+
+    function filter() {
+        var imgData = ctxa.getImageData(0, 0, canvasa.width, canvasa.height);
+        var pixelData = imgData.data;
+
+        for (var i = 0; i < canvasb.width * canvasb.height; i++) {
+            pixelData[4 * i + 0] = 0; // r通道修改为0
+            pixelData[4 * i + 1] = 0; // g通道修改为0
+//            pixelData[4*i+2] = 0; // b通道修改为0，rgb为000得到黑色
+
+        }
+
+        ctxb.putImageData(imgData, 0, 0, 0, 0, canvasb.width, canvasb.height);
+    }
+</script>
+</body>
+</html>
