@@ -1,0 +1,75 @@
+#canvas {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #AAAAAA;
+}
+
+#controller {
+    margin: 0 auto;
+}
+
+.op-btn {
+    float: right;
+    margin: 10px 0 0 10px;
+    border: 2px solid #AAAAAA;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px 5px;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.op-btn:hover {
+    background-color: #de770f;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.color-btn {
+    float: left;
+    margin: 10px 10px 0 0;
+    border: 5px solid #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px 5px;
+    cursor: pointer;
+}
+
+.color-btn:hover {
+    border: 5px solid violet;
+}
+
+.color-btn-selected {
+    border: 5px solid blueviolet;
+}
+
+#black_btn {
+    background-color: black;
+}
+
+#blue_btn {
+    background-color: #0000ff;
+}
+
+#green_btn {
+    background-color: #008000;
+}
+
+#red_btn {
+    background-color: #FF0000;
+}
+
+#orange_btn {
+    background-color: #ffa500;
+}
+
+#yellow_btn {
+    background-color: #ffff00;
+}
