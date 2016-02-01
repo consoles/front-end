@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas绘图api-使用arc绘制圆角矩形</title>
+</head>
+<body>
+
+<canvas id="canvas" width="1024" height="768"></canvas>
+
+<script src="js/canvas.js"></script>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        fillRoundRect(context, 150, 150, 500, 500, 10, '#bbada0');
+        for (var i = 0; i < 4; i++) {
+            for (var j = 0; j < 4; j++) {
+                fillRoundRect(context, 170 + i * 120, 170 + j * 120, 100, 100, 6, '#ccc0b3');
+            }
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用非零环绕原则绘制折纸效果</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="800">
+    <h1>当前浏览器不支持html5</h1>
+</canvas>
+<script>
+    'use strict';
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        context.beginPath();
+        // 注意绘制路径的方向
+        context.arc(400, 400, 300, 0, Math.PI * 2, false);
+        context.arc(400, 400, 150, 0, Math.PI * 2, true);
+
+        context.fillStyle = '#058';
+        context.shadowColor = 'gray';
+        context.shadowOffsetX = 10;
+        context.shadowOffsetY = 10;
+        context.shadowBlur = 10;
+        context.fill();
+
+    };
+</script>
+</body>
+</html>

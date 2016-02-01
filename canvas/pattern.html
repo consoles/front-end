@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用图片当做笔刷工具</title>
+</head>
+<body>
+<img src="bg.gif" alt="" id="img" style="display: none"/>
+<canvas id="canvas" width="800" height="800"></canvas>
+<script src="js/canvas.js"></script>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        var backgroundImage = document.getElementById('img');
+//        var pattern = context.createPattern(backgroundImage,'repeat');
+        var backgroundCanvas = createBackgroundCanvas();
+        var pattern = context.createPattern(backgroundCanvas, 'repeat');
+        context.fillStyle = pattern;
+        context.fillRect(0, 0, 800, 800);
+    };
+    function createBackgroundCanvas() {
+        var bgCanvas = document.createElement('canvas');
+        bgCanvas.width = 100;
+        bgCanvas.height = 100;
+        var bgCanvasContext = bgCanvas.getContext('2d');
+        drawStar2(bgCanvasContext, 50, 50, 50, 0);
+        return bgCanvas;
+    }
+</script>
+</body>
+</html>

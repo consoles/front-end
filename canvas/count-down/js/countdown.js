@@ -22,8 +22,8 @@ const colors = ['#33b5e5', '#0099cc', '#99cc00', '#669900', '#ffbb33', 'ff8800',
 window.onload = function () {
 
     // 自适应
-    WINDOW_WIDTH = document.body.clientWidth;
-    WINDOW_HEIGHT = document.body.clientHeight;
+    WINDOW_WIDTH = document.documentElement.clientWidth;
+    WINDOW_HEIGHT = document.documentElement.clientHeight;
     MARGIN_LEFT = Math.round(WINDOW_WIDTH / 10);
     RADIUS = Math.round(WINDOW_WIDTH * 4 / 5 / 108) - 1; // 画布的4/5是真正的效果，除以108是一共有108份
     MARGIN_TOP = Math.round(WINDOW_HEIGHT / 5);
@@ -141,47 +141,47 @@ function addBalls(x, y, numIndex) {
     }
 }
 
-function render(ctx) {
+function render(cxt) {
 
     // repaint
-    ctx.clearRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+    cxt.clearRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
     var hours = parseInt(currentShowTimeSeconds / 3600),
         minutes = parseInt((currentShowTimeSeconds - hours * 3600) / 60),
         seconds = currentShowTimeSeconds % 60;
 
-    renderDigit(MARGIN_LEFT, MARGIN_TOP, parseInt(hours / 10), ctx);
-    renderDigit(MARGIN_LEFT + (2 * 7 + 1) * (RADIUS + 1), MARGIN_TOP, parseInt(hours % 10), ctx);
-    renderDigit(MARGIN_LEFT + 30 * (RADIUS + 1), MARGIN_TOP, 10, ctx);
-    renderDigit(MARGIN_LEFT + 39 * (RADIUS + 1), MARGIN_TOP, parseInt(minutes / 10), ctx);
-    renderDigit(MARGIN_LEFT + 54 * (RADIUS + 1), MARGIN_TOP, parseInt(minutes % 10), ctx);
-    renderDigit(MARGIN_LEFT + 69 * (RADIUS + 1), MARGIN_TOP, 10, ctx);
-    renderDigit(MARGIN_LEFT + 78 * (RADIUS + 1), MARGIN_TOP, parseInt(seconds / 10), ctx);
-    renderDigit(MARGIN_LEFT + 93 * (RADIUS + 1), MARGIN_TOP, parseInt(seconds % 10), ctx);
+    renderDigit(MARGIN_LEFT, MARGIN_TOP, parseInt(hours / 10), cxt);
+    renderDigit(MARGIN_LEFT + (2 * 7 + 1) * (RADIUS + 1), MARGIN_TOP, parseInt(hours % 10), cxt);
+    renderDigit(MARGIN_LEFT + 30 * (RADIUS + 1), MARGIN_TOP, 10, cxt);
+    renderDigit(MARGIN_LEFT + 39 * (RADIUS + 1), MARGIN_TOP, parseInt(minutes / 10), cxt);
+    renderDigit(MARGIN_LEFT + 54 * (RADIUS + 1), MARGIN_TOP, parseInt(minutes % 10), cxt);
+    renderDigit(MARGIN_LEFT + 69 * (RADIUS + 1), MARGIN_TOP, 10, cxt);
+    renderDigit(MARGIN_LEFT + 78 * (RADIUS + 1), MARGIN_TOP, parseInt(seconds / 10), cxt);
+    renderDigit(MARGIN_LEFT + 93 * (RADIUS + 1), MARGIN_TOP, parseInt(seconds % 10), cxt);
 
     for (var i = 0; i < balls.length; i++) {
-        ctx.fillStyle = balls[i].color;
-        ctx.beginPath();
-        ctx.arc(balls[i].x, balls[i].y, RADIUS, 0, Math.PI * 2, true);
-        ctx.closePath();
-        ctx.fill();
+        cxt.fillStyle = balls[i].color;
+        cxt.beginPath();
+        cxt.arc(balls[i].x, balls[i].y, RADIUS, 0, Math.PI * 2, true);
+        cxt.closePath();
+        cxt.fill();
     }
 }
 
-function renderDigit(x, y, numIndex, ctx) {
+function renderDigit(x, y, numIndex, cxt) {
 
-    ctx.fillStyle = 'rgba(235,235,12,0.8)';
+    cxt.fillStyle = 'rgba(235,235,12,0.8)';
     for (var i = 0; i < digit[numIndex].length; i++) {
         for (var j = 0; j < digit[numIndex][i].length; j++) {
             if (digit[numIndex][i][j] == 1) {
-                ctx.beginPath();
+                cxt.beginPath();
                 // 圆心坐标，参见readme图二
                 var cx = x + j * 2 * (RADIUS + 1) + (RADIUS + 1);
                 var cy = y + i * 2 * (RADIUS + 1) + (RADIUS + 1);
-                ctx.arc(cx, cy, RADIUS, 0, Math.PI * 2);
-                ctx.closePath();
+                cxt.arc(cx, cy, RADIUS, 0, Math.PI * 2);
+                cxt.closePath();
 
-                ctx.fill();
+                cxt.fill();
             }
         }
     }

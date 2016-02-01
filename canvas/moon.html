@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas 绘制弯月</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="768"></canvas>
+
+<script src="js/canvas.js"></script>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+//        context.arc(400, 400, 300, 0.5 * Math.PI, 1.5 * Math.PI, true);
+//        context.arcTo(1200, 400, 400, 700, (400 - 100) * dis(400, 100, 1200, 400) / (1200 - 400));
+//        context.stroke();
+
+        fillMoon(context, 2, 400, 400, 300, 0);
+    };
+</script>
+</body>
+</html>

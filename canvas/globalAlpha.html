@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全局透明度</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="800">
+    <h1>当前浏览器不支持html5</h1>
+</canvas>
+<script>
+    'use strict';
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        const R = 100;
+        context.globalAlpha = 0.7;
+        for (var i = 0; i < 200; i++) {
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            context.fillStyle = `rgb(${r},${g},${b})`;
+
+            context.beginPath();
+            context.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * R, 0, Math.PI * 2);
+            context.fill();
+        }
+
+    }
+</script>
+</body>
+</html>

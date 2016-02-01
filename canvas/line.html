@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas绘图api-线条的属性</title>
+</head>
+<body>
+
+<canvas id="canvas" width="1024" height="768"></canvas>
+
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        context.lineWidth = 50;
+        context.strokeStyle = '#005588';
+
+        context.beginPath();
+        context.moveTo(100, 200);
+        context.lineTo(700, 200);
+        context.lineCap = "butt";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(100, 400);
+        context.lineTo(700, 400);
+        context.lineCap = 'round';
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(100, 600);
+        context.lineTo(700, 600);
+        context.lineCap = 'square';
+        context.stroke();
+
+        // baseline
+        context.lineWidth = 1;
+        context.strokeStyle = '#27a';
+        context.beginPath();
+        context.moveTo(100, 100);
+        context.lineTo(100, 700);
+        context.moveTo(700, 100);
+        context.lineTo(700, 700);
+        context.stroke();
+    }
+</script>
+</body>
+</html>

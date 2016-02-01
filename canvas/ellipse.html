@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas新特性-绘制椭圆在Chrome中的实现情况以及context接口的扩充</title>
+</head>
+<body>
+
+<canvas id="canvas" width="1024" height="800">
+    <h1>当前浏览器不支持html5时显示此文字</h1>
+</canvas>
+
+<script src="js/canvas.js"></script>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        context.beginPath();
+        if (context.ellipse) {
+            context.ellipse(400, 400, 300, 200, 0, 0, Math.PI * 2);
+            context.stroke();
+        } else {
+            alert('No ellipse');
+        }
+
+        context.beginPath();
+        context.drawStar(150, 300, 400, 400, 30);
+
+        context.moveTo(700, 700);
+        context.fillStyle = '#0f0';
+        context.fillStar(150, 300, 60);
+    };
+
+    var originalMoveTo = CanvasRenderingContext2D.prototype.moveTo;
+    CanvasRenderingContext2D.prototype.lastMoveToLocation = {};
+
+    CanvasRenderingContext2D.prototype.moveTo = function (x, y) {
+        originalMoveTo.apply(this, [x, y]);
+
+        this.lastMoveToLocation.x = x;
+        this.lastMoveToLocation.y = y;
+    };
+
+    CanvasRenderingContext2D.prototype.fillStar = function (r, R, rot) {
+        this.beginPath();
+        for (var i = 0; i < 5; i++) {
+            // big circle
+            this.lineTo(Math.cos((18 + i * 72 - rot) / 180 * Math.PI) * R, -Math.sin((18 + i * 72 - rot) / 180 * Math.PI) * R);
+            // small circle
+            this.lineTo(Math.cos((54 + i * 72 - rot) / 180 * Math.PI) * r, -Math.sin((54 + i * 72 - rot) / 180 * Math.PI) * r);
+        }
+        this.closePath();
+        this.fill();
+    }
+</script>
+</body>
+</html>

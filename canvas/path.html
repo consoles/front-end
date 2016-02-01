@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用非零环绕规则制作剪纸的镂空效果</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="800">
+    <h1>当前浏览器不支持html5</h1>
+</canvas>
+<script>
+    'use strict';
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        context.beginPath();
+        context.rect(100, 100, 600, 600);
+        pathRect(context, 200, 200, 400, 200);
+        pathTriangle(context, 300, 450, 150, 650, 450, 650);
+        context.arc(550, 550, 100, 0, Math.PI * 2, true);
+        context.closePath();
+
+        context.fillStyle = '#058';
+        context.shadowColor = 'gray';
+        context.shadowOffsetX = 10;
+        context.shadowOffsetY = 10;
+        context.shadowBlur = 10;
+        context.fill();
+
+    };
+
+    function pathRect(cxt, x, y, width, height) {
+        cxt.moveTo(x, y);
+        cxt.lineTo(x, y + height);
+        cxt.lineTo(x + width, y + height);
+        cxt.lineTo(x + width, y);
+        cxt.lineTo(x, y);
+    }
+
+    function pathTriangle(cxt, x1, y1, x2, y2, x3, y3) {
+        cxt.moveTo(x1, y1);
+        cxt.lineTo(x2, y2);
+        cxt.lineTo(x3, y3);
+        cxt.lineTo(x1, y1)
+    }
+</script>
+</body>
+</html>

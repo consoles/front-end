@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用canvas绘制五角星</title>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #ccc;margin: 10px auto" width="800" height="800"></canvas>
+<script src="js/star.js"></script>
+<script src="js/canvas.js"></script>
+<script>
+    var ctx = document.getElementById('canvas').getContext('2d');
+    //    ctx.lineJoin = 'bevel';
+    ctx.lineJoin = 'round';
+    drawStar(ctx, 200, 50, 300, 300, 60);
+</script>
+</body>
+</html>

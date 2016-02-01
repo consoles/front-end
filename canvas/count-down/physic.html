@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>一个抛物线运动</title>
+</head>
+<body>
+
+<canvas id="canvas" style="border: 1px solid #aaa;display: block;margin: 10px auto"></canvas>
+
+<script>
+    var ball = {x: 512, y: 100, r: 20, g: 2, vx: -4, vy: -10, color: '#005588'};
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        canvas.width = 800;
+        canvas.height = 600;
+
+        var context = canvas.getContext('2d');
+        setInterval(function () {
+            render(context);
+            update();
+        }, 50);
+    };
+
+    function update() {
+        ball.x += ball.vx;
+        ball.y += ball.vy;
+        ball.vy += ball.g;
+        if (ball.y > 600 - ball.r) {
+            ball.y = 600 - ball.r;
+            ball.vy = -ball.vy * 0.7; // 小球碰撞之后速度取相反数,并且由于动量损耗速度衰减
+        }
+    }
+
+    function render(ctx) {
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        ctx.fillStyle = ball.color;
+        ctx.beginPath();
+        ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+        ctx.closePath();
+
+        ctx.fill();
+    }
+</script>
+</body>
+</html>

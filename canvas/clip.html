@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用clip制作探照灯的效果</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="800">
+    <h1>当前浏览器不支持html5</h1>
+</canvas>
+<script src="js/canvas.js"></script>
+<script>
+    'use strict';
+    var searchLight = {
+        x: 400,
+        y: 400,
+        radius: 150,
+        vx: Math.random() * 5 + 10,
+        vy: Math.random() * 5 + 10
+    };
+    var rot = 0;
+    var isIncrease = false;
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        setInterval(function () {
+            draw(context);
+            update(canvas.width, canvas.height);
+        }, 50);
+    };
+
+    function draw(cxt) {
+
+        var canvas = cxt.canvas;
+        cxt.clearRect(0, 0, canvas.width, canvas.height);
+        cxt.save();
+
+        cxt.beginPath();
+        cxt.fillStyle = 'black';
+        cxt.fillRect(0, 0, canvas.width, canvas.height);
+
+        /*   cxt.beginPath();
+         cxt.arc(searchLight.x, searchLight.y, searchLight.radius, 0, Math.PI * 2);
+         cxt.fillStyle = '#fff';
+         cxt.fill();
+         cxt.clip();*/
+
+        cxt.save();
+        cxt.translate(searchLight.x, searchLight.y);
+        cxt.rotate(rot / 180 * Math.PI);
+        cxt.scale(searchLight.radius, searchLight.radius);
+        starPath(cxt);
+        cxt.fillStyle = '#fff';
+        cxt.fill();
+        cxt.restore();
+        cxt.clip();
+
+        cxt.font = 'bold 150px Arial';
+        cxt.textAlign = 'center';
+        cxt.textBaseline = 'middle';
+        cxt.fillStyle = '#058';
+        cxt.fillText('CANVAS', canvas.width / 2, canvas.height / 4);
+        cxt.fillText('CANVAS', canvas.width / 2, canvas.height / 2);
+        cxt.fillText('CANVAS', canvas.width / 2, canvas.height * 3 / 4);
+
+        cxt.restore();
+    }
+
+    function update(canvasWidth, canvasHeight) {
+
+        rot++;
+
+        searchLight.x += searchLight.vx;
+        searchLight.y += searchLight.vy;
+
+        if (searchLight.x - searchLight.radius <= 0) {
+            searchLight.vx = -searchLight.vx;
+            searchLight.x = searchLight.radius;
+        }
+        if (searchLight.x + searchLight.radius >= canvasWidth) {
+            searchLight.vx = -searchLight.vx;
+            searchLight.x = canvasWidth - searchLight.radius;
+        }
+        if (searchLight.y - searchLight.radius <= 0) {
+            searchLight.vy = -searchLight.vy;
+            searchLight.y = searchLight.radius;
+        }
+        if (searchLight.y + searchLight.radius >= canvasHeight) {
+            searchLight.vy = -searchLight.vy;
+            searchLight.y = canvasHeight - searchLight.radius;
+        }
+
+        if (searchLight.radius > 400) {
+            isIncrease = false;
+        } else if (searchLight.radius < 150) {
+            isIncrease = true;
+        }
+
+        if (isIncrease) {
+            searchLight.radius += 5;
+        } else {
+            searchLight.radius -= 5;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>渐变-径向渐变</title>
+</head>
+<body>
+
+<canvas id="canvas" width="800" height="800"></canvas>
+
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        // 创建一条渐变线
+        var radialGradient = context.createRadialGradient(400, 400, 100, 400, 400, 500);
+        // 在渐变线上添加颜色
+        radialGradient.addColorStop(0.0, 'white');
+        radialGradient.addColorStop(0.25, 'yellow');
+        radialGradient.addColorStop(0.5, 'green');
+        radialGradient.addColorStop(0.75, 'blue');
+        radialGradient.addColorStop(1.0, 'black');
+        context.fillStyle = radialGradient;
+        context.fillRect(0, 0, 800, 800);
+    }
+</script>
+</body>
+</html>

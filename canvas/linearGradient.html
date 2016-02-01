@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>渐变-线性渐变</title>
+</head>
+<body>
+
+<canvas id="canvas" width="800" height="800"></canvas>
+
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        // 创建一条渐变线
+        var linearGradient = context.createLinearGradient(0, 0, 800, 800);
+        // 在渐变线上添加颜色
+        linearGradient.addColorStop(0.0, 'white');
+        linearGradient.addColorStop(0.25, 'yellow');
+        linearGradient.addColorStop(0.5, 'green');
+        linearGradient.addColorStop(0.75, 'blue');
+        linearGradient.addColorStop(1.0, 'black');
+        context.fillStyle = linearGradient;
+        context.fillRect(0, 0, 800, 800);
+    }
+</script>
+</body>
+</html>

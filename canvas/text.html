@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas绘制文字</title>
+</head>
+<body>
+<img src="bg.gif" alt="" id="img" style="display: none"/>
+<canvas id="canvas" width="800" height="800">
+    <h1>当前浏览器不支持html5</h1>
+</canvas>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        context.font = 'bold 40px Arial';
+        context.fillStyle = '#058';
+
+        context.fillText('好好学习，天天向上', 40, 100);
+
+        context.lineWidth = 1;
+        context.strokeStyle = '#f00';
+        context.strokeText('你好么？', 40, 200, 50);
+
+        var gad = context.createLinearGradient(5, 300, 80, 200);
+        gad.addColorStop(0.0, 'white');
+        gad.addColorStop(0.25, 'yellow');
+        gad.addColorStop(0.5, 'green');
+        gad.addColorStop(0.75, 'blue');
+        gad.addColorStop(1.0, 'black');
+        context.fillStyle = gad;
+        context.strokeWidth = 2;
+        context.strokeStyle = '#f0f';
+        context.fillText('大梦初晓', 20, 300);
+        context.strokeText('大梦初晓', 20, 300);
+
+        context.font = 'bold 60px Arial';
+        var bg = document.getElementById('img');
+        var pattern = context.createPattern(bg, 'repeat');
+        context.fillStyle = pattern;
+        context.strokeWidth = 2;
+        context.strokeStyle = '#00f';
+        context.fillText('成功的花', 30, 400);
+        context.strokeText('成功的花', 30, 400);
+    };
+</script>
+</body>
+</html>

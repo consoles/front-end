@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas阴影属性</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800">
+    <h1>当前浏览器不支持html5</h1>
+</canvas>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        context.shadowColor = '#f00';
+        context.shadowOffsetX = -20;
+        context.shadowOffsetY = 30;
+        context.shadowBlur = 5;
+
+        context.fillStyle = '#0f0';
+        context.fillRect(200, 200, 400, 400);
+
+        context.font = 'bold 40px Arial';
+        context.fillStyle = '#00f';
+        context.fillText('主定理', 200, 200);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas绘制矩形1</title>
+</head>
+<body>
+
+<canvas id="canvas" width="1024" height="768"></canvas>
+
+<script src="js/canvas.js"></script>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        drawRect(context, 0, 0, 400, 400, 10, '#f00', '#f0f');
+        drawRect2(context, 200, 200, 400, 400, 10, '#0f0', 'rgba(0,255,0,0.5)');
+    }
+</script>
+</body>
+</html>

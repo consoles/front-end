@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas arcTo</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="768"></canvas>
+<script>
+    window.onload = function () {
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        arcToTest(context, 150, 100, 450, 100, 650, 600, 700);
+    };
+
+    function arcToTest(cxt, x0, y0, x1, y1, x2, y2, R) {
+
+        // arcTo
+        cxt.beginPath();
+        cxt.moveTo(x0, y0);
+        cxt.arcTo(x1, y1, x2, y2, R);
+        cxt.lineWidth = 6;
+        cxt.strokeStyle = 'red';
+        cxt.stroke();
+
+        // baseLine
+        cxt.beginPath();
+        cxt.moveTo(x0, y0);
+        cxt.lineTo(x1, y1);
+        cxt.lineTo(x2, y2);
+        cxt.lineWidth = 2;
+        cxt.strokeStyle = 'gray';
+        cxt.stroke();
+    }
+</script>
+</body>
+</html>
