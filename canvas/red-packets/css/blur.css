@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#blur_div {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#blur_image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    margin: 0 auto;
+
+    /* CSS3滤镜，ref:https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter */
+    -webkit-filter: blur(10px);
+
+    z-index: 0;
+}
+
+#canvas {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.button {
+    display: block;
+    position: absolute;
+    z-index: 200;
+
+    width: 100px;
+    height: 30px;
+
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+
+    border-radius: 5px;
+}
+
+#reset_button {
+    left: 50px;
+    bottom: 20px;
+    background-color: #058;
+}
+
+#reset_button:hover {
+    background-color: #0479c9;
+}
+
+#show_button {
+    right: 50px;
+    bottom: 20px;
+    background-color: #085;
+}
+
+#show_button:hover {
+    background-color: #074;
+}

@@ -62,3 +62,5 @@ function window2canvas(x, y) {
 ![canvas如何存储图像的每个像素](./images/canvas_imageData.png)
 
 基于此，我们可以得到图像的每个像素，从而实现我们自己的图像算法。
+
+[有没有一段代码让你觉得人类的智慧璀璨无比](https://www.zhihu.com/question/30262900)

@@ -180,7 +180,7 @@ CanvasRenderingContext2D.prototype.drawStar = function (r, R, x, y, rotate) {
 context.drawStar(r, R, x, y, rotate)
 ```
 
-###其他canvas图形库
+### 其他canvas图形库
 
 [ExplorerCanvas](https://github.com/arv/explorercanvas)库可以在老式浏览器上运行canvas
 [Rgraph](https://roopons.com.au/wp-content/plugins/viral-optins/js/rgraph/) canvas图表库
