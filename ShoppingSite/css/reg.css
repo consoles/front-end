@@ -1,0 +1,32 @@
+.reg-logo .commonWidth {
+    width: 630px;
+}
+
+.reg-item {
+    font: 14px/34px "宋体";
+    width: 110px;
+    text-align: right;
+    float: left;
+}
+
+.reg-item i {
+    color: red;
+    font-style: normal;
+    margin-right: 5px;
+}
+
+.input-item {
+    width: 270px;
+    float: left;
+}
+
+.reg-box {
+    width: 628px;
+    margin: 10px auto;
+    border: 1px solid #CCCCCC;
+}
+
+.reg-box li {
+    height: 70px;
+    vertical-align: top;
+}

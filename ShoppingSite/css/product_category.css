@@ -106,11 +106,3 @@
 .item span{
 
 }
-.star{
-    width: 13px;
-    height: 12px;
-    margin-right: 5px;
-    display: inline-block;
-    overflow: hidden;
-    background: url("../images/icon/star.gif") left top no-repeat;
-}

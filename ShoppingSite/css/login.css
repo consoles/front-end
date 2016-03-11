@@ -1,0 +1,83 @@
+.login-logo .commonWidth {
+    width: 460px;
+}
+
+.login-logo .logo {
+    margin-left: 60px;
+}
+
+.welcome-title {
+    font: 22px/85px "微软雅黑";
+    color: #ffffff;
+    float: left;
+    padding-left: 24px;
+}
+
+.login-box {
+    width: 458px;
+    border: 1px solid #999;
+    margin: 10px auto;
+    position: relative;
+    padding: 15px 40px;
+}
+
+.login-content {
+    padding: 15px 76px;
+}
+
+.login-title {
+    color: #666;
+    line-height: 20px;
+}
+
+.login-input {
+    border: #999 solid 1px;
+    height: 32px;
+    line-height: 32px \9;
+    text-indent: 5px;
+    width: 100%;
+}
+
+.user-icon {
+    background: url("../images/icon/user_icon.jpg") right center no-repeat;
+}
+
+.auto-login {
+    padding-top: 27px;
+    padding-bottom: 28px;
+}
+
+.checked {
+    position: relative;
+    top: 3px;
+    margin-right: 3px;
+}
+
+.login-btn {
+    width: 309px;
+    height: 36px;
+    background: url("../images/icon/login_btn.jpg") left top no-repeat;
+}
+
+.login-parteners {
+    padding-top: 34px;
+}
+
+.login-list li {
+    float: left;
+    line-height: 20px;
+}
+
+.login-list li span {
+    color: #999;
+    margin: 0 2px;
+}
+
+.reg-link {
+    width: 115px;
+    height: 31px;
+    background: url("../images/icon/red_link.jpg") left top no-repeat;
+    position: absolute;
+    right: 41px;
+    bottom: 31px;
+}

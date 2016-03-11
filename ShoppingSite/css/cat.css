@@ -1,0 +1,240 @@
+.stepBox {
+    padding-top: 26px;
+}
+
+.step {
+    width: 396px;
+    background: url("../images/step.jpg") left top no-repeat;
+    height: 19px;
+}
+
+.step-text {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.step-text li {
+    float: left;
+}
+
+.s1, .s3 {
+    width: 30%;
+}
+
+.s2 {
+    width: 40%;
+    text-align: center;
+}
+
+.s3 {
+    text-align: right;
+}
+
+.step-text .active {
+    color: #f3e402;
+    font-weight: bold;
+}
+
+.shopping-cart {
+    padding-top: 10px;
+}
+
+.shopping-item {
+    border: #ccc solid 1px;
+}
+
+.shopping-title {
+    height: 31px;
+    background: url("../images/shopping_bg.jpg") left top repeat-x;
+    font: 16px/31px "Microsoft Yahei", "微软雅黑";
+    color: #444444;
+    text-indent: 12px;
+    border-bottom: #e3e3e3 solid 1px;
+}
+
+.padding-shop {
+    padding: 25px 30px;
+}
+
+.shopping-list li {
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.shopping-list-text {
+    float: left;
+    width: 76px;
+    line-height: 24px;
+}
+
+.shopping-list-text em {
+    color: #f30;
+    font-style: normal;
+    margin-right: 5px;
+}
+
+.input {
+    height: 22px;
+    line-height: 22px \9;
+    width: 110px;
+    border: 1px #CCCCCC solid;
+    padding: 0 6px;
+}
+
+.input-b {
+    width: 392px;
+}
+
+.confirm {
+    width: 114px;
+    height: 28px;
+    background: url("../images/sh_btn.jpg") left top no-repeat;
+}
+
+.radio {
+    position: relative;
+    top: 3px;
+    margin-right: 4px;
+}
+
+.back-car {
+    float: right;
+    font-size: 12px;
+    font-family: "arial", "微软雅黑";
+    margin-right: 33px;
+    color: #3377ff;
+}
+
+.back-car:hover {
+    text-decoration: underline;
+}
+
+.cart-item {
+    border-bottom: #CCCCCC 1px solid;
+    float: left;
+}
+
+.cart-head {
+    padding-top: 5px;
+}
+
+.cart-head .cart-item {
+    line-height: 28px;
+}
+
+.t-name {
+    width: 440px;
+    padding-left: 30px;
+}
+
+.t-price {
+    width: 134px;
+}
+
+.t-return {
+    width: 136px;
+}
+
+.t-num {
+    width: 135px;
+}
+
+.t-subtotal {
+    width: 125px;
+}
+
+.text-red {
+    color: red;
+}
+
+/*商品信息*/
+.cart-content {
+    border-bottom: solid 1px #CCCCCC;
+}
+
+.cart-content .cart-item {
+    border-bottom: none;
+}
+
+.cart-content .t-price, .cart-content .t-return, .cart-content .t-num, .cart-content .t-subtotal {
+    line-height: 37px;
+}
+
+.cart-shop-info img {
+    width: 90px;
+    height: 100px;
+    display: block;
+    float: left;
+}
+
+.cart-shop-info-content {
+    padding-left: 90px;
+    font-size: 12px;
+}
+
+.cart-link {
+    line-height: 37px;
+    margin-bottom: 30px;
+}
+
+.cart-link a:hover {
+    text-decoration: underline;
+}
+
+.cart-info {
+    color: #000;
+}
+
+.cart-message {
+    line-height: 40px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.cart-prompt {
+    line-height: 40px;
+    padding-left: 30px;
+    color: red;
+}
+
+.cart-prompt-icon {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background: url('../images/icon/icon_cart_prompt.jpg') left top no-repeat;
+    margin-right: 11px;
+}
+
+.cart-no-border {
+    border-bottom: none;
+}
+
+.cart-rmb i {
+    font-size: 14px;
+    color: #999;
+    font-style: normal;
+}
+
+.cart-rmb {
+    margin-bottom: 16px;
+}
+
+.cart-rmb span {
+    font-size: 24px;
+    color: red;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.cart-btn-box {
+    text-align: right;
+}
+
+.cart-btn {
+    width: 165px;
+    height: 33px;
+    color: #ffffff;
+    background-color: #e50007;
+    font: 18px/33px "microsoft yahei";
+}

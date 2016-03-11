@@ -69,7 +69,7 @@
     padding: 10px;
 }
 
-.des-tit {
+.des-content-title {
     font: bold 16px/22px "微软雅黑"; /* 16号字体，行高22 */
     padding: 13px 25px;
 }
@@ -118,48 +118,10 @@
     margin-right: 10px;
 }
 
-.select {
-    border: 1px #999999 solid;
-    height: 22px;
-    line-height: 22px;
-    float: left;
-    background-color: #fff;
-    padding: 0 20px 0 10px;
-    position: relative;
-    z-index: 4;
-}
-
-.select h3 {
-    font-size: 12px;
-    font-weight: normal;
-}
-
-.select span {
-    position: absolute;
-    background: url("../images/icon/sj_blue.jpg") center center no-repeat;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 20px;
-}
-
-.show-select {
-    position: absolute;
-    border: 1px #999999 solid;
-    left: -1px;
-    top: 22px;
-    background-color: #fff;
-    width: 100%;
-    display: none;
-}
-
-.show-select li {
-    padding-left: 10px;
-}
-
 /* 送货 */
 .des-position {
     padding: 15px 0;
+    background-color: #F2F2F2;
 }
 
 .the_goods {
@@ -210,14 +172,16 @@
 .reduction, .plus {
     width: 15px;
     background: url("../images/icon/plus_bg.jpg") left top no-repeat;
+    text-align: center;
+    color: #333;
 }
 
 .reduction {
-    border-left: 1px solid #2c2c2c;
+    border-right: 1px solid #ccc;
 }
 
 .plus {
-    border-right: 1px solid #2c2c2c;
+    border-left: 1px solid #ccc;
 }
 
 .des-input {
@@ -327,13 +291,13 @@
     background: #ffffff;
 }
 
-.des-tit {
+.des-title {
     height: 39px;
     border-bottom: 1px solid #CCCCCC;
     background: url("../images/icon/des_title.jpg") left top repeat-x;
 }
 
-.des-tit li {
+.des-title li {
     width: 50%;
     float: left;
     font-size: 14px;
@@ -344,13 +308,13 @@
     margin-left: -1px;
 }
 
-.des-tit .active {
+.des-title .active {
     background-color: #0479ca;
     font-weight: bold;
     color: #ffffff;
 }
 
-.des-tit span {
+.des-title span {
     background: url("../images/icon/des_title_icon.png") left center no-repeat;
     padding-left: 32px;
     display: inline-block;
@@ -376,7 +340,6 @@
     height: 26px;
     border-bottom: #CCCCCC 1px solid;
     font-family: "arial", "微软雅黑";
-    height: 26px;
     margin-bottom: 18px;
     position: relative;
 }
@@ -408,7 +371,7 @@
     line-height: 38px;
     height: 38px;
     font-size: 14px;
-    color: #CCCCCC;
+    color: #656565;
     padding-left: 10px;
 }
 .score-box{
@@ -468,11 +431,103 @@
     width: 25px;
     height: 14px;
     background-color: #7f7f7f;
+    color: #fff;
 }
 /* 小三角 */
 .score-num i{
     border: 4px dashed transparent;
     border-top: solid #7f7f7f;
-    width: 0;
-    height: 0;
+}
+
+/* 满意度切换 */
+.review-tab {
+    height: 30px;
+    background-color: #F2F2F2;
+}
+
+.review {
+    height: 100%;
+    line-height: 32px;
+    padding-left: 20px;
+}
+
+.review li {
+    height: 100%;
+    float: left;
+    margin-right: 40px;
+}
+
+.review li a {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+}
+
+.review a.active {
+    color: #317de6;
+    font-weight: bold;
+    border-bottom: #317de6 solid 2px;
+    margin-bottom: -2px;
+    position: relative;
+}
+
+.review-sort {
+    padding: 5px 5px 0 0;
+}
+
+.review-sort a {
+    display: inline-block;
+    line-height: 20px;
+    height: 20px;
+    border: 1px solid #CCCCCC;
+    padding: 0 20px 0 6px;
+    background: url("../images/icon/down.png") 58px center no-repeat;
+}
+
+.review-list {
+    margin-bottom: 10px;
+    padding-top: 18px;
+}
+
+.review-user-head {
+    width: 170px;
+}
+
+.review-user {
+    margin-left: 40px;
+    width: 60px;
+    text-align: center;
+}
+
+.review-user img {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+.review-user p {
+    line-height: 20px;
+}
+
+.review-content {
+    padding-left: 170px;
+}
+
+.starBox .star {
+    margin-top: 1px;
+}
+
+.stars-text {
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.review-t {
+    height: 24px;
+    padding-top: 5px;
+}
+
+.review-content p {
+    line-height: 30px;
 }

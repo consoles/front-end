@@ -156,41 +156,6 @@
     position: relative;
 }
 
-/* 组件 */
-.select{
-    border: 1px #999999 solid;
-    height: 22px;
-    line-height: 22px;
-    float: left;
-    background-color: #fff;
-    padding: 0 20px 0 10px;
-    position: relative;
-    z-index: 4;
-}
-.select h3{
-    font-size: 12px;
-    font-weight: normal;
-}
-.select span{
-    position: absolute;
-    background: url("../images/icon/sj_blue.jpg") center center no-repeat;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 20px;
-}
-.show-select{
-    position: absolute;
-    border: 1px #999999 solid;
-    left: -1px;
-    top: 22px;
-    background-color: #fff;
-    width: 100%;
-    display: none;
-}
-.show-select li{
-    padding-left: 10px;
-}
 .hot{
     width: 52px;
     height: 52px;

@@ -19,6 +19,13 @@
     display: block;
 }
 
+.pb-10 {
+    padding-bottom: 10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
 /* topBar */
 .topBar{
     height: 31px;
@@ -366,4 +373,55 @@
 }
 .web img{
     margin: 0 12px;
+}
+
+/* components */
+/*select*/
+.select {
+    border: 1px #999999 solid;
+    height: 22px;
+    line-height: 22px;
+    float: left;
+    background-color: #fff;
+    padding: 0 20px 0 10px;
+    position: relative;
+    z-index: 4;
+}
+
+.select h3 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.select span {
+    position: absolute;
+    background: url("../images/icon/sj_blue.jpg") center center no-repeat;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+}
+
+.show-select {
+    position: absolute;
+    border: 1px #999999 solid;
+    left: -1px;
+    top: 22px;
+    background-color: #fff;
+    width: 100%;
+    display: none;
+}
+
+.show-select li {
+    padding-left: 10px;
+}
+
+/*star*/
+.star {
+    width: 13px;
+    height: 12px;
+    margin-right: 5px;
+    display: inline-block;
+    overflow: hidden;
+    background: url("../images/icon/star.gif") left top no-repeat;
 }
