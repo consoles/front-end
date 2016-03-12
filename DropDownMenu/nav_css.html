@@ -3,23 +3,88 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>CSS实现下拉菜单</title>
-    <link rel="stylesheet" href="css/css.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #nav {
+            width: 600px;
+            height: 40px;
+            background-color: #eeeeee;
+            margin: 0 auto;
+        }
+
+        /* 一级菜单 */
+        .nav-first li {
+            position: relative;
+            line-height: 40px;
+            text-align: center;
+            float: left;
+        }
+
+        .nav-first a {
+            width: 90px;
+            height: 40px;
+            display: block;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .nav-first a:hover {
+            color: #ffffff;
+            background-color: #cccccc;
+        }
+
+        /* 二级菜单 */
+        .nav-second {
+            position: absolute;
+            left: 0;
+            top: 40px;
+            display: none;
+        }
+
+        .nav-second a {
+            display: block;
+        }
+
+        .nav-second a:hover {
+            background-color: #999999;
+        }
+
+        .nav-second li {
+            float: none;
+            background-color: #eeeeee;
+            margin-top: 2px;
+        }
+
+        /* 鼠标进过一级菜单的时候二级菜单显示 */
+        .nav-first li:hover .nav-second {
+            display: block;
+        }
+
+    </style>
 </head>
 <body>
-    <div id="nav">
-        <ul class="nav-first">
-            <li><a href="#">首页</a></li>
-            <li><a href="#">课程大厅</a>
-                <ul class="nav-second">
-                    <li><a href="#">js课程</a></li>
-                    <li><a href="#">JQuery课程</a></li>
-                    <li><a href="#">html5课程</a></li>
-                </ul>
-            </li>
-            <li><a href="#">学习中心</a></li>
-            <li><a href="#">经典案例</a></li>
-            <li><a href="#">关于我们</a></li>
-        </ul>
-    </div>
+<div id="nav">
+    <ul class="nav-first">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">课程大厅</a>
+            <ul class="nav-second">
+                <li><a href="#">js课程</a></li>
+                <li><a href="#">JQuery课程</a></li>
+                <li><a href="#">html5课程</a></li>
+            </ul>
+        </li>
+        <li><a href="#">学习中心</a></li>
+        <li><a href="#">经典案例</a></li>
+        <li><a href="#">关于我们</a></li>
+    </ul>
+</div>
 </body>
 </html>

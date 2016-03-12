@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>变换菜单（下拉菜单的变体）</title>
+    <style>
+        .top-nav {
+            font-weight: bold;
+            font-size: 12px;
+            list-style: none;
+            border-bottom: 8px solid #DC4E1B;
+            overflow: auto;
+        }
+
+        .top-nav li {
+            float: left;
+            margin-right: 1px;
+        }
+
+        .top-nav li a {
+            line-height: 20px;
+            text-decoration: none;
+            background-color: #DDD;
+            color: #666666;
+            display: block;
+            width: 80px;
+            text-align: center;
+        }
+
+        .top-nav li a span {
+            display: none;
+        }
+
+        .top-nav li a:hover span {
+            display: block;
+            background-color: #DC4E1B;
+            color: #FFF;
+        }
+
+        .top-nav li a:hover {
+            margin-top: -20px;
+        }
+    </style>
+</head>
+
+<body>
+<ul class="top-nav">
+    <li><a href="http://www.imooc.com">首页<span>Home</span></a></li>
+    <li><a href="http://www.imooc.com">课程中心<span>Course</span></a></li>
+    <li><a href="http://www.imooc.com">学习大厅<span>Learn</span></a></li>
+    <li><a href="http://www.imooc.com">关于我们<span>About</span></a></li>
+</ul>
+</body>
+</html>

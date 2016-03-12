@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>导航菜单特效</title>
+    <style>
+        html,
+        body,
+        div {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .header {
+            width: 1105px;
+            margin: 0 auto;
+            height: 111px;
+            padding: 12px 0 18px;
+            position: relative;
+            *z-index: 1;
+        }
+
+        .header .logo {
+            height: 86px;
+            width: 256px;
+            margin-top: 25px;
+        }
+
+        .top-nav .navlist-wrap {
+            width: 1050px;
+            margin: 0 auto;
+            position: relative
+        }
+
+        .top-nav .navlist {
+            position: absolute;
+            right: 130PX;
+            top: -40PX
+        }
+
+        .top-nav .navlist .nav-btn {
+            float: left;
+            margin-left: 60px;
+            color: #666;
+            vertical-align: middle;
+            text-decoration: none
+        }
+
+        .top-nav .expand {
+            height: 0px;
+            background-color: #333d4d;
+            overflow: hidden;
+            position: relative;
+            width: 100%
+        }
+
+        .expand .expdiv {
+            height: 130px;
+            width: 500%;
+        }
+
+        .expand .expdiv .item {
+            float: left;
+            width: 20%
+        }
+
+        .expand .expdiv .item-active {
+            display: block
+        }
+
+        .expand .close-btn {
+            width: 120px;
+            height: 20px;
+            background: url(images/broswer_home.png) no-repeat -13px -117px;
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            margin-left: -60px;
+            cursor: pointer;
+        }
+
+        .expdiv .expdiv-list {
+            text-align: center;
+            height: 56px;
+            padding: 37px;
+            color: White
+        }
+
+        .expdiv .expdiv-list .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #586e91;
+            font-size: 18px;
+            line-height: 24px;
+            margin: 0 28px;
+            cursor: pointer
+        }
+
+        .expdiv .expdiv-list .btn:hover {
+            color: #7896af
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1 class="logo">慕课网</h1>
+    </div>
+    <div class="top-nav">
+        <div id="navList" class="navlist-wrap">
+            <div class="navlist clearfix">
+                <a class="nav-btn" href="#" data-device="#homeItem">首页</a>
+                <a class="nav-btn" href="#" data-device="#courseItem">课程大厅</a>
+                <a class="nav-btn" href="#" data-device="#learnItem">学习中心</a>
+                <a class="nav-btn" href="#" data-device="#personalItem">个人中心</a>
+                <a class="nav-btn" href="#" data-device="#aboutItem">关于我们</a>
+            </div>
+        </div>
+        <div id="expandZone" class="expand">
+            <div class="expdiv">
+                <div id="homeItem" class="item">
+                    <div class="expdiv-list">
+                        <a href="#">慕课网主页</a>
+                    </div>
+                </div>
+                <div id="courseItem" class="item">
+                    <div class="expdiv-list">
+                        <a href="#">前端课程</a>
+                        <a href="#">手机开发</a>
+                        <a href="#">后台练习</a>
+                    </div>
+                </div>
+                <div id="learnItem" class="item">
+                    <div class="expdiv-list">
+                        <a href="#">javascript</a>
+                        <a href="#">CSS</a>
+                        <a href="#">jQuery</a>
+                    </div>
+                </div>
+                <div id="personalItem" class="item">
+                    <div class="expdiv-list">
+                        个人信息：
+                    </div>
+                </div>
+                <div id="aboutItem" class="item">
+                    <div class="expdiv-list">
+                        公司地址：北京市西城区德外大街10号
+                    </div>
+                </div>
+            </div>
+            <div id="closeBtn" class="close-btn">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../lib/jquery-2.1.1.js"></script>
+<script>
+    $(function () {
+        var $expandZone = $('#expandZone');
+        //navlist
+        $('#navList').on('click', '.nav-btn', function () {
+            if ($(this).hasClass('btn-active')) {
+                $('#closeBtn').click();
+                return false;
+            }
+            var curIndex = $(this).index(), mlValue = '-' + curIndex * 100 + '%';
+            if ($expandZone.hasClass('active')) {
+                $expandZone.find('.expdiv').animate({marginLeft: mlValue});
+            } else {
+                $expandZone.find('.expdiv').css({marginLeft: mlValue});
+                $expandZone.animate({height: '130px'}).addClass('active');
+            }
+            $(this).addClass('btn-active').siblings().removeClass('btn-active');
+            return false;
+        });
+
+        $('#closeBtn').on('click', function () {
+            $expandZone.animate({height: '0px'}, function () {
+                $(this).removeClass('active');
+                $('#navList').find('.btn-active').removeClass('btn-active');
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+
+</html>

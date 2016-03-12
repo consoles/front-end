@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>多级菜单</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        .top-nav {
+            font-size: 12px;
+            font-weight: bold;
+            list-style: none;
+        }
+
+        .top-nav li {
+            float: left;
+            list-style: none;
+            margin-right: 1px;
+        }
+
+        .top-nav li a {
+            line-height: 20px;
+            text-decoration: none;
+            background: #DDDDDD;
+            color: #666666;
+            display: block;
+            width: 80px;
+            text-align: center;
+        }
+
+        .top-nav li a:hover {
+            background: #900;
+            color: #FFF;
+        }
+
+        .top-nav ul {
+            list-style: none;
+            display: none;
+            width: 80px;
+            padding: 0;
+            position: relative;
+        }
+
+        .top-nav li ul li ul {
+            position: absolute;
+            top: 0;
+            left: 80px;
+        }
+
+        /* 使用CSS设置鼠标移动到一级菜单时，二级菜单显示，三级菜单隐藏 */
+        .top-nav li:hover ul {
+            display: block;
+        }
+
+        .top-nav li:hover ul li ul {
+            display: none;
+        }
+
+        /* 使用CSS设置鼠标移动到二级菜单时，三级菜单显示 */
+        .top-nav li ul li:hover ul {
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var isIE = !!window.ActiveXObject;
+            var isIE6 = isIE && !window.XMLHttpRequest;
+            if (isIE6) {
+                var Lis = document.getElementsByTagName("li");
+                for (var i = 0; i < Lis.length; i++) {
+                    Lis[i].onmouseover = function () {
+                        var u = this.getElementsByTagName("ul")[0];
+                        if (u != undefined) {
+                            u.style.display = "block";
+                        }
+                    };
+                    Lis[i].onmouseout = function () {
+                        var u = this.getElementsByTagName("ul")[0];
+                        if (u != undefined) {
+                            u.style.display = "none";
+                        }
+                    };
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul class="top-nav">
+    <li><a href="#">慕课网首页</a>
+        <ul>
+            <li><a href="#">前端课程 +</a>
+                <ul>
+                    <li><a href="#">javascript</a></li>
+                    <li><a href="#">css</a></li>
+                    <li><a href="#">jquery</a></li>
+                </ul>
+            </li>
+            <li><a href="#">手机开发</a>
+                <ul>
+                    <li><a href="#">ios开发</a></li>
+                    <li><a href="#">android开发</a></li>
+                    <li><a href="#">WP开发</a></li>
+                </ul>
+            </li>
+            <li><a href="#">后台编程</a></li>
+        </ul>
+    </li>
+    <li><a href="#">课程大厅</a></li>
+    <li><a href="#">学习中心 +</a>
+        <ul>
+            <li><a href="#">前端课程 +</a>
+                <ul>
+                    <li><a href="#">javascript</a></li>
+                    <li><a href="#">css</a></li>
+                    <li><a href="#">jquery</a></li>
+                </ul>
+            </li>
+            <li><a href="#">手机开发</a>
+                <ul>
+                    <li><a href="#">ios开发</a></li>
+                    <li><a href="#">android开发</a></li>
+                    <li><a href="#">WP开发</a></li>
+                </ul>
+            </li>
+            <li><a href="#">后台编程</a></li>
+        </ul>
+    </li>
+    <li><a href="#">关于我们</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>动画菜单js实现</title>
+    <style>
+        .top-nav {
+            font-size: 14px;
+            font-weight: bold;
+            list-style: none;
+        }
+
+        .top-nav li {
+            float: left;
+            margin-right: 1px;
+        }
+
+        .top-nav li a {
+            line-height: 34px;
+            text-decoration: none;
+            background: #3f420e;
+            color: #ffffff;
+            display: block;
+            width: 80px;
+            text-align: center;
+        }
+
+        .top-nav ul {
+            list-style: none;
+            display: none;
+            padding: 0;
+            position: absolute;;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .top-nav li a:hover {
+            background: url("images/slide-pannel_14.png") 0 0 repeat-x;
+        }
+
+        .note {
+            color: #3f240e;
+            display: block;
+            background: url("images/slide-pannel_14.png") 0 0 repeat-x;
+        }
+
+        .corner {
+            display: block;
+            height: 11px;
+            background: url("images/bird.png") 31px 0 no-repeat;
+        }
+    </style>
+</head>
+<body>
+<ul class="top-nav">
+    <li><a href="#"><span class="note">慕课网</span></a></li>
+    <li><a href="#">课程大厅</a></li>
+    <li><a href="#">学习中心</a>
+        <ul id="second_menu">
+            <span class="corner"></span>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">JQuery</a></li>
+            <li><a href="#">HTML</a></li>
+        </ul>
+    </li>
+    <li><a href="#">个人中心</a></li>
+    <li><a href="#">关于我们</a></li>
+</ul>
+<script>
+
+    function changeHeight(id, count) {
+        var ulList = document.getElementById(id);
+        var h = ulList.offsetHeight;
+        h += count;
+        if (count > 0) {
+            if (h <= 42) {
+                ulList.style.height = h + 'px';
+                setTimeout(function () {
+                    changeHeight(id, 1);
+                }, 10);
+            }
+        } else {
+            if (h > 0) {
+                ulList.style.height = h + 'px';
+                setTimeout(function () {
+                    changeHeight(id, -1);
+                }, 10);
+            } else {
+                ulList.style.display = 'none';
+            }
+        }
+    }
+
+    var Lis = document.getElementsByTagName('li');
+    for (var i = 0; i < Lis.length; i++) {
+        Lis[i].onmouseover = function () {
+            var u = this.getElementsByTagName('ul')[0];
+            if (u != undefined) {
+                u.style.display = 'block';
+                changeHeight(u.id, 1);
+            }
+        };
+        Lis[i].onmouseout = function () {
+            var u = this.getElementsByTagName('ul')[0];
+            if (u != undefined) {
+                changeHeight(u.id, -1);
+            }
+        };
+    }
+</script>
+</body>
+</html>
