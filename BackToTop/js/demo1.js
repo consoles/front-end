@@ -8,7 +8,7 @@ window.onload = function () {
 
     var topBtn = document.getElementById('backTop');
     var timer = null;
-    top.onclick = function () {
+    topBtn.onclick = function () {
         var backTop = document.body.scrollTop;
         var speed = backTop / 5;
         timer = setInterval(function () {

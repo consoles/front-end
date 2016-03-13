@@ -1,0 +1,19 @@
+.box {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+#btn {
+    display: none;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    background: url("../images/top_bg.png") left top no-repeat;
+    margin-left: 610px;
+}
+
+#btn:hover {
+    background: url("../images/top_bg.png") left -40px no-repeat;
+}

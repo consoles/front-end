@@ -69,7 +69,6 @@ CSS的定位机制有3种：
 
 - 三列布局
 
-
 ### 网页布局范例 ###
 1. 新浪微博布局中的第三种情况。
 ![](http://i.imgur.com/jcmuVIU.jpg)
@@ -90,6 +89,41 @@ CSS的定位机制有3种：
 
 生成雪碧图常用sprite工具自动生成。[CSSgaga教程](http://www.99css.com/1524/)。
 
+## 清除浮动的终结版本
+
+`after`伪类选择器：
+
+```css
+.top-nav:before,.top-nav:after{
+    content: '';
+    display: table;
+}
+.top-nav:after{
+    clear: both;
+}
+```
+
+## 网站上常用的小三角的实现
+
+```css
+.box{
+    display: block;
+    width: 0;
+    border-top: 10px solid red;
+    border-right: 10px solid blue;
+    border-bottom: 10px solid yellow;
+    border-left: 10px solid magenta;
+}
+```
+
+设置小三角只需要将别的边的颜色设置为透明即可。
+
+## jQuery浏览器检测
+
+```js
+$.browser.msie && $.browser.version.substr(0,1) < 7
+```
+
 #注意事项#
 
 1. CSS中只有多行注释，在其他语言中的"//"方式是不行的。
@@ -98,7 +132,9 @@ CSS的定位机制有3种：
 	2.  使用CSS样式：`<span style="white-space:pre">1 2          3</span>`
 3.  遍历json需要使用`for-in`循环。
 
-		 var json = {a:1,b:2};
-		  	for(var i in json){
-				alert(i + '--->' + json[i]);
-		 }
+```js
+var json = {a:1,b:2};
+for(var i in json){
+    alert(i + '--->' + json[i]);
+}
+```
