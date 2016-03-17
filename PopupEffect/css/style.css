@@ -1,0 +1,33 @@
+#mask {
+    background: #000;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    height: 1000px;
+    width: 10000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+#login {
+    position: fixed;
+    z-index: 1001;
+}
+
+.login-content {
+    width: 670px;
+    height: 380px;
+    background: url("../images/loginBg.png") center no-repeat;
+    position: relative;
+}
+
+#close {
+    width: 30px;
+    height: 30px;
+    background: url("../images/close.png") no-repeat;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
