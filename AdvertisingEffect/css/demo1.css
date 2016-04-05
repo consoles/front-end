@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 960px;
+    height: 1440px;
+    background: #CCCCCC;
+    color: #000000;
+    font-size: 36px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.tip-content {
+    position: fixed;
+    background: #efefef;
+    color: #000;
+    font-size: 16px;
+    bottom: 0;
+    right: 0;
+}
+
+.clickMe {
+    height: 24px;
+    background: #CCC;
+    line-height: 24px;
+    position: relative;
+}
+
+.showPic {
+    display: none;
+}
+
+.clickMe a {
+    background: url(../images/icon.jpg) no-repeat -399px -19px;
+    width: 16px;
+    height: 16px;
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.clickMe a:hover {
+    background-position: -343px -19px;
+}

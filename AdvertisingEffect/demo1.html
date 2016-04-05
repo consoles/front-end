@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>右下角弹窗</title>
+    <link rel="stylesheet" href="css/demo1.css"/>
+</head>
+<body>
+<div class="content">网页内容</div>
+<div class="tip-content">
+    <div class="clickMe">
+        猜猜我有啥？
+        <a href="javascrip:void(0);" id="closeBtn"></a>
+    </div>
+    <div class="showPic">
+        <img src="images/snow.gif"/></div>
+</div>
+<script>
+    window.onload = function () {
+        var TipBox = document.querySelector('.tip-content');
+        var ClickMe = document.querySelector(".clickMe");
+        var showPic = document.querySelector(".showPic");
+        var closeBtn = document.getElementById("closeBtn");
+
+        ClickMe.onmouseover = function () {
+            showPic.style.display = 'block';
+            closeBtn.style.display = 'block';
+        };
+        closeBtn.onclick = function () {
+            showPic.style.display = 'none';
+            closeBtn.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>

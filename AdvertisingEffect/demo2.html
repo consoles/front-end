@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>顶部广告展开收起</title>
+    <style>
+        body, div, img, span {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            width: 960px;
+            height: 1000px;
+            background: #ccc;
+            margin: 0 auto;
+        }
+
+        #ad {
+            width: 960px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            display: none;
+        }
+
+        #close {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background: #CF3;
+            top: 0;
+            right: 0;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!-- 广告位置 -->
+<div id="ad">
+    <img id="adcon" src="http://img.mukewang.com/52fdb1ce0001e92d09620386.jpg" width="960" height="385"/>
+    <img id="adcur" src="http://img.mukewang.com/52fdb21a0001a0eb11990068.jpg" width="960" height="80"/>
+    <span id="close">X</span>
+</div>
+<div id="content"><img src="http://img.mukewang.com/52fdb1930001795a09601700.jpg"/></div>
+<script>
+    //全局变量
+    var oAd = document.getElementById('ad');
+    var oAdcon = document.getElementById('adcon');
+    var oAdcur = document.getElementById('adcur');
+    var oClose = document.getElementById('close');
+
+    var maxH = oAdcon.height;//最大高度
+    var minH = oAdcur.height;//最小高度
+    var step = 5;//移动的距离
+    var h = 0;
+
+    /*广告向下展开*/
+    function adDown() {
+        oAd.style.display = "block";
+        oAd.style.height = h + "px";
+
+        if (h < maxH) {
+            h += step; //向下移动
+            setTimeout(adDown, 1);
+        } else {
+            setTimeout(adUp, 3000); //停留时间自己适当调整 1000 = 1秒
+        }
+    }
+
+    /*广告向上收起*/
+    function adUp() {
+        oAd.style.height = h + 'px';
+
+        if (h > minH) {
+            h -= step; //向上移动
+            setTimeout(adUp, 1);
+        } else {
+            oAdcon.style.display = "none";
+            oClose.style.display = "block";
+        }
+    }
+
+    oClose.onclick = function () {
+        oAd.style.display = "none";
+    };
+    setTimeout(adDown, 3000);
+</script>
+</body>
+</html>
