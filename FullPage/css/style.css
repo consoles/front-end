@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    background-size: cover;
+    background: #000 50% 50%;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #333;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /*取消滚动条*/
+}
+
+h1 {
+    font-size: 6em;
+    font-weight: normal;
+}
+
+p {
+    font-size: 2em;
+    margin: 0.5em 0 2em 0;
+}
+
+#container, .sections, .section {
+    height: 100%;
+    position: relative;
+}
+
+#section0 {
+    background: url("../images/1.jpg");
+}
+
+#section1 {
+    background: url("../images/2.jpg");
+}
+
+#section2 {
+    background: url("../images/3.jpg");
+    text-shadow: 1px 1px 1px #666;
+}
+
+#section3 {
+    background: url("../images/4.jpg");
+    color: #008283;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+#section0 p {
+    color: #f1ff00;
+}
+
+#section3 p {
+    color: #00a3af;
+}
+
+.intro {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.left {
+    float: left;
+    width: 25%;
+}
+
+ul.pages {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    list-style: none;
+}
+
+ul.pages li {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 10px 5px;
+}
+
+ul.pages li.active {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ffee00;
+    background: none;
+    margin-left: 0;
+}
+
+#section0 .title {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-animation: sectitle0 1s ease-in-out 100ms forwards;
+    animation: sectitle0 1s ease-in-out 100ms forwards;
+}
+
+#section0 p {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-animation: sec0 1s ease-in-out 100ms forwards;
+    animation: sec0 1s ease-in-out 100ms forwards;
+}
+
+@-webkit-keyframes sectitle0 {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes sectitle0 {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes sec0 {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes sec0 {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}

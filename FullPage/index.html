@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全屏切换效果</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="container" data-PageSwitch>
+    <div class="sections">
+        <div class="section active" id="section0">
+            <div class="intro">
+                <h1 class="title">the page1</h1>
+
+                <p>Create Beautiful Fullscreen Scrolling Websites</p>
+            </div>
+        </div>
+        <div class="section" id="section1">
+            <div class="intro">
+                <h1 class="title">the page2</h1>
+
+                <p>HTML markup example to define 4 sections</p>
+                <img src="images/example.png"/>
+            </div>
+
+        </div>
+        <div class="section" id="section2">
+            <div class="intro">
+                <h1 class="title">the page3</h1>
+
+                <p>The plug-in configuration parameters</p>
+                <img src="images/example2.png"/>
+
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="intro">
+                <h1 class="title">the page4</h1>
+
+                <p>Everything will be okay in the end. If it's not okay, it's not the end.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="../lib/jquery-2.1.1.js"></script>
+<script src="js/jQuery.pageSwitch.js"></script>
+<script>
+    $('#container').PageSwitch({
+        loop: true,
+        direction: 'horizontal',
+        easing: 'ease-in-out',
+        index: 1,
+        callback: function (index) {
+            console.log('finish render: ' + index);
+        }
+    });
+</script>
+</body>
+</html>
