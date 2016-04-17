@@ -131,8 +131,8 @@
              */
             _initEvent: function () {
                 var me = this;
-                me.element.on('click', me.selectors.pages + ' li', function () {
-                    me.index = $(this).index;
+                me.element.on('click', me.selectors.page + ' li', function () {
+                    me.index = $(this).index();
                     me._scrollPage();
                 });
                 me.element.on('mousewheel DOMMouseScroll', function (e) {
@@ -200,6 +200,7 @@
                         }
                     });
                 }
+                me.section.eq(me.index).addClass(me.activeClass).siblings().removeClass(me.activeClass);
                 if (me.settings.pagination) {
                     me.pageItem.eq(me.index).addClass(me.activeClass).siblings().removeClass(me.activeClass);
                 }

@@ -74,10 +74,29 @@ p {
 
 ul.pages {
     position: fixed;
-    top: 50%;
-    right: 10px;
     list-style: none;
 }
+
+ul.pages.vertical {
+    top: 50%;
+    right: 10px;
+}
+
+ul.pages.horizontal {
+    bottom: 20px;
+    left: 50%;
+}
+
+ul.pages.horizontal li {
+    display: inline-block;
+    margin: 10px;
+}
+
+ul.pages.horizontal li.active {
+    position: relative;
+    top: 4px;
+}
+
 
 ul.pages li {
     width: 8px;
