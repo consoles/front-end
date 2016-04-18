@@ -1,0 +1,324 @@
+html,
+body,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+@lineColor: #e1e1e1;
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+body {
+  background: #ccc;
+}
+
+h1 {
+  text-align: center;
+  color: #FF6600;
+}
+
+.football-pitch {
+
+  width: 1000px;
+  height: 500px;
+  position: relative;
+  margin: 40px auto;
+  background: url(../images/turf.jpeg) repeat;
+  overflow: hidden;
+  border: 4px solid @lineColor;
+
+  .lines {
+    opacity: 0;
+    .transition(opacity 1.2s ease-in-out);
+
+    .halfway-line {
+      width: 4px;
+      height: 500px;
+      position: absolute;
+      top: 0;
+      left: 498px;
+      background-color: #e1e1e1;
+    }
+    .center-circle {
+      position: absolute;
+      top: 196px;
+      left: 446px;
+      width: 100px;
+      height: 100px;
+      border: 4px solid @lineColor;
+      .border-radius(50%);
+    }
+    .center-spot {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 245px;
+      left: 495px;
+      background-color: #fff;
+      .border-radius(50%);
+    }
+    .penalty-arc-container-left {
+      width: 25px;
+      height: 100px;
+      position: absolute;
+      left: 141px;
+      overflow: hidden;
+      top: 196px;
+
+      .penalty-arc {
+        float: right;
+        width: 100px;
+        height: 100px;
+        border: 4px solid @lineColor;
+        .border-radius(50%);
+      }
+    }
+    .penalty-area-left {
+      width: 140px;
+      height: 300px;
+      position: absolute;
+      left: -4px;
+      top: 96px;
+      border: 4px solid @lineColor;
+    }
+    .penalty-spot-left {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      left: 91px;
+      top: 245px;
+      background-color: #fff;
+      .border-radius(50%);
+    }
+    .goal-area-left {
+      width: 60px;
+      height: 100px;
+      position: absolute;
+      left: -4px;
+      top: 196px;
+      border: 4px solid @lineColor;
+    }
+    .corner-area-left-top {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: -8px;
+      top: -8px;
+      border: 4px solid @lineColor;
+      .border-radius(50%);
+    }
+    .corner-area-left-bottom {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: -8px;
+      bottom: -8px;
+      border: 4px solid @lineColor;
+      .border-radius(50%);
+    }
+
+    .penalty-arc-container-right {
+      width: 25px;
+      height: 100px;
+      position: absolute;
+      right: 141px;
+      overflow: hidden;
+      top: 196px;
+
+      .penalty-arc {
+        float: left;
+        width: 100px;
+        height: 100px;
+        border: 4px solid @lineColor;
+        .border-radius(50%);
+      }
+    }
+    .penalty-area-right {
+      width: 140px;
+      height: 300px;
+      position: absolute;
+      right: -4px;
+      top: 96px;
+      border: 4px solid @lineColor;
+    }
+    .penalty-spot-right {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      right: 91px;
+      top: 245px;
+      background-color: #fff;
+      .border-radius(50%);
+    }
+    .goal-area-right {
+      width: 60px;
+      height: 100px;
+      position: absolute;
+      right: -4px;
+      top: 196px;
+      border: 4px solid @lineColor;
+    }
+    .corner-area-right-top {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: -8px;
+      top: -8px;
+      border: 4px solid @lineColor;
+      .border-radius(50%);
+    }
+    .corner-area-right-bottom {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: -8px;
+      bottom: -8px;
+      border: 4px solid @lineColor;
+      .border-radius(50%);
+    }
+  }
+
+  .schedules {
+    div {
+      position: absolute;
+      text-align: center;
+      .border-radius(6px);
+      top: 600px;
+      .transition(top 1.2s ease-in-out);
+    }
+  }
+}
+
+.football-pitch.ready {
+  .lines {
+    opacity: 1;
+  }
+  .match-vs16 {
+    width: 150px;
+    height: 60px;
+    background-color: #f1c40f;
+    color: #F9F9F9;
+    line-height: 60px;
+  }
+  .match-vs8 {
+    width: 150px;
+    height: 60px;
+    background-color: #f39c12;
+    color: #F9F9F9;
+    line-height: 60px;
+  }
+  .match-vs4 {
+    width: 120px;
+    height: 80px;
+    background-color: #e67e22;
+    color: #F9F9F9;
+    line-height: 80px;
+  }
+  .match-vs2 {
+    width: 120px;
+    height: 40px;
+    background-color: #d35400;
+    color: #F9F9F9;
+    line-height: 40px;
+  }
+  .match-49 {
+    left: 20px;
+    top: 40px;
+  }
+  .match-50 {
+    left: 20px;
+    top: 140px;
+  }
+  .match-53 {
+    left: 20px;
+    top: 300px;
+  }
+  .match-54 {
+    left: 20px;
+    top: 400px;
+  }
+  .match-51 {
+    right: 20px;
+    top: 40px;
+  }
+  .match-52 {
+    right: 20px;
+    top: 140px;
+  }
+  .match-55 {
+    right: 20px;
+    top: 300px;
+  }
+  .match-56 {
+    right: 20px;
+    top: 400px;
+  }
+
+  .match-57 {
+    left: 180px;
+    top: 80px;
+  }
+  .match-58 {
+    left: 180px;
+    top: 340px;
+  }
+  .match-59 {
+    right: 180px;
+    top: 80px;
+  }
+  .match-60 {
+    right: 180px;
+    top: 340px;
+  }
+
+  .match-61 {
+    left: 280px;
+    top: 200px;
+  }
+  .match-62 {
+    right: 280px;
+    top: 200px;
+  }
+
+  .match-63 {
+    left: 440px;
+    top: 260px;
+  }
+  .match-64 {
+    right: 440px;
+    top: 200px;
+    background: #c0392b;
+  }
+}
+
+.football-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1000px;
+  height: 500px;
+  z-index: 9999;
+
+  .ball {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  canvas {
+    display: none;
+  }
+}
