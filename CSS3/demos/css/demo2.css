@@ -1,0 +1,47 @@
+@-webkit-keyframes move {
+    0% {
+        transform: translateY(90px);
+    }
+    15% {
+        transform: translate(90px, 90px);
+    }
+    30% {
+        transform: translate(180px, 90px);
+    }
+    45% {
+        transform: translate(90px, 90px);
+    }
+    60% {
+        transform: translate(90px, 0);
+    }
+    75% {
+        transform: translate(90px, 90px);
+    }
+    90% {
+        transform: translate(90px, 180px);
+    }
+    100% {
+        transform: translate(90px, 90px);
+    }
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    margin: 20px auto;
+}
+
+span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: orange;
+    transform: translateY(90px);
+    -webkit-animation-name: move;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-delay: .2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
