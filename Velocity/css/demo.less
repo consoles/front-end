@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  opacity: 0;
+  position: relative;
+  width: 320px;
+  height: 480px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin: 10px auto;
+
+  // 卡片正面
+  .box {
+    opacity: 0;
+    position: relative;
+    z-index: 99;
+
+    .buddy {
+      opacity: 0;
+      position: absolute;
+      width: 96px;
+      height: 96px;
+
+      // 居中，ml设置为本元素宽度的一半，不能设置为50%
+      left: 50%;
+      margin-left: -48px;
+      margin-top: -48px;
+
+      top: 213px;
+      border-radius: 50%;
+    }
+
+    .inner {
+      margin-top: 66px;
+      text-align: center;
+
+      span {
+        font-size: 14px;
+        color: #b4b4b4;
+        display: inline-block;
+        margin-top: 5px;
+      }
+      .btn {
+        width: 90%;
+        height: 45px;
+        line-height: 45px;
+        margin-top: 45px;
+        background-color: #5677fc;
+        color: #fff;
+        border-radius: 3px;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color .2s;
+      }
+      .btn:hover {
+        background-color: #3b50ce;
+      }
+    }
+  }
+
+  .pop {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      color: #999;
+      font-size: 24px;
+      font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #111;
+    }
+
+    h3 {
+      margin-top: 15px;
+    }
+    span {
+      display: block;
+      font-size: 12px;
+      color: #999;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    img {
+      opacity: 0;
+      width: 125px;
+      height: 125px;
+      display: inline-block;
+      margin: 10px;
+    }
+  }
+}

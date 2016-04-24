@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Velocity实现弹出式相框</title>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="../lib/jquery-2.1.1.js"></script>
+    <script src="http://cdn.bootcss.com/velocity/1.2.3/velocity.min.js"></script>
+    <script src="http://cdn.bootcss.com/velocity/1.2.3/velocity.ui.js"></script>
+</head>
+<body>
+<div class="container">
+    <!--卡片正面-->
+    <div class="box">
+        <img src="images/back.jpg" alt=""/>
+        <img class="buddy" src="images/head.jpg" alt=""/>
+
+        <div class="inner">
+            <h3>慕课网</h3>
+            <span>慕课网，只学有用的</span>
+
+            <div class="btn">查看了课程</div>
+        </div>
+    </div>
+    <!--卡片背面-->
+    <div class="pop">
+        <div class="close">&times;</div>
+        <h3>慕课网</h3>
+        <span>慕课网，只学有用的</span>
+        <img src="images/pic1.jpg" alt=""/>
+        <img src="images/pic2.jpg" alt=""/>
+        <img src="images/pic3.jpg" alt=""/>
+        <img src="images/pic4.jpg" alt=""/>
+    </div>
+</div>
+<script src="js/demo.js"></script>
+</body>
+</html>
