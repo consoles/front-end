@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.picList {
+  width: 980px;
+  margin: 0 auto;
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
+
+  li {
+    position: relative;
+    list-style: none;
+    float: left;
+    width: 300px;
+    height: 170px; // 此height属性如果去掉会出现非常诡异的现象
+    border: 2px solid #ccc;
+    margin: 10px 0;
+
+    a, .description {
+      position: absolute;
+    }
+    a {
+      display: block;
+    }
+    .description {
+      display: none;
+      z-index: 999;
+      left: 100%;
+      width: 300px;
+      height: 170px;
+      border: 2px solid #ccc;
+      background-color: rgba(0, 1, 2, .5);
+
+      dl {
+        color: #003300;
+        font-weight: normal;
+        padding: 10px;
+
+        dt {
+          color: #FF6600;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        dd {
+          margin-top: 20px;
+          text-indent: 2em;
+        }
+      }
+    }
+  }
+}

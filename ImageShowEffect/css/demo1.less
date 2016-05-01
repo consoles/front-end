@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+  font-family: "微软雅黑", Arial,;
+
+  .picList {
+    width: 980px;
+    margin: 20px auto; // 使用此种方式居中元素需要定宽
+    // 解决子元素浮动后父元素造成的父元素高度塌陷问题，详见：http://t.imooc.com/article/6739
+    &::after {
+      content: '';
+      display: block;
+      height: 0;
+      visibility: hidden;
+      clear: both;
+    }
+
+    li.pic {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      margin: 10px 0 0 10px;
+      list-style: none;
+      float: left;
+
+      img, a {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      img {
+        width: 100%;
+      }
+      a {
+        &::first-line {
+          font-size: 18px;
+          font-weight: bold;
+          color: rgba(23, 45, 67, .8);
+        }
+        top: 160px;
+        display: block;
+        width: 280px;
+        height: 180px;
+        background-color: rgba(0, 0, 0, .5);
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px;
+        line-height: 25px;
+        transition: all .5s;
+      }
+    }
+  }
+}
