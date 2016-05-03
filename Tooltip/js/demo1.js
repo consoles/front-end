@@ -75,7 +75,7 @@ window.onload = function () {
                     break;
                 case "logo":
                     _id = "lg";
-                    _html = "<img src='logo.png'>";
+                    _html = "<img src='../images/logo.png'>";
                     _width = 230;
                     break;
                 case "jikexueyuan":
