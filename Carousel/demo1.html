@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>焦点轮播</title>
+    <link rel="stylesheet" href="css/demo1.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="list" style="left: -600px;">
+        <!--最后一张图的附属图-->
+        <img class="img-adjust" src="images/5.jpg" alt=""/>
+        <!--此区域的上下为无缝滚动技巧-->
+        <img class="img" src="images/1.jpg" alt=""/>
+        <img class="img" src="images/2.jpg" alt=""/>
+        <img class="img" src="images/3.jpg" alt=""/>
+        <img class="img" src="images/4.jpg" alt=""/>
+        <img class="img" src="images/5.jpg" alt=""/>
+        <!--此区域的上下为无缝滚动技巧-->
+        <!--第一张图的附属图-->
+        <img class="img-adjust" src="images/1.jpg" alt=""/>
+    </div>
+    <div class="buttons">
+        <span data-index="0" class="on"></span>
+        <span data-index="1"></span>
+        <span data-index="2"></span>
+        <span data-index="3"></span>
+        <span data-index="4"></span>
+    </div>
+    <a href="javascript:;" class="arrow prev">&lt;</a>
+    <a href="javascript:;" class="arrow next">&gt;</a>
+</div>
+<script src="js/demo1.js"></script>
+<!--以下是jQuery实现-->
+<script src="../lib/jquery-2.1.1.js"></script>
+<!--<script src="js/demo1-jquery.js"></script>-->
+</body>
+</html>
