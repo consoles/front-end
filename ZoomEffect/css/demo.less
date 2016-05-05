@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: block;
+  width: 400px;
+  height: 255px;
+  margin: 50px;
+  position: relative;
+  border: 1px solid #ccc;
+
+  //  小图片容器
+  .small_box {
+    position: relative;
+    z-index: 1;
+
+    // 全透明蒙版
+    .mask {
+      position: absolute;
+      display: block;
+      width: 400px;
+      height: 255px;
+      background: rgba(0, 0, 0, 0);
+      z-index: 10;
+      cursor: move;
+    }
+    //    放大镜
+    .zoom {
+      display: none;
+      width: 160px;
+      height: 120px;
+      position: absolute;
+      background-color: rgba(0, 0, 156, .3);
+      border: 1px solid #ccc;
+    }
+  }
+
+  // 大图片容器
+  .big_box {
+    //    display: none;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    top: 0;
+    left: 460px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    z-index: 1;
+
+    img {
+      position: absolute;
+      z-index: 5;
+    }
+  }
+
+}

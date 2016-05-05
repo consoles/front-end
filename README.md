@@ -126,17 +126,23 @@ CSS的定位机制有3种：
 $.browser.msie && $.browser.version.substr(0,1) < 7
 ```
 
+## `mouseover`事件和`mouseenter`事件的区别
+
+`mouseover`事件会在鼠标穿入子元素及其子元素的时候触发，而`mouseenter`事件仅会在穿入该元素的是皇后触发，参见：[W3School演示](http://www.w3school.com.cn/tiy/t.asp?f=jquery_event_mouseenter_mouseover)，同理可以类比`mouseout`和`mouseleave`.
+
+javascript中并非所有的事件都能够冒泡，`blur`,`focus`,`load`和`unload`事件不能冒泡。
+
+## 图片居中
+
+图片设置`display:block;margin:0 auto;width:300px;`,参见：[W3CPlus](http://www.w3cplus.com/css%2520/img-vertically-center-content-with-css)
+
+## 使用javascript设置样式的优化
+
+如果有多个`obj.style.xxx=xxx`，我们可以设置`obj.style.cssText=xx`，简化操作，提高性能。
+
 # 注意事项 
 
 1. CSS中只有多行注释，在其他语言中的"//"方式是不行的。
 2. html中输出空格可以有以下2种解决方案：
 	1.  使用html的`&nbsp;`来解决：`1 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3`
 	2.  使用CSS样式：`<span style="white-space:pre">1 2          3</span>`
-3.  遍历json需要使用`for-in`循环。
-
-```js
-var json = {a:1,b:2};
-for(var i in json){
-    alert(i + '--->' + json[i]);
-}
-```
