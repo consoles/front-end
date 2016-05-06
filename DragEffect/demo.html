@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标拖拽效果</title>
+    <link rel="stylesheet" href="css/demo.css"/>
+</head>
+<body>
+<!--对话框-->
+<div class="ui-dialog" id="dialog" onselectstart="return false;">
+    <div class="ui-dialog-title" id="dialogTitle" onselectstart="return false;">
+        登录通行证
+        <a href="javascript:hideDialog();" class="ui-dialog-title-close-button"></a>
+    </div>
+    <div class="ui-dialog-content">
+        <div class="ui-dialog-l40 ui-dialog-pt15">
+            <input type="text" class="ui-dialog-input ui-dialog-input-username" placeholder="用户名"/>
+        </div>
+        <div class="ui-dialog-l40 ui-dialog-pt15">
+            <input type="password" class="ui-dialog-input ui-dialog-input-password" placeholder="密码"/>
+        </div>
+        <div class="ui-dialog-l40">
+            <a href="">忘记密码</a>
+        </div>
+        <a class="ui-dialog-submit">登录</a>
+
+        <div class="ui-dialog-l40">
+            <a href="">立即注册</a>
+        </div>
+    </div>
+</div>
+<!--遮罩,onselectstart防止鼠标选中-->
+<div class="ui-mask" id="mask" onselectstart="return false;"></div>
+<div class="link">
+    <a href="javascript:showDialog();">登录</a>
+</div>
+<script src="js/demo.js"></script>
+</body>
+</html>

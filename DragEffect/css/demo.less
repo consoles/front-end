@@ -1,0 +1,117 @@
+body {
+  background: url("../images/baidu_demo.png") no-repeat top center #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "微软雅黑";
+
+  .ui-dialog {
+    display: none;
+    width: 380px;
+    height: auto; // 高度由子元素撑开
+    position: absolute;
+    z-index: 9999;
+    top: 100px;
+    left: 100px;
+    border: 1px solid #d5d5d5;
+    background: #fff;
+
+    a {
+      text-decoration: none;
+    }
+
+    .ui-dialog-title {
+      height: 48px;
+      line-height: 48px;
+      padding-left: 20px;
+      color: #535353;
+      font-size: 16px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #efefef;
+      cursor: move;
+
+      .ui-dialog-title-close-button {
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        background: url("../images/close_def.png");
+        &:hover {
+          background: url("../images/close_hov.png");
+        }
+      }
+    }
+
+    .ui-dialog-content {
+      padding: 15px 20px;
+
+      // 每行元素可能需要的样式
+      .ui-dialog-pt15 {
+        padding-top: 15px;
+      }
+      .ui-dialog-l40 {
+        height: 40px;
+        line-height: 40px;
+        text-align: right;
+      }
+
+      // 输入框公共样式
+      .ui-dialog-input {
+        width: 100%;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #d5d5d5;
+        font-size: 16px;
+        color: #c1c1c1;
+        text-indent: 25px;
+        outline: none;
+      }
+
+      // 两个输入框的icon位置
+      .ui-dialog-input-username {
+        background: url("../images/input_username.png") no-repeat 2px;
+      }
+      .ui-dialog-input-password {
+        background: url("../images/input_password.png") no-repeat 2px;
+      }
+      // 提交按钮
+      .ui-dialog-submit {
+        width: 100%;
+        height: 50px;
+        background: #3b7ae3;
+        border: none;
+        font-size: 16px;
+        color: #fff;
+        outline: none;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        transition: all .5s;
+        &:hover {
+          background: #3f8100;
+        }
+      }
+    }
+  }
+
+  .ui-mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8888;
+    display: none;
+  }
+
+  .link {
+    text-align: right;
+    line-height: 20px;
+    padding-right: 40px;
+  }
+}
