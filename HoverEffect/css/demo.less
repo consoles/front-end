@@ -1,0 +1,68 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes bubble {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#main {
+  #mapBg {
+    width: 100%;
+  }
+
+  #zgHotSpot {
+    top: 220px;
+    left: 400px;
+  }
+  #hlHotSpot {
+    left: 610px;
+    top: 260px;
+  }
+  .hotSpot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    a.hotSpotBtn {
+      display: block;
+      span.hotSpotSpan {
+        width: 15px;
+        height: 15px;
+        display: block;
+        text-align: center;
+        cursor: pointer;
+        opacity: 1;
+        position: absolute;
+        z-index: 1;
+        background: url("../images/ball.png") 0 0 no-repeat;
+        background-size: 100%;
+        -webkit-animation: bubble 2s infinite;
+      }
+    }
+    .detailImg {
+      width: 120px;
+      height: 80px;
+      display: none;
+    }
+    #zg {
+      background: url("../images/detail1.jpg") 0 0 no-repeat;
+    }
+    #hl {
+      background: url("../images/detail2.jpg") 0 0 repeat;
+    }
+  }
+}
