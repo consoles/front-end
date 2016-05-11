@@ -1,0 +1,45 @@
+body {
+  font: 14px/28px "微软雅黑";
+
+  .concat {
+    width: 700px;
+    height: auto;
+    background: #f6f6f6;
+    margin: 40px auto;
+    padding: 10px;
+
+    *:focus {
+      outline: none;
+    }
+
+    ul {
+      width: 700px;
+      li {
+        padding-left: 12px;
+        border-bottom: 1px solid #dfdfdf;
+
+        label {
+          width: 120px;
+          display: inline-block;
+          float: left;
+        }
+
+        input[type=text] {
+          width: 220px;
+          height: 20px;
+          border: 1px solid #aaa;
+          padding: 3px 8px;
+          border-radius: 5px;
+          background: url("../images/red_asterisk.png") no-repeat #fff 98%;
+          transition: padding .3s;
+
+          &:focus {
+            padding-right: 70px;
+            border-color: #c00;
+            background-image: url('../images/invalid.png');
+          }
+        }
+      }
+    }
+  }
+}
