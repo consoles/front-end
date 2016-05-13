@@ -1,0 +1,110 @@
+body,
+ul,
+li,
+p,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 938px;
+  height: 128px;
+  border: 1px solid #d3d3d3;
+}
+.wrapper ul * {
+  transition: all linear .1s;
+}
+.wrapper:hover .mask {
+  opacity: .15;
+}
+.wrapper li {
+  width: 156px;
+  height: 128px;
+  float: left;
+  overflow: hidden;
+}
+.wrapper li.big {
+  width: 314px;
+}
+.wrapper li.big a {
+  width: 314px;
+}
+.wrapper li.big a:hover .mask {
+  opacity: 0;
+}
+.wrapper li.big a img {
+  width: 195px;
+  height: 120px;
+  right: 0;
+  bottom: 0;
+}
+.wrapper li.big a .info {
+  width: 290px;
+}
+.wrapper li.big a .info h3 {
+  font-size: 18px;
+}
+.wrapper li.big a .info p {
+  font-size: 14px;
+  width: 166px;
+}
+.wrapper li.big a .info p.price {
+  font-size: 16px;
+  padding-top: 7px;
+}
+.wrapper li a {
+  display: block;
+  width: 156px;
+  height: 128px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+.wrapper li a img {
+  position: absolute;
+  right: -15px;
+  bottom: 0;
+  width: 117px;
+  height: 72px;
+}
+.wrapper li a .info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 136px;
+  padding: 4px 10px;
+}
+.wrapper li a .info h3 {
+  font-size: 14px;
+  font-weight: 700;
+}
+.wrapper li a .info p {
+  color: #868686;
+  font-size: 12px;
+  height: 22px;
+  line-height: 22px;
+  width: 136px;
+  overflow: hidden;
+}
+.wrapper li a .info p.price {
+  font-size: 14px;
+  font-style: italic;
+  color: #fa2a5d;
+  height: 35px;
+}
+.wrapper li a .line {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 128px;
+  border: 1px dashed #cacaca;
+}
+.wrapper li a .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 156px;
+  height: 128px;
+  opacity: 0;
+  background: #000;
+}

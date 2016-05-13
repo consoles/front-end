@@ -1,0 +1,123 @@
+body, ul, li, p, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+// 最外层的容器的宽度等于4个收缩的列表项和一个展开的列表项的宽度的和
+.wrapper {
+  width: 938px;
+  height: 128px;
+  border: 1px solid #d3d3d3;
+
+  ul * {
+    transition: all linear .1s;
+  }
+
+  &:hover {
+    .mask {
+      opacity: .15;
+    }
+  }
+
+  li {
+    width: 156px;
+    height: 128px;
+    float: left;
+    overflow: hidden;
+
+    &.big {
+      width: 314px;
+      a {
+        &:hover {
+          .mask {
+            opacity: 0;
+          }
+        }
+        width: 314px;
+        img {
+          width: 195px;
+          height: 120px;
+          right: 0;
+          bottom: 0;
+        }
+        .info {
+          width: 290px;
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            font-size: 14px;
+            width: 166px;
+            &.price {
+              font-size: 16px;
+              padding-top: 7px;
+            }
+          }
+        }
+      }
+    }
+
+    a {
+      display: block;
+      width: 156px;
+      height: 128px;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+
+      img {
+        position: absolute;
+        right: -15px; // 从右边故意超出列表一部分
+        bottom: 0;
+        width: 117px;
+        height: 72px;
+      }
+
+      .info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 136px;
+        padding: 4px 10px;
+
+        h3 {
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        p {
+          color: #868686;
+          font-size: 12px;
+          height: 22px;
+          line-height: 22px;
+          width: 136px;
+          overflow: hidden;
+
+          &.price {
+            font-size: 14px;
+            font-style: italic;
+            color: #fa2a5d;
+            height: 35px;
+          }
+        }
+      }
+      .line {
+        position: absolute;
+        right: 0;
+        //          我们并不需要元素真实的宽度仅仅是需要元素边框的宽度
+        width: 0;
+        height: 128px;
+        border: 1px dashed #cacaca;
+      }
+      .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 156px;
+        height: 128px;
+        opacity: 0;
+        background: #000;
+      }
+    }
+  }
+}
