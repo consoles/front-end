@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>QQ空间时光轴特效</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- 模板不直接显示到页面 -->
+<div class="hide">
+    <!--时光轴-->
+    <div id="tpl_scrubber_year">
+        <a href="javascript:;" class="scrubber_year current" id="scrubber_year_{year}" onclick="show_year({year});">{year}</a>
+        <!-- 下面的月份将替换此变量 -->
+        {list}
+    </div>
+    <div id="tpl_scrubber_month">
+        <a href="javascript:;" class="scrubber_month scrubber_month_in_{year}" id="scrubber_month_{year}_{month}"
+           onclick="show_month({year},{month});">{month}月</a>
+    </div>
+
+    <!--内容-->
+    <div id="tpl_content_year">
+        <div class="content_year" id="content_year_{year}">{year}</div>
+        {list}
+    </div>
+    <div id="tpl_content_month">
+        <div class="content_month" id="content_month_{year}_{month}">{month}月</div>
+        {list}
+    </div>
+    <div id="tpl_content_item">
+        <div class="content_item content_item_{position} {isFirst}">
+            <div class="content_item_icon_arrow"></div>
+            <div class="content_item_icon_dot">
+                <div class="content_item_icon_dot_child"></div>
+            </div>
+            <div class="content_item_head">
+                <div class="content_item_head_title">
+                    <div class="content_item_head_title_lunar">
+                        {lunar}
+                    </div>
+                    {date}
+                </div>
+                <div class="content_item_head_intro">
+                    <i class="ui_icon quote_before"></i>
+                    {intro}
+                    <i class="ui_icon quote_after"></i>
+                </div>
+            </div>
+            <div class="content_item_media">
+                {media}
+            </div>
+            <div class="content_media_footer">
+                <div class="content_media_footer_info">
+                    <a href="javascript:;" title="赞"><i class="icon_zan"></i>（{like}）</a>
+                    <a href="javascript:;" title="评论"><i class="icon_pinglun"></i>（{comment}）</a>
+                </div>
+                <div class="content_media_footer_like">
+                    {like_format}人觉得很赞
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top"></div>
+<div class="header"></div>
+<div class="container">
+    <!--左侧时光轴-->
+    <div class="scrubber" id="scrubber">
+        <a href="javascript:;" class="scrubber_year current">2014</a>
+        <a href="javascript:;" class="scrubber_mongth">3月</a>
+        <a href="javascript:;" class="scrubber_mongth">2月</a>
+    </div>
+    <!--右侧内容-->
+    <div class="content" id="content">
+        <div class="content_year">2014</div>
+        <div class="content_month">3月</div>
+        <div class="content_item">
+            <div class="content_item_icon_arrow"></div>
+            <div class="content_item_icon_dot">
+                <div class="content_item_icon_dot_child"></div>
+            </div>
+            <div class="content_item_head">
+                <div class="content_item_head_title">
+                    <div class="content_item_head_title_lunar">
+                        三<br/>&nbsp;十
+                    </div>
+                    2014-03-30
+                </div>
+                <div class="content_item_head_intro">
+                    <i class="ui_icon quote_before"></i>
+                    1.熟练掌握HTML+CSS相关知识，尤其是对CSS定位、浮动清除，圆角、三角形等了解；2.对JS基础知识熟悉
+                    <i class="ui_icon quote_after"></i>
+                </div>
+            </div>
+            <div class="content_item_media">
+                <img src="images/psb.jpeg" width="370" alt=""/>
+            </div>
+            <div class="content_media_footer">
+                <div class="content_media_footer_info">
+                    <a href="javascript:;" title="赞"><i class="icon_zan"></i>（199）</a>
+                    <a href="javascript:;" title="评论"><i class="icon_pinglun"></i>（2199）</a>
+                </div>
+                <div class="content_media_footer_like">
+                    2.5万人觉得很赞
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/lunar.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

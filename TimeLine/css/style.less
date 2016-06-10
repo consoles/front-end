@@ -1,0 +1,240 @@
+// 图标组件
+.ui_icon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  font-size: 0;
+  overflow: hidden;
+  background-image: url("../images/timeline.png");
+  margin-right: 5px;
+  vertical-align: bottom;
+
+  &.quote_before {
+    background-position: -986px -85px;
+  }
+  &.quote_after {
+    background-position: -986px -102px;
+  }
+}
+
+body {
+  background: url("../images/1.jpg") #1c0c0f top center no-repeat fixed;
+  margin: 0;
+  padding: 41px 0 0;
+
+  .hide {
+    display: none;
+  }
+
+  .top {
+    width: 100%;
+    height: 41px;
+    position: fixed;
+    top: 0;
+    background: #001e38;
+    z-index: 99;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+  }
+  .header {
+    width: 960px;
+    height: 200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, .2);
+  }
+  .container {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+
+    .scrubber {
+      width: 47px;
+      min-height: 200px;
+      position: absolute;
+      top: 29px;
+      left: 0;
+      z-index: 999;
+      //      background: rgba(255, 255, 255, .2);
+
+      a {
+        display: block;
+        height: 26px;
+        line-height: 26px;
+        font-size: 12px;
+        border-right: 2px solid rgba(200, 200, 200, .5);
+        padding-right: 5px;
+        color: #a5a5a5;
+        text-decoration: none;
+        text-shadow: 0 1px rgba(0, 0, 0, .3);
+        text-align: right;
+
+        &:hover, &.current {
+          border-right: 2px solid #7ebad0;
+          color: #7ebad0;
+          font-weight: bold;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+        &.current:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .content {
+      min-height: 1000px;
+      background: url("../images/spine.png") repeat-y 120px 0;
+      padding-top: 50px;
+      padding-left: 160px;
+      position: relative;
+
+      .content_year, .content_month {
+        height: 30px;
+        line-height: 30px;
+        color: #a5a5a5;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+        font-weight: bold;
+        font-size: 14px;
+        position: relative;
+        left: -90px;
+        clear: both;
+      }
+
+      .content_item {
+
+        &.content_item_left {
+          float: left;
+        }
+        &.content_item_right {
+          float: right;
+          // 在右侧的点需要重新设置偏移
+          .content_item_icon_dot {
+            left: -443px;
+          }
+        }
+
+        &.first {
+          margin-top: 20px;
+        }
+        width: 370px;
+        min-height: 300px;
+        background: #fff;
+        border-radius: 4px;
+        margin: 20px 30px 0 0;
+        position: relative;
+        color: #888;
+
+        // 左侧小三角图标
+        .content_item_icon_arrow {
+          position: absolute;
+          left: -10px;
+          top: 20px;
+          height: 0;
+          border-color: transparent #fff transparent transparent;
+          border-width: 10px 10px 10px 0;
+          border-style: dashed solid dashed dashed;
+        }
+
+        // 小圆角
+        .content_item_icon_dot {
+          width: 11px;
+          height: 11px;
+          border-radius: 11px;
+          background: #fff;
+          position: absolute;
+          left: -44px;
+          top: 25px;
+
+          .content_item_icon_dot_child {
+            width: 7px;
+            height: 7px;
+            border-radius: 7px;
+            background: #b3aed9;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+          }
+        }
+
+        .content_item_head {
+          padding: 15px;
+          padding-bottom: 0;
+
+          .content_item_head_title {
+            height: 46px;
+            line-height: 46px;
+            font-size: 28px;
+            padding: 0 0 10px 56px;
+            position: relative;
+
+            .content_item_head_title_lunar {
+              width: 46px;
+              height: 46px;
+              background: #b3dae9;
+              border-radius: 8px;
+              position: absolute;
+              left: 0;
+              top: 0;
+              overflow: hidden;
+              color: #fff;
+              font-size: 23px;
+              line-height: 23px;
+            }
+          }
+          .content_item_head_intro {
+            font-size: 14px;
+            line-height: 22px;
+            padding: 0 15px;
+            margin-bottom: 10px;
+          }
+        }
+
+        .content_item_media {
+          height: 277px;
+          overflow: hidden;
+          padding-bottom: 10px;
+        }
+
+        .content_media_footer {
+          padding: 10px 15px;
+          margin: 0 15px;
+          border-top: 1px solid #d6d6d6;
+          font-size: 12px;
+          color: #b2b2b2;
+          line-height: 20px;
+
+          .content_media_footer_info {
+            a {
+              color: #b2b2b2;
+              text-decoration: none;
+              padding-right: 10px;
+              display: inline-block;
+              height: 20px;
+
+              .icon_zan, .icon_pinglun {
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                font-size: 0;
+                overflow: hidden;
+                background: url("../images/timeline.png") no-repeat;
+                vertical-align: bottom;
+              }
+              .icon_zan {
+                background-position: -883px -21px;
+              }
+              .icon_pinglun {
+                background-position: -897px -42px;
+              }
+            }
+          }
+
+          .content_media_footer_like {
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
