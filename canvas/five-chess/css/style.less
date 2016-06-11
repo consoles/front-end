@@ -1,6 +1,44 @@
-canvas {
-  display: block;
-  margin: 50px auto;
-  box-shadow: -2px -2px 2px #efefef,
-  5px 5px 5px #b9b9b9;
+body {
+  background: #000033;
+
+  canvas {
+    display: block;
+    background: #000099;
+    margin: 50px auto;
+    box-shadow: -2px -2px 2px #efefef,
+    5px 5px 5px #b9b9b9;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background: #003300;
+      transform: scale(1.2);
+    }
+  }
+
+  button {
+    &::selection {
+      color: #330033;
+    }
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 10px auto;
+    color: rgba(12, 251, 234, 0.8);
+    text-shadow: 5px 5px 5px #000011;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(234, 67, 12, 0.9);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+    box-shadow: inset 2px 2px 2px #00dd00, 1px 1px 2px #f00;
+
+    &:hover {
+      transform: scale(1.2);
+      background: rgba(23, 45, 188, .7);
+      color: #00dd00;
+    }
+  }
 }
