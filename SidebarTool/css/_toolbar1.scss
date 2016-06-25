@@ -1,0 +1,82 @@
+/**
+ * 工具条
+ */
+
+$toolbar-size: 52px;
+
+// 正常情况下图片的位置和hover下的图片位置
+@mixin toolbar-item($pos, $hoverPos) {
+  background-position: 0 $pos;
+  &:hover {
+    background-position: 0 $hoverPos;
+  }
+}
+
+.toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: 5px;
+  margin-left: -$toolbar-size / 2;
+}
+
+.toolbar-item, .toolbar-layer {
+  background: url("../images/toolbar.png") no-repeat;
+}
+
+.toolbar-item {
+  display: block;
+  position: relative;
+  width: $toolbar-size;
+  height: $toolbar-size;
+  margin-top: 1px;
+  @include transition(background-position 1s);
+
+  &:hover {
+    .toolbar-layer {
+      @include opacity(1);
+      transform: scale(1);
+    }
+  }
+}
+
+.toolbar-layer {
+  position: absolute;
+  right: $toolbar-size - 6;
+  bottom: -10px;
+  width: 172px;
+  @include opacity(0);
+  transform: scale(.01);
+  transform-origin: 95% 95%;
+  @include transition(all 1s);
+}
+
+.toolbar-item-weixin {
+
+  @include toolbar-item(-798px, -860px);
+
+  .toolbar-layer {
+    height: 212px;
+    background-position: 0 0;
+  }
+}
+
+.toolbar-item-feedback {
+
+  @include toolbar-item(-426px, -488px);
+}
+
+.toolbar-item-app {
+
+  @include toolbar-item(-550px, -612px);
+
+  .toolbar-layer {
+    height: 194px;
+    background-position: 0 -222px;
+  }
+}
+
+.toolbar-item-top {
+
+  @include toolbar-item(-674px, -736px);
+
+}

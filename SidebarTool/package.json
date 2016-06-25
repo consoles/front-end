@@ -1,0 +1,16 @@
+{
+  "name": "sidebar-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "jquery": "^3.0.0",
+    "requirejs": "^2.2.0"
+  }
+}

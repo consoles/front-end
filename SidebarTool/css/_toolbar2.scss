@@ -1,0 +1,90 @@
+$toolbar-size: 52px;
+
+.toolbar-item, .toolbar-btn, .toolbar-icon, .toolbar-text {
+  width: $toolbar-size;
+  height: $toolbar-size;
+}
+
+.toolbar-text, .toolbar-icon {
+  position: absolute;
+  left: 0;
+  color: #fff;
+  text-align: center;
+  @include transition(top 1s);
+}
+
+.toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: 5px;
+  margin-left: -$toolbar-size / 2;
+}
+
+.toolbar-item {
+  position: relative;
+  display: block;
+
+  margin-top: 1px;
+
+  // hover的时候图标消失,显示文字
+  &:hover {
+    .toolbar-icon {
+      top: -$toolbar-size;
+    }
+    .toolbar-text {
+      top: 0;
+    }
+    .toolbar-layer {
+      @include opacity(1);
+      transform-origin: (95%, 95%);
+      transform: scale(1);
+    }
+  }
+}
+
+.toolbar-btn {
+  position: absolute;;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.toolbar-icon {
+
+  top: 0;
+  line-height: $toolbar-size;
+  background-color: #d0d6d9;
+  font-size: 30px;
+
+}
+
+.toolbar-text {
+
+  top: $toolbar-size; // 初始情况下文字不显示
+  line-height: 1.2;
+  background-color: #98a1a6;
+  font-size: 12px;
+  padding-top: 12px;
+}
+
+.toolbar-layer {
+  position: absolute;
+  right: $toolbar-size - 6;
+  bottom: -10px;
+  width: 172px;
+  background: url("../images/toolbar_img.png") no-repeat;
+  @include opacity(0);
+  transform-origin: (95% 95%);
+  transform: scale(.01);
+  @include transition(all 1s);
+}
+
+.toolbar-layer-weixin {
+  height: 212px;
+  background-position: 0 0;
+}
+
+.toolbar-layer-app {
+  height: 194px;
+  background-position: 0 -222px;
+}

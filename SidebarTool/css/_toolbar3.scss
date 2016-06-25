@@ -1,0 +1,146 @@
+$toolbar-size: 52px;
+
+.toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: 5px;
+  margin-left: -$toolbar-size / 2;
+}
+
+.toolbar-item {
+  position: relative;
+  display: block;
+  width: $toolbar-size;
+  height: $toolbar-size;
+  margin-top: 1px;
+
+  &:hover {
+    .toolbar-btn {
+      &::before {
+        top: -$toolbar-size;
+      }
+      &::after {
+        top: 0;
+      }
+    }
+    &::after {
+      @include opacity(1);
+      transform: scale(1);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: $toolbar-size - 6;
+    bottom: -10px;
+    width: 172px;
+    background: url("../images/toolbar_img.png") no-repeat;
+    @include opacity(0);
+    transform-origin: 95% 95%;
+    transform: scale(.01);
+    @include transition(all 1s);
+  }
+}
+
+.toolbar-item-weixin {
+  &::after {
+    content: "";
+    height: 212px;
+    background-position: 0 0;
+  }
+  .toolbar-btn {
+    // 这个其实可以从font-awesome中继承,但是目前不会用
+    &::before {
+      content: "\f1d7";
+    }
+    &::after {
+      content: '公众\A账号';
+    }
+  }
+}
+
+.toolbar-item-feedback {
+  .toolbar-btn {
+    &::before {
+      content: "\f27b";
+    }
+    &::after {
+      content: '意见\A反馈';
+    }
+  }
+}
+
+.toolbar-item-app {
+  &::after {
+    content: "";
+    height: 194px;
+    background-position: 0 -222px;
+  }
+  .toolbar-btn {
+    &::before {
+      content: "\f10b";
+    }
+    &::after {
+      content: 'app\A下载';
+    }
+  }
+}
+
+.toolbar-item-top {
+  .toolbar-btn {
+    &::before {
+      content: "\f13d";
+    }
+    &::after {
+      content: '返回\A顶部';
+    }
+  }
+}
+
+.toolbar-btn {
+
+  &, &::before, &::after {
+    width: $toolbar-size;
+    height: $toolbar-size;
+
+    position: absolute;
+    left: 0;
+  }
+  &::before, &::after {
+    content: '';
+    color: #fff;
+    text-align: center;
+    @include transition(top 1s);
+  }
+
+  top: 0;
+  overflow: hidden;
+
+  // fontawesome的公共样式
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+
+  // icon
+  &::before {
+
+    top: 0;
+    background-color: #d0d6d9;
+    font-size: 30px;
+
+    line-height: $toolbar-size;
+
+  }
+  // text
+  &::after {
+    top: $toolbar-size; // 默认不可见
+    background-color: #98a1a6;
+    font-size: 12px;
+    padding-top: 12px;
+    line-height: 1.2;
+    white-space: pre;
+  }
+}
