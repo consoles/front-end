@@ -1,0 +1,191 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+// reset模块
+// @import "compass/reset";
+@import "variables", "mixin";
+// 使用normalize替换reset
+// @import "normalize";
+// 我们也可以只引入normalize的单独一个模块,需要先引入normalize-version
+@import "normalize-version";
+@import "normalize/base";
+@import "normalize/html5";
+@import "normalize/links";
+
+@debug compass-env();
+
+// layout模块
+@import "compass/layout";
+.stretch-full {
+  @include stretch(5px, 10px, 20px, 15px);
+}
+
+@include sticky-footer(30px);
+$grid-background-column-color: rgba(255, 0, 0, .25);
+#root {
+  @include grid-background;
+}
+
+// css3模块和browser support模块
+@import "compass/css3";
+@import "compass/support";
+@debug browsers();
+// 使用debug指令生成日志
+$supported-browsers: chrome;
+// 仅为chrome生成适配
+$browser-minimum-versions: ("ie":"8");
+
+// Typography模块
+@import "compass/typography";
+a {
+  // @include hover-link;
+  @include link-colors(#00c, #0cc, #c0c, #cc0);
+}
+
+.list-unstyled {
+  @include no-bullets;
+}
+
+.list-inline {
+  @include inline-list;
+}
+
+.list-horizontal {
+  @include horizontal-list;
+}
+
+.list-inline-block {
+  @include inline-block-list;
+}
+
+.text-force-wrap {
+  @include force-wrap;
+}
+
+$use-mozilla-ellipsis-binding: true;
+.text-ellipsis {
+  @include ellipsis;
+}
+
+.text-hide {
+  // @include hide-text;
+  @include squish-text;
+}
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline;
+
+body {
+  @include debug-vertical-alignment;
+}
+
+h1 {
+  @include adjust-font-size-to(3em);
+}
+
+h2 {
+  @include adjust-font-size-to(36px);
+}
+
+h3 {
+  @include adjust-font-size-to(24px);
+}
+
+h4 {
+  @include adjust-font-size-to(21px);
+}
+
+h5 {
+  @include adjust-font-size-to(18px);
+}
+
+h6 {
+  @include adjust-font-size-to(16px);
+}
+
+p {
+  @include adjust-font-size-to(16px);
+  @include leader(2);
+  @include trailer;
+}
+
+// helpers模块
+.analyzer-logo {
+  // background-image: inline-image('analyzer.png'); // 使用compass内置函数生成base64图片
+  background-image: image-url('logo/analyzer.png'); // 不必关心资源的具体路径，并且可解决缓存问题
+}
+
+// utilities模块
+@import "compass/utilities";
+@debug brightness(#000);
+@debug brightness(#ccc);
+@debug brightness(#fff);
+
+@import "compass/utilities/print";
+@include print-utilities(screen);
+
+@import "compass/utilities/tables";
+.price-table {
+  $table-color: #7a98c6; // 局部变量
+  @include outer-table-borders();
+  @include inner-table-borders(1px darken($table-color, 40%));
+  @include table-scaffolding();
+  @include alternating-rows-and-columns($table-color, adjust-hue($table-color, -120deg), #222222);
+}
+
+.clearfix {
+  // @include clearfix;
+  // @include pie-clearfix;
+  @include legacy-pie-clearfix;
+}
+
+// compass合图
+@import "icons";
+
+.headline {
+  font-family: $headline-ff;
+}
+
+.main-sec {
+  font-family: $main-sec-ff;
+
+  @at-root {
+    .main-sec-headline {
+      // sass属性嵌套
+      font: {
+        family: $main-sec-ff;
+        size: 16px;
+      }
+    }
+
+    .main-sec-defail {
+      font-size: 12px;
+    }
+  }
+}
+
+p {
+  color: hsl(270, 100%, 50%);
+}
+
+.webdemo-sec {
+  // @include col-6();
+  // @include col();
+  @include col-sm();
+  @include box-shadow(1px 1px 3px 2px #cfcecf);
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.error {
+  color: #f00;
+}
+
+.serious-error {
+  // 继承了error类
+  @extend .error;
+  border: 1px #f00;
+}

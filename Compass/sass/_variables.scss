@@ -1,0 +1,5 @@
+// 以下划线开头的scss文件是局部文件，不会被编译为css，专门被其他sass文件导入
+
+// 定义变量，头部字体和主体字体
+$headline-ff: Braggadocio, Arial, Verdanna, Helvetica, sans-serif;
+$main-sec-ff: Arial, Verdanna, Helvetica, sans-serif;

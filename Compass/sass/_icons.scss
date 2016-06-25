@@ -1,0 +1,8 @@
+@import "compass/utilities/sprites";
+// compass合图
+@import "logo/*.png";
+
+//magic import
+
+// 中间是目录名
+@include all-logo-sprites();
