@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html manifest="/ft-tech-blog.appcache">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon" href="icon.png"/>
+    <title>HTML5离线应用-离线版</title>
+</head>
+<body>
+<div id="loading">Loading&hellip;</div>
+<script src="js/libs/jquery-2.1.1.js"></script>
+<script>
+    'use strict'
+
+    $(function () {
+        const APP_START_FAILED = 'I am sorry, the app can start right now';
+
+        /**
+         * IIFE形式的js字符串可以使用eval执行
+         * 更优雅的方式是使用script标签插入到html页面中
+         */
+        let insertScript = script
+        =>
+        {
+            let node = document.createElement('script');
+            node.innerHTML = script;
+            document.head.appendChild(node);
+        }
+
+        /**
+         * 初始化资源
+         * @param resources {Object} 资源
+         * @param storeResources {Boolean} 是否从localStorage加载资源
+         */
+        let startWithResources = (resources, storeResources)
+        =>
+        {
+            try {
+                insertScript(resources.js);
+                setTimeout(function () {
+                    APP.applicationController.start(resources, storeResources)
+                }, 500);
+            } catch (e) {
+                alert(APP_START_FAILED);
+                console.error('%o', e);
+            }
+        }
+
+        let startWithOnlineResources = resources
+        =>
+        startWithResources(resources, true);
+
+        let startWithOfflineResources = ()
+        =>
+        {
+            let resources;
+
+            // If we have resources saved from a previous visit, use them
+            if (localStorage && localStorage.resources) {
+                resources = JSON.parse(localStorage.resources);
+                startWithResources(resources, false);
+            } else {
+                // Otherwise, apologize and let the user know
+                alert(APP_START_FAILED);
+            }
+        }
+
+
+        if (navigator && !navigator.onLine) {
+            startWithOfflineResources();
+        } else {
+            $.ajax({
+                url: '/api/resources',
+                success: startWithOnlineResources,
+                error: startWithOfflineResources,
+                dataType: 'json'
+            });
+        }
+
+    });
+</script>
+</body>
+</html>

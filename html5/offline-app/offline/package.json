@@ -1,0 +1,22 @@
+{
+  "name": "offline-app",
+  "version": "1.0.0",
+  "description": "html5 offline app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^1.2.0",
+    "koa-favicon": "^1.2.1",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
+    "moment": "^2.13.0",
+    "rss-parser": "^2.2.4"
+  },
+  "devDependencies": {
+    "koa-logger": "^1.3.0"
+  }
+}

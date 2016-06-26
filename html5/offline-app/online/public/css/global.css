@@ -1,0 +1,27 @@
+body {
+  /*background: #d6fab2;  garish green */
+  font: 0.76em/1.6em Arial, Helvetica, sans-serif;
+  color: #363636;
+}
+#headlines h2 {
+  font-weight: bold;
+  font-size: 2.2em;
+  line-height: 1.1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 a,
+h3 a {
+  color: #0aa7d6;
+  text-decoration: none;
+  border: none;
+}
+.byline {
+  color: #aaa;
+  font-size: 12px;
+  margin: -1em 0 0.7em;
+}
+a:hover {
+  color: #fff;
+  background: #0aa7d6;
+  text-decoration: none;
+}

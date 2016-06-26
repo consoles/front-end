@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="shortcut icon" href="icon.png"/>
+    <title>HTML5离线应用-在线版</title>
+    <link rel="stylesheet" href="css/global.css"/>
+</head>
+<body>
+<div id="loading">Loading&hellip;</div>
+<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+<script>
+    window.APP = {};
+    $(function () {
+        console.log('jQuery document.ready event')
+        APP.applicationController.start();
+    });
+</script>
+<script src="js/database.js"></script>
+<script src="js/template.js"></script>
+<script src="js/articles/article.js"></script>
+<script src="js/articles/articlecontroller.js"></script>
+<script src="js/application/applicationcontroller.js"></script>
+<script>
+    console.log('dom contentloaded event')
+</script>
+</body>
+</html>
