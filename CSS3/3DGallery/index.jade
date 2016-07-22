@@ -1,0 +1,27 @@
+// CSS3实现3D画廊特效,原型:http://www.17sucai.com/preview/1/2014-12-23/ScatteredPolaroidsGallery/index.html
+   Created by yiihua-013 on 16/7/19.
+
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title CSS3 3D画廊
+        link(href='css/style.css' rel='stylesheet')
+    // 禁止用户选取网页上的内容,IE和Chrome下是这样用,Firefox下设置
+    body(onselectstart='return false')
+        #wrap.wrap
+            // 负责平移和旋转
+            .photo.photo-front(id='photo_{{index}}',onclick='trun(this)')
+                // 负责翻转
+                .photo-wrap
+                    // 正面
+                    .side.side-front
+                        p.image
+                            img(src='images/{{img}}')
+                        p.caption {{caption}}
+                    // 反面
+                    .side.side-back
+                        p.desc {{desc}}
+
+        script(src='js/data.js')
+        script(src='js/main.js')
