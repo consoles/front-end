@@ -31,3 +31,9 @@ lib/normalize.css
 /CSS3/Gallery/style.css
 /BaiKuai/css/main.css
 lib/jquery-2.1.1.js
+/ImageClip/css/*.css*
+/lib/jquery-ui-1.10.4.custom.min.js
+/ResizablePanel/*.html
+/ResizablePanel/css/*.css*
+/CSS3/3DGallery/*.html
+/CSS3/3DGallery/css/style.css*

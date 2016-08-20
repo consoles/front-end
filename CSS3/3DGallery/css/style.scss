@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Avenir Next', 'Lantinghei SC';
+  font-size: 14px;
+
+  // -webkit-font-smoothing：none | subpixel-antialiased | antialiased
+  // none：对低像素的文本比较好
+  // subpixel-antialiased：默认值
+  // antialiased：抗锯齿
+  //
+  // -moz-osx-font-smoothing是mozilla给特定操作系统推出的特性增强
+  // 设置grayscale对于图标字体表现更清晰，减轻次像素渲染带来的相邻像素色彩污染问题
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // 禁止用户选中
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'icon';
+  src: url("../fonts/icons/icon.eot") format("embedded-opentype"),
+  url("../fonts/icons/icon.woff") format("woff"),
+  url("../fonts/icons/icon.ttf") format("truetype"),
+  url("../fonts/icons/icon.svg") format("svg");
+}
+
+.wrap {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  margin-top: -300px;
+  background-color: #333;
+  overflow: hidden;
+
+  // perspective 属性定义3D元素距视图的距离，以像素计.
+  // 其值越小，用户与3D空间Z平面距离越近，视觉效果更令人印象深刻；反之，值越大，用户与3D空间Z平面距离越远,视觉效果就很小.
+  // 当为元素定义perspective属性时，其子元素会获得透视效果，而不是元素本身，
+  // perspective 属性只影响3D转换元素与perspective-origin属性一同使用该属性，
+  // 这样您就能够改变3D元素的底部位置perspective: number | none;
+  // number：元素距离视图的距离，以像素计(px 可以不写)
+  // none：默认值，与 0 相同，
+  // 不设置透视在3D变形中，除了perspective属性可以激活一个3D空间之外，在3D变形的函数中的perspective()也可以激活3D空间。
+  // 他们不同的地方是：perspective用在舞台元素上（变形元素们的共同父元素）；
+  // perspective()就是用在当前变形元素上，并且可以与其他的transform函数一起使用。
+  // 例如，我们可以把：.stage {perspective: 600px;} 写成 .stage .box {transform: perspective(600px);}
+  // perspective()函数取值只能大于0，如果取值为0或比0小的值，将无法激活3D空间
+  perspective: 800px;
+
+  // 海报
+  .photo {
+    width: 260px;
+    height: 320px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .1);
+    transition: all .6s;
+
+    // 初始化时每张海报都居中显示,生成随机位置的时候用于平滑过渡
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -130px;
+
+    &:hover {
+      z-index: 1000;
+      transform: scale(1.5) rotate(0deg) !important;
+      position: absolute;
+    }
+
+    // 负责翻转
+    .photo-wrap {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      // 使子元素支持3D效果
+      transform-style: preserve-3d;
+      transition: all .6s ease-in-out;
+      // x-axis,y-axis,z-axis
+      transform-origin: 0 50% 0;
+
+      .side {
+        width: 100%;
+        height: 100%;
+        background-color: #eee;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        box-sizing: border-box;
+
+        // 当元素不面向屏幕的时候将其隐藏
+        // http://www.w3school.com.cn/tiy/t.asp?f=css3_backface-visibility
+        backface-visibility: hidden;
+      }
+
+      .side-front {
+        transform: rotateY(0deg);
+
+        .image {
+          width: 100%;
+          height: 250px;
+          line-height: 250px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            vertical-align: middle;
+          }
+        }
+        .caption {
+          text-align: center;
+          font-size: 16px;
+          line-height: 50px;
+        }
+      }
+
+      .side-back {
+        transform: rotateY(180deg);
+
+        .desc {
+          color: #666;
+          font-size: 14px;
+          line-height: 1.5em;
+        }
+      }
+    }
+
+  }
+
+  // 当前选中的海报样式,水平垂直居中
+  .photo-center {
+    left: 50%;
+    top: 50%;
+    margin: -160px 0 0 -130px;
+    z-index: 2;
+  }
+
+  // 控制按钮的样式
+  .nav {
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 10%;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+
+    // 普通
+    .i {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      cursor: pointer;
+      background-color: #aaa;
+      text-align: center;
+      border-radius: 50%;
+      transform: scale(.48);
+      transition: all 1s;
+
+      // 字体图标背景
+      &::after {
+        font-family: 'icon';
+        content: '\e600';
+        color: #fff0e8;
+        font-size: 80%;
+        display: inline-block;
+        text-align: center;
+        opacity: 0;
+        line-height: 30px;
+      }
+    }
+    // 激活
+    .i-current {
+      transform: scale(1);
+      &::after {
+        opacity: 1;
+      }
+    }
+    // 背面
+    .i-back {
+      background-color: #555;
+      transform: rotateY(-180deg);
+    }
+  }
+}
+
+.photo-front .photo-wrap {
+  transform: translate(0px, 0px) rotateY(0deg);
+}
+
+// 翻转的时候向右移动260px
+.photo-back .photo-wrap {
+  transform: translate(260px, 0px) rotateY(180deg);
+}
