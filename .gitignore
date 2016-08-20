@@ -19,6 +19,7 @@ lib/d3/
 /InformationListEffect/css/*.css
 lib/jquery.easing/
 /ZoomEffect/css/*.css
+/html5/dragon-boat/css/*.css
 **/node_modules/
 /html5/offline-app/**/*.css
 lib/fullPage.js/
